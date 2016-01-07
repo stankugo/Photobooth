@@ -9,5 +9,3 @@ Modified by **Tim Reasa**
 
 * `sudo apt-get install python-picamera`
 * `sudo apt-get install python-imaging-tk`
-
-## first-time operations
