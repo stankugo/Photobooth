@@ -235,10 +235,10 @@ class Photobooth(Tkinter.Label):
         self.willQuit = False
         
         #Initialize GUI
-        # bgImage = PhotoImage(file=self.DIR_CARDS + "26.png")
-        Tkinter.Label.__init__(self, master) # Tkinter.Label.__init__(self, master, image=bgImage)
+        bgImage = PhotoImage(file=self.DIR_CARDS + "26.png")
+        Tkinter.Label.__init__(self, master, image=bgImage)
         self.master = master
-        # self.image = bgImage
+        self.image = bgImage
         
         self.countDown = Tkinter.StringVar()
         self.countDownLabel = Tkinter.Label(master, textvariable=self.countDown, font=("Helvetica", 72), bg='white')
@@ -250,7 +250,7 @@ class Photobooth(Tkinter.Label):
         self.bind("x", self.takeBWPhotos)
         self.pack(side=Tkinter.TOP, expand=Tkinter.YES, fill=Tkinter.BOTH)
         
-        master.overrideredirect(1)      #full screen mode (due to a bug, this disrupts key bindings)
+        # master.overrideredirect(1)      #full screen mode (due to a bug, this disrupts key bindings)
         master.geometry(str(self.SCREEN_WIDTH) + "x" + str(self.SCREEN_HEIGHT) + "+0+0")
 
         #Initialize PI camera
@@ -258,8 +258,6 @@ class Photobooth(Tkinter.Label):
         self.camera.preview_fullscreen = False
         self.camera.resolution = (self.CAMERA_WIDTH, self.CAMERA_HEIGHT)
         # self.camera.preview_window = ((self.SCREEN_WIDTH - self.CAMERA_WIDTH) / 2, (self.SCREEN_HEIGHT - self.CAMERA_HEIGHT) / 2, self.CAMERA_WIDTH, self.CAMERA_HEIGHT)
-        
-        self.camera.start_preview()
         
         self.focus_set()
     
