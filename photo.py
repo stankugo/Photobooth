@@ -235,10 +235,10 @@ class Photobooth(Tkinter.Label):
         self.willQuit = False
         
         #Initialize GUI
-        bgImage = PhotoImage(file=self.DIR_CARDS + "26.png")
-        Tkinter.Label.__init__(self, master, image=bgImage)
+        # bgImage = PhotoImage(file=self.DIR_CARDS + "26.png")
+        # Tkinter.Label.__init__(self, master, image=bgImage)
         self.master = master
-        self.image = bgImage
+        # self.image = bgImage
         
         self.countDown = Tkinter.StringVar()
         self.countDownLabel = Tkinter.Label(master, textvariable=self.countDown, font=("Helvetica", 72), bg='white')
