@@ -236,7 +236,7 @@ class Photobooth(Tkinter.Label):
         
         #Initialize GUI
         # bgImage = PhotoImage(file=self.DIR_CARDS + "26.png")
-        # Tkinter.Label.__init__(self, master, image=bgImage)
+        Tkinter.Label.__init__(self, master) # Tkinter.Label.__init__(self, master, image=bgImage)
         self.master = master
         # self.image = bgImage
         
