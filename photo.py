@@ -31,8 +31,8 @@ class Photobooth(Tkinter.Label):
     NUM_IMAGES = 4
     MAX_PRINTS = 25
 
-    SCREEN_WIDTH = 1680
-    SCREEN_HEIGHT = 1050
+    SCREEN_WIDTH = 800
+    SCREEN_HEIGHT = 1280
     CAMERA_WIDTH = 1200
     CAMERA_HEIGHT = 900
     PRINT_WIDTH = 960
@@ -44,9 +44,9 @@ class Photobooth(Tkinter.Label):
     THUMBNAIL_PADDING = 10
 
 
-    DIR_SAVE = "/home/pi/Photobooth/captured_images/"	#for individual camera snapshots
-    DIR_COMPOSITE = "/home/pi/Photobooth/final_images/" #for final composite images for printing
-    DIR_IMAGE = "/home/pi/Photobooth/base_images/"		#for static background images
+    DIR_SAVE = "/home/pi/Photobooth/snapshots/"	    #for individual camera snapshots
+    DIR_CARDS = "/home/pi/Photobooth/cards/"		#for cards
+    DIR_IMAGE = "/home/pi/Photobooth/base_images/"	#for static background images
 
     TEST = False #True no printout and shutdown only warns
 
@@ -235,7 +235,7 @@ class Photobooth(Tkinter.Label):
         self.willQuit = False
         
         #Initialize GUI
-        bgImage = PhotoImage(file=self.DIR_IMAGE + "screen_background.png")
+        bgImage = PhotoImage(file=self.DIR_CARDS + "26.png")
         Tkinter.Label.__init__(self, master, image=bgImage)
         self.master = master
         self.image = bgImage
