@@ -257,7 +257,7 @@ class Photobooth(Tkinter.Label):
         self.camera=picamera.PiCamera()
         self.camera.preview_fullscreen = False
         self.camera.resolution = (self.CAMERA_WIDTH, self.CAMERA_HEIGHT)
-        self.camera.preview_window = ((self.SCREEN_WIDTH - self.CAMERA_WIDTH) / 2, (self.SCREEN_HEIGHT - self.CAMERA_HEIGHT) / 2, self.CAMERA_WIDTH, self.CAMERA_HEIGHT)
+        # self.camera.preview_window = ((self.SCREEN_WIDTH - self.CAMERA_WIDTH) / 2, (self.SCREEN_HEIGHT - self.CAMERA_HEIGHT) / 2, self.CAMERA_WIDTH, self.CAMERA_HEIGHT)
         
         self.focus_set()
     
