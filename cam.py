@@ -10,10 +10,11 @@ try:
     camera.hflip = True
     
     camera.start_preview()
-    os.system("/home/pi/raspidmx/pngview/./pngview -b 0 -l 3 /home/pi/Photobooth/cards/26.png")
+    # os.system("/home/pi/raspidmx/pngview/./pngview -b 0 -l 3 /home/pi/Photobooth/cards/26.png")
     
     time.sleep(30)
+    
     camera.stop_preview()
 finally:
     camera.close()
-    os.system("killall pngview")
+    # os.system("killall pngview")
