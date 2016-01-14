@@ -101,6 +101,16 @@ class Photobooth(Tkinter.Label):
         self.lightOn()
         self.camera.hflip = True
         self.camera.start_preview()
+
+	self.img = Image.open(self.DIR_CARDS + "26.png")
+	self.pad = Image.new('RGB', (
+		((self.img.size[0] + 31) // 32) * 32,
+		((self.img.size[1] + 15) // 16) * 16
+	))
+
+	self.pad.paste(self.img, (0,0), self.img)
+	self.camera.add_overlay(self.pad.tostring(), layer=3, size=self.img.size, alpha=255)
+	
         
         while previewLength > 0:
             self.countDown.set(previewLength)   #Update the counter label
@@ -237,7 +247,7 @@ class Photobooth(Tkinter.Label):
         
         #Initialize GUI
         bgImage = PhotoImage(file=self.DIR_CARDS + "26.png")
-        Tkinter.Label.__init__(self, master, image=bgImage)
+        Tkinter.Label.__init__(self, master)
         self.master = master
         self.image = bgImage
         
@@ -261,7 +271,6 @@ class Photobooth(Tkinter.Label):
         # self.camera.preview_window = ((self.SCREEN_WIDTH - self.CAMERA_WIDTH) / 2, (self.SCREEN_HEIGHT - self.CAMERA_HEIGHT) / 2, self.CAMERA_WIDTH, self.CAMERA_HEIGHT)
         
         self.camera.preview_window = (0,0,self.CAMERA_WIDTH, self.CAMERA_HEIGHT)
-        
         self.focus_set()
     
 root = Tkinter.Tk()
