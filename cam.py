@@ -11,7 +11,7 @@ try:
     camera.hflip = True
     
     camera.start_preview()
-    p = subprocess.Popen("/home/pi/raspidmx/pngview/./pngview -b 0 -l 3 /home/pi/Photobooth/cards/26.png")
+    p = subprocess.Popen("/home/pi/raspidmx/pngview/./pngview -b 0 -l 3 /home/pi/Photobooth/cards/26.png", shell=True)
     # os.system("/home/pi/raspidmx/pngview/./pngview -b 0 -l 3 /home/pi/Photobooth/cards/26.png")
     
     time.sleep(30)
