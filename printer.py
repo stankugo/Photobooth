@@ -353,7 +353,7 @@ class ThermalPrinter(object):
             original image (this requires PIL).
 
             Example code with PIL:
-                import Image, ImageDraw
+                from PIL import Image, ImageDraw
                 i = Image.open("lammas_grayscale-bw.png")
                 data = list(i.getdata())
                 w, h = i.size
@@ -361,7 +361,7 @@ class ThermalPrinter(object):
         """
         counter = 0
         if output_png:
-            import Image, ImageDraw
+            from PIL import Image, ImageDraw
             test_img = Image.new('RGB', (384, h))
             draw = ImageDraw.Draw(test_img)
 
@@ -424,7 +424,7 @@ if __name__ == '__main__':
     p.linefeed()
     p.linefeed()
 
-    import Image, ImageDraw
+    from PIL import Image, ImageDraw
     i = Image.open("raster/neutral.png")
     data = list(i.getdata())
     w, h = i.size
