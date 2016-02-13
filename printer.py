@@ -420,7 +420,12 @@ if __name__ == '__main__':
     p = ThermalPrinter(serialport=serialport)
     
     p.linefeed()
-    p.linefeed()
+    
+    p.upsidedown_on()
+    p.print_text("http://fotobox.mhq-ravensburg.de/\n")
+    p.print_text("bild123\n")
+    p.upsidedown_off()
+    
     p.linefeed()
     p.linefeed()
 
@@ -430,16 +435,4 @@ if __name__ == '__main__':
     w, h = i.size
     p.print_bitmap(data, w, h, True)
     
-    p.linefeed()
-    p.linefeed()
-    p.linefeed()
-    p.linefeed()
-    
-    p.upsidedown_on()
-    p.print_text("http://fotobox.mhq-ravensburg.de/bild123\n")
-    p.upsidedown_off()
-    
-    p.linefeed()
-    p.linefeed()
-    p.linefeed()
     p.linefeed()
