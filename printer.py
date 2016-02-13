@@ -422,8 +422,8 @@ if __name__ == '__main__':
     p.linefeed()
     
     p.upsidedown_on()
-    p.print_text("bild123\n")
-    p.print_text("http://fotobox.mhq-ravensburg.de/\n")
+    p.print_text("/foto12345\n")
+    p.print_text("http://fotobox.mhq-ravensburg.de\n")
     p.upsidedown_off()
     
     p.linefeed()
