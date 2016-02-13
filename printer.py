@@ -436,3 +436,5 @@ if __name__ == '__main__':
     p.print_bitmap(data, w, h, True)
     
     p.linefeed()
+    p.linefeed()
+    p.linefeed()
