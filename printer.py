@@ -422,18 +422,17 @@ if __name__ == '__main__':
     p.linefeed()
     
     p.upsidedown_on()
-    p.print_text("http://fotobox.mhq-ravensburg.de/\n")
     p.print_text("bild123\n")
+    p.print_text("http://fotobox.mhq-ravensburg.de/\n")
     p.upsidedown_off()
     
-    p.linefeed()
     p.linefeed()
 
     from PIL import Image, ImageDraw
     i = Image.open("raster/neutral.png")
     data = list(i.getdata())
     w, h = i.size
-    p.print_bitmap(data, w, h, True)
+    p.print_bitmap(data, w, h, False)
     
     p.linefeed()
     p.linefeed()
