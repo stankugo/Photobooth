@@ -425,8 +425,6 @@ if __name__ == '__main__':
     p.print_text("/foto12345\n")
     p.print_text("http://fotobox.mhq-ravensburg.de\n")
     p.upsidedown_off()
-    
-    p.linefeed()
 
     from PIL import Image, ImageDraw
     i = Image.open("raster/neutral.png")
@@ -434,6 +432,5 @@ if __name__ == '__main__':
     w, h = i.size
     p.print_bitmap(data, w, h, False)
     
-    p.linefeed()
     p.linefeed()
     p.linefeed()
