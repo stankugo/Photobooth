@@ -15,27 +15,27 @@ try:
     
     time.sleep(5)
     
-    c5 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","5","/home/pi/Photobooth/test/5.png"])
+    c5 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","15","/home/pi/Photobooth/test/5.png"])
     
     time.sleep(1)
     c5.terminate()
     
-    c4 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","5","/home/pi/Photobooth/test/4.png"])
+    c4 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","14","/home/pi/Photobooth/test/4.png"])
     
     time.sleep(1)
     c4.terminate()
 
-    c3 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","5","/home/pi/Photobooth/test/3.png"])
+    c3 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","13","/home/pi/Photobooth/test/3.png"])
     
     time.sleep(1)
     c3.terminate()
     
-    c2 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","5","/home/pi/Photobooth/test/2.png"])
+    c2 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","12","/home/pi/Photobooth/test/2.png"])
     
     time.sleep(1)
     c2.terminate()
     
-    c1 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","5","/home/pi/Photobooth/test/1.png"])
+    c1 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","11","/home/pi/Photobooth/test/1.png"])
     
     time.sleep(1)
     c1.terminate()
