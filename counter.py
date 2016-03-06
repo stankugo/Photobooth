@@ -15,30 +15,10 @@ try:
     
     time.sleep(5)
     
-    c5 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","15","/home/pi/Photobooth/test/5.png"])
+    c = subprocess.Popen(["/home/pi/raspidmx/spriteview/./spriteview","-b","0","c","5","-l","5","r","1","/home/pi/Photobooth/counter/counter.png"])
     
-    time.sleep(1)
-    c5.terminate()
-    
-    c4 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","14","/home/pi/Photobooth/test/4.png"])
-    
-    time.sleep(1)
-    c4.terminate()
-
-    c3 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","13","/home/pi/Photobooth/test/3.png"])
-    
-    time.sleep(1)
-    c3.terminate()
-    
-    c2 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","12","/home/pi/Photobooth/test/2.png"])
-    
-    time.sleep(1)
-    c2.terminate()
-    
-    c1 = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","11","/home/pi/Photobooth/test/1.png"])
-    
-    time.sleep(1)
-    c1.terminate()
+    time.sleep(10)
+    c.terminate()
     
     time.sleep(5)
     
