@@ -15,7 +15,7 @@ try:
     
     time.sleep(5)
     
-    c = subprocess.Popen(["/home/pi/raspidmx/spriteview/./spriteview","-b","0","-c","5","-l","5","-r","1","/home/pi/Photobooth/counter/counter.png"])
+    c = subprocess.Popen(["/home/pi/raspidmx/spriteview/./spriteview","-b","0","-c","5","-l","5","-r","5","/home/pi/Photobooth/counter/counter.png"])
     
     time.sleep(10)
     c.terminate()
