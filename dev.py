@@ -115,6 +115,11 @@ def setup():
 
 def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
+    sleep(5)
+    
+    tSnapshot = threading.Thread(name='snapshot', target=snapshot)
+    tSnapshot.daemon = True
+    tSnapshot.start()
 
 def snapshot():
     global camera
@@ -224,11 +229,11 @@ try:
         tSetup.daemon = True
         tSetup.start()
         
-        tSnapshot = threading.Thread(name='snapshot', target=snapshot)
-        tSnapshot.daemon = True
-        tSnapshot.start()
+        tCounter = threading.Thread(name='counter', target=counter)
+        tCounter.daemon = True
+        tCounter.start()
         
-        sleep(20)
+        sleep(30)
         
         # CHECK ULTRASONIC
         # mm = ultrasonic.measure(misc['port'])

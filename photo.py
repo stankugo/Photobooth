@@ -1,280 +1,257 @@
-#!/usr/bin/env python
-# Raspberry Pi PhotoBooth by Bret Lanuis
-# Discovered at http://www.raspberrypi.org/phpBB3/viewtopic.php?f=41&t=48232
-# Modified by Tim Reasa (timothy.reasa@gmail.com)
-# Using Pi Camera Module
-# Requires PIL and picamera libraries
-# http://github.com/waveform80/picamera
-# Pythonware.com/products/pil
+#
+#
+#
+#
+#
+# IMPORTS
+#
+#
+#
+#
+#
 
-import os, sys
+import sys, traceback, os
+import serial, time
+import requests
+import subprocess
+import Queue, threading
+import ultrasonic
+import printer
 import picamera
-import time
-import io
-import Tkinter
-from PIL import Image,ImageDraw
-from PIL.ImageTk import PhotoImage
-import RPi.GPIO as gpio
+import random
+import math
 
-class Photobooth(Tkinter.Label):
-    #Declare constants
-    BTN_SHUTDOWN = 7
-    BTN_PHOTO_CLR = 11
-    BTN_PHOTO_BW = 12
-    #OUT_LIGHT = 15
-    #OUT_WARNING = 16
+import urllib2
+import httplib
 
-    DELAY_MS = 100
-    DELAY_QUIT = 2000
-    DELAY_SHUTDOWN = 6000
+from PIL import Image
+from time import sleep
+from time import strftime
+from serial import Serial
+from datetime import datetime
+
+#
+#
+#
+#
+#
+#   DECLARATIONS
+#
+#
+#
+#
+#
+
+api = {
+	'protocol' : 'http://',
+	'url' : 'mhq-verspielt.de',
+	'header' : {'user-agent': 'raspberry-pi/photobooth'}
+}
+
+ready = {
+	'action' : False,
+	'snapshot' : False
+}
+
+misc = {
+	'snapshots' : '/home/pi/Photobooth/snapshots/',
+    'compositions' : '/home/pi/Photobooth/compositions/',
+    'cards' : '/home/pi/Photobooth/cards/',
+    'raster' : '/home/pi/Photobooth/raster/',
+    'ext' : '.png',
+    'width' : 800,
+    'height' : 1067,
+    'images' : [2,7,8,13,14,15,19,20,25,26,28],
+    'image' : 0,
+    'random' : 0,
+    'port' : '/dev/ttyUSB0'
+}
+
+camera = picamera.PiCamera()
+camera.resolution = (misc['width'], misc['height'])
+camera.preview_fullscreen = False
+camera.preview_window = (0,0,800,1067)
+camera.hflip = True
+camera.start_preview()
+
+if len(sys.argv) == 2:
+    serialport = sys.argv[1]
+else:
+    serialport = printer.ThermalPrinter.SERIALPORT
+
+if not os.path.exists(serialport):
+    sys.exit("ERROR: Serial port not found at: %s" % serialport)
+
+overlay = None
+
+#
+#
+#
+#
+#
+#   DEFINITIONS
+#
+#
+#
+#
+#
+
+def cleanupAndExit():
+	print 'EXIT'
     
-    NUM_IMAGES = 4
-    MAX_PRINTS = 25
-
-    SCREEN_WIDTH = 800
-    SCREEN_HEIGHT = 1280
-    CAMERA_WIDTH = 1200
-    CAMERA_HEIGHT = 900
-    PRINT_WIDTH = 960
-    PRINT_HEIGHT = 1520
-    PRINT_TOP_PADDING = 25
-    THUMBNAIL_WIDTH = 460
-    THUMBNAIL_HEIGHT = 342
-    THUMBNAIL_HEIGHT_CROPPED = 322
-    THUMBNAIL_PADDING = 10
-
-
-    DIR_SAVE = "/home/pi/Photobooth/snapshots/"	    #for individual camera snapshots
-    DIR_CARDS = "/home/pi/Photobooth/cards/"		#for cards
-    DIR_COMPOSITE = "/home/pi/Photobooth/comps/"	#for compositions
-    DIR_IMAGE = "/home/pi/Photobooth/images/"	#for static background images
-
-    TEST = False #True no printout and shutdown only warns
-
-    def shouldShutdown(self):
-        return gpio.input(Photobooth.BTN_SHUTDOWN)
-        
-    def shouldStartColor(self):
-        return gpio.input(Photobooth.BTN_PHOTO_CLR)
-        
-    def shouldStartBlackWhite(self):
-        return gpio.input(Photobooth.BTN_PHOTO_BW)
-            
-    def lightOn(self):
-        a = 1 #gpio.output(Photobooth.OUT_LIGHT, 1)
-
-    def lightOff(self):
-        a = 1 #gpio.output(Photobooth.OUT_LIGHT, 0)
-        
-    def warnOn(self):
-        a = 1 #gpio.output(Photobooth.OUT_WARNING, 1)
-
-    def warnOff(self):
-        a = 1 #gpio.output(Photobooth.OUT_WARNING, 0)
-
-    def closeProgram(self, event=None):    
-        gpio.cleanup()
-        self.master.destroy()
-        return "break"
-        
-    def doShutdown(self):
-        if self.TEST:
-            self.closeProgram()
-            
-        else:
-            gpio.cleanup()
-            os.system("sudo shutdown -h now shutdown button pressed")
-            sys.exit(0)
-        
-    def doPhotoPrint(self, filename):
-
-        if not self.TEST:
-            os.system("lp " + filename)
-            self.printCount += 1
-        
-        if self.printCount % self.MAX_PRINTS == 0:
-            self.warn = True
-
-    def takeSinglePhoto(self, previewLength):
-        stream = io.BytesIO()
-        
-        self.lightOn()
-        self.camera.hflip = True
-        self.camera.start_preview()
-
-	self.img = Image.open(self.DIR_CARDS + "26.png")
-	self.pad = Image.new('RGB', (
-		((self.img.size[0] + 31) // 32) * 32,
-		((self.img.size[1] + 15) // 16) * 16
-	))
-
-	self.pad.paste(self.img, (0,0), self.img)
-	self.camera.add_overlay(self.pad.tostring(), layer=3, size=self.img.size, alpha=255)
-	
-        
-        while previewLength > 0:
-            self.countDown.set(previewLength)   #Update the counter label
-            self.countDownLabel.update_idletasks()
-            time.sleep(1)
-            previewLength = previewLength - 1
-            
-        self.camera.stop_preview()
-        self.camera.hflip = False
-        self.camera.capture(stream, format='jpeg', resize=(self.CAMERA_WIDTH, self.CAMERA_HEIGHT))
-        self.countDown.set("   ")
-        self.countDownLabel.update_idletasks()
-        self.lightOff()
-        
-        #It would be nice to display for a few seconds the picture that was just taken
-        
-        stream.seek(0)
-        photo = Image.open(stream)
-        return photo
-        
-    def takePhotos(self, color=True):
-        
-        if color:
-            self.camera.color_effects = None         #default color
-        else:
-            self.camera.color_effects = (128, 128)   #black and white
-        
-        #Start taking photos
-        today = time.strftime("%Y-%m-%d")
-        path = self.DIR_SAVE + today + "/"
-        if not (os.path.isdir(path)):
-            os.makedirs(path)
-        
-        now = time.strftime("%H%M%S")
-        
-        imageNames = [path + now + "_" + str(i) + ".jpg" for i in range(1, 1 + self.NUM_IMAGES)]
-        images = []
-        
-        #Take photos; save to disk, resize and cache photos
-        for imageName in imageNames:
-            photo = self.takeSinglePhoto(5)
-            photo.save(imageName)
-            photo = photo.resize((self.THUMBNAIL_WIDTH,self.THUMBNAIL_HEIGHT), Image.ANTIALIAS)
-            
-            #Photos must be taken in 4:3 to get a full FOV. We don't have room to
-            #print 4:3 photos, so crop some off the top and bottom. Hopefully folks don't notice.
-            cropVertical = (self.THUMBNAIL_HEIGHT - self.THUMBNAIL_HEIGHT_CROPPED) / 2
-            photo = photo.crop((0, cropVertical, self.THUMBNAIL_WIDTH, self.THUMBNAIL_HEIGHT - cropVertical))
-            images.append(photo)
-            time.sleep(0.5)
-        
-        #Open the final image        
-        try:
-            final = Image.open(self.DIR_IMAGE + "print_background.png").convert("RGB")
-        except:
-            print "Unable to load BG"
-            exit(1)
-        
-        #Lay out the photos on the final image
-        column1 = 0  # CUPS on the raspberry pi doesn't seem to print to the edge self.THUMBNAIL_PADDING
-        column2 = self.PRINT_WIDTH - self.THUMBNAIL_WIDTH # - self.THUMBNAIL_PADDING
-        row = self.THUMBNAIL_PADDING + self.PRINT_TOP_PADDING
-        for photo in images:
-            final.paste(photo, (column1,row))
-            final.paste(photo, (column2,row))
-            row += self.THUMBNAIL_HEIGHT_CROPPED + self.THUMBNAIL_PADDING
-        
-        #Save the final image
-        path = self.DIR_COMPOSITE + today + "/"
-        finalName = path + now + ".jpg"
-        if not (os.path.isdir(path)):
-            os.makedirs(path)
-            
-        final.save(finalName)
-        
-        self.doPhotoPrint(finalName)
-        return "break"
+def setup():
+    global ready
+    global overlay
     
-    def takeColorPhotos(self, event=None):
-        return self.takePhotos(True)
-        
-    def takeBWPhotos(self, event=None):
-        return self.takePhotos(False)
+    ready['setup'] = false
     
-    def mainBody(self):
-    
-        #First, check for exit conditions
-        if not self.shouldShutdown():
-            if self.willShutDown:       #Wait until the button is released for quit and shutdown
-                self.doShutdown()
-                return "break"
-                
-            elif self.willQuit:
-                self.closeProgram()
-                return "break"
+    # CREATE A RANDOM NUMBER
+    while (misc['image'] == misc['random']):
+        misc['random'] = random.randrange(0,len(misc['images'])-1,1)
         
-            self.buttonCount = 0
-            self.willQuit = False
-            self.willShutDown = False
-            
-        else:
-            self.warn = False           #Clear the warn flag immediately
-            self.buttonCount += 1
-            if self.buttonCount > (self.DELAY_QUIT / self.DELAY_MS):
-                self.willQuit = True    
-            if self.buttonCount > (self.DELAY_SHUTDOWN / self.DELAY_MS):
-                self.willShutDown = True
-            
-        #Second, check if we should begin photobooth-ing
-        if not self.warn: 
-            if self.shouldStartColor():
-                self.takePhotos(True)
-            elif self.shouldStartBlackWhite():
-                self.takePhotos(False)
-            
-        
-        #Finally, schedule ourself to run again
-        self.after(Photobooth.DELAY_MS, self.mainBody)
+    misc['image'] = misc['random']
     
-    def __init__(self, master):      
-        #Setup gpio
-        gpio.setmode(gpio.BOARD)
-        gpio.setup(Photobooth.BTN_SHUTDOWN, gpio.IN)
-        gpio.setup(Photobooth.BTN_PHOTO_CLR, gpio.IN)
-        gpio.setup(Photobooth.BTN_PHOTO_BW, gpio.IN)
-        #gpio.setup(Photobooth.OUT_LIGHT, gpio.OUT)
-        #gpio.setup(Photobooth.OUT_WARNING, gpio.OUT)        
+    if overlay != None:
+        overlay.terminate()
+    overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
 
-        #Initialize state
-        self.printCount = 0
-        self.warn = False
-        self.willShutDown = False
-        self.willQuit = False
-        
-        #Initialize GUI
-        bgImage = PhotoImage(file=self.DIR_CARDS + "26.png")
-        Tkinter.Label.__init__(self, master)
-        self.master = master
-        self.image = bgImage
-        
-        self.countDown = Tkinter.StringVar()
-        self.countDownLabel = Tkinter.Label(master, textvariable=self.countDown, font=("Helvetica", 72), bg='white')
-        self.countDownLabel.place(x=self.SCREEN_WIDTH-112, y=self.SCREEN_HEIGHT-150)
-        self.countDown.set("")
-        
-        self.bind("<Escape>", self.closeProgram)
-        self.bind("z", self.takeColorPhotos)
-        self.bind("x", self.takeBWPhotos)
-        self.pack(side=Tkinter.TOP, expand=Tkinter.YES, fill=Tkinter.BOTH)
-        
-        # master.overrideredirect(1)      #full screen mode (due to a bug, this disrupts key bindings)
-        master.geometry(str(self.SCREEN_WIDTH) + "x" + str(self.SCREEN_HEIGHT) + "+0+0")
+def counter():
+    counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
 
-        #Initialize PI camera
-        self.camera=picamera.PiCamera()
-        self.camera.preview_fullscreen = False
-        self.camera.resolution = (self.CAMERA_WIDTH, self.CAMERA_HEIGHT)
-        # self.camera.preview_window = ((self.SCREEN_WIDTH - self.CAMERA_WIDTH) / 2, (self.SCREEN_HEIGHT - self.CAMERA_HEIGHT) / 2, self.CAMERA_WIDTH, self.CAMERA_HEIGHT)
-        
-        self.camera.preview_window = (0,0,self.CAMERA_WIDTH, self.CAMERA_HEIGHT)
-        self.focus_set()
+    sleep(5)
+
+    tSnapshot = threading.Thread(name='snapshot', target=snapshot)
+    tSnapshot.daemon = True
+    tSnapshot.start()
+
+def snapshot():
+    global ready
+    global camera
     
-root = Tkinter.Tk()
-root.title("Photobooth")
-app = Photobooth(root)
-app.after(Photobooth.DELAY_MS, app.mainBody)
-app.mainloop()
+    filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
+    camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
+    
+    print 'resize'
+    
+    # MERGING IMAGES
+    resize_canvas(misc['snapshots'] + filename + misc['ext'],misc['snapshots'] + filename + misc['ext'])
+    background = Image.open(misc['snapshots'] + filename + misc['ext'])
+    foreground = Image.open(misc['cards'] + str(misc['images'][misc['image']]) + '.png')
+
+    print 'merge'
+    
+    Image.alpha_composite(background, foreground).save(misc['compositions'] + filename + misc['ext'])
+    
+    tUpload = threading.Thread(name='upload', target=upload, args=(filename,))
+    tUpload.daemon = True
+    tUpload.start()
+    
+    print 'upload'
+    ready['setup'] = true
+    
+    tSetup = threading.Thread(name='setup', target=setup)
+    tSetup.daemon = True
+    tSetup.start()
+
+def upload(filename):
+	url = api['protocol'] + api['url'] + '/upload'
+	files = {'file': open(misc['compositions'] + filename + misc['ext'], 'rb')}
+	data = {'image': misc['image']}
+    
+	try:
+		r = requests.post(url, headers=api['header'], files=files, data=data)
+		response = r.json()
+
+		# CHECK FOR HASH
+		if 'status' in response:
+			hashid = response['status']
+            
+			# PRINT 
+			tPlot = threading.Thread(name='plot', target=plot, args=(hashid,))
+			tPlot.daemon = True
+			tPlot.start()
+            
+		del response
+		
+	except requests.exceptions.RequestException as e:
+	    print e
+        
+def plot(hashid):
+    print api['protocol'] + api['url'] + '/' + hashid
+    p = printer.ThermalPrinter(serialport=serialport)
+    
+    p.linefeed()
+    
+    p.upsidedown_on()
+    p.print_text(api['protocol'] + api['url'] + '/' + hashid + "\n")
+    p.upsidedown_off()
+
+    from PIL import Image, ImageDraw
+    i = Image.open("raster/neutral.png")
+    data = list(i.getdata())
+    w, h = i.size
+    p.print_bitmap(data, w, h, False)
+    
+    p.linefeed()
+    p.linefeed()
+    
+def resize_canvas(old_image_path, new_image_path,
+                  canvas_width=800, canvas_height=1280):
+
+    im = Image.open(old_image_path)
+    old_width, old_height = im.size
+
+    # Center the image
+    x1 = int(math.floor((canvas_width - old_width) / 2))
+    y1 = int(math.floor((canvas_height - old_height) / 2))
+
+    mode = im.mode
+    if len(mode) == 1:  # L, 1
+        new_background = (255)
+    if len(mode) == 3:  # RGB
+        new_background = (255, 255, 255)
+    if len(mode) == 4:  # RGBA, CMYK
+        new_background = (255, 255, 255, 255)
+
+    newImage = Image.new(mode, (canvas_width, canvas_height), new_background)
+    newImage.paste(im, (x1, y1, x1 + old_width, y1 + old_height))
+    newImage.save(new_image_path)
+ 
+#
+#
+#
+#
+#
+#   MAIN LOOP
+#
+#
+#
+#
+#       
+
+try:
+    
+    print 'READY'
+    
+    tSetup = threading.Thread(name='setup', target=setup)
+    tSetup.daemon = True
+    tSetup.start()
+    
+    while True:
+
+        # CHECK ULTRASONIC
+        mm = ultrasonic.measure(misc['port'])
+        if mm <= 2000 and ready['setup'] == True:
+            
+            tCounter = threading.Thread(name='counter', target=counter)
+            tCounter.daemon = True
+            tCounter.start()
+            
+        sleep(1)
+
+except KeyboardInterrupt:
+	cleanupAndExit()
+except Exception:
+	cleanupAndExit()
+	traceback.print_exc(file=sys.stdout)
+sys.exit(0)
