@@ -113,8 +113,8 @@ def snapshot():
     camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
     
     # MERGING IMAGES
-    background = Image.open(misc['snapshots'] + filename + misc['ext'])
-    foreground = Image.open(misc['cards'] + str(misc['images'][misc['image']]) + '.png')
+    # background = Image.open(misc['snapshots'] + filename + misc['ext'])
+    # foreground = Image.open(misc['cards'] + str(misc['images'][misc['image']]) + '.png')
 
     # Image.alpha_composite(background, foreground).save(misc['compositions'] + filename + misc['ext'])
     
