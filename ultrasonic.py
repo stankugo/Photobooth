@@ -21,7 +21,8 @@ def measure(portName):
        ch = ser.read()
        rv += ch
        if ch=='\r' or ch=='':
-           print rv[:2]
+           rv = rv.replace('\r','')
+           print rv
            if not rv.startswith('R'):
                # data received did not start with R
                print 'not starting with R'
