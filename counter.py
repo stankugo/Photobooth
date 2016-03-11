@@ -74,6 +74,14 @@ camera.preview_window = (0,0,800,1067)
 camera.hflip = True
 camera.start_preview()
 
+if len(sys.argv) == 2:
+    serialport = sys.argv[1]
+else:
+    serialport = printer.ThermalPrinter.SERIALPORT
+
+if not os.path.exists(serialport):
+    sys.exit("ERROR: Serial port not found at: %s" % serialport)
+
 overlay = None
 
 #
