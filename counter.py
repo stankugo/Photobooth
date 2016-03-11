@@ -68,6 +68,8 @@ camera.preview_fullscreen = False
 camera.preview_window = (0,0,1067,800)
 camera.hflip = True
 
+overlay = None
+
 #
 #
 #
@@ -85,13 +87,16 @@ def cleanupAndExit():
     
 def setup():
     global ready
+    global overlay
     
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
         
     misc['image'] = misc['random']
-
+    
+    if overlay != None:
+        overlay.terminate()
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
 
 def counter():
