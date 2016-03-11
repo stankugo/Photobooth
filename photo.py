@@ -187,7 +187,7 @@ def plot(hashid):
     p.upsidedown_off()
 
     from PIL import Image, ImageDraw
-    i = Image.open("raster/neutral.png")
+    i = Image.open(misc['raster'] + str(misc['images'][misc['image']]) + '.png')
     data = list(i.getdata())
     w, h = i.size
     p.print_bitmap(data, w, h, False)
