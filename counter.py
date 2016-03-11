@@ -61,11 +61,12 @@ misc = {
     'port' : '/dev/ttyUSB0'
 }
 
-camera = picamera.PiCamera()
-camera.resolution = (misc['width'], misc['height'])
-camera.preview_fullscreen = False
-camera.preview_window = (0,0,1067,800)
-camera.hflip = True
+with picamera.PiCamera() as camera:
+    camera.resolution = (misc['width'], misc['height'])
+    camera.preview_fullscreen = False
+    camera.preview_window = (0,0,1067,800)
+    camera.hflip = True
+    camera.start_preview()
 
 overlay = None
 
@@ -102,8 +103,10 @@ def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
 
 def snapshot():
+    global camera
+    
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
-    camera.capture(misc['folder'] + filename + misc['ext'], format='jpeg', resize=(misc['width'], misc['height']))
+    camera.capture(misc['folder'] + filename + misc['ext'])
 
 def upload(filename):
 	url = api['protocol'] + api['url'] + '/upload'
