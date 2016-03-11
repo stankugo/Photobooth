@@ -94,7 +94,7 @@ def counter():
 
 def snapshot():
 	filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S') + misc['ext']
-    camera.capture(stream, format='jpeg', resize=(misc['width'], misc['height'])
+    #camera.capture(stream, format='jpeg', resize=(misc['width'], misc['height'])
 
 def upload(filename):
 	url = api['protocol'] + api['url'] + '/upload'
