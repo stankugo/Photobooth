@@ -6,8 +6,8 @@
 # Use as an importable module with "import ultrasonic"
 # Returns an integer value representing distance to target in millimeters
 
+import re
 from time import time
-from time import sleep
 from serial import Serial
 
 serialDevice = "/dev/ttyUSB0" # default for RaspberryPi
@@ -22,17 +22,10 @@ def measure(portName):
        ch = ser.read()
        rv += ch
        if ch=='\r':
-           rv = rv.replace('\r','')
-           if not rv.startswith('R'):
-               # data received did not start with R
-               continue
+           data = re.findall("\d+", rv)
+           print data
            try:
-               sensorData = rv.decode('utf-8').lstrip('R')
-           except UnicodeDecodeError:
-               # data received could not be decoded properly
-               continue
-           try:
-               mm = int(sensorData)
+               mm = int(data)
            except ValueError:
                # value is not a number
                continue
