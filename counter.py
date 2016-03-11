@@ -7,7 +7,6 @@ camera = picamera.PiCamera()
 
 def cleanupAndExit():
 	print "EXIT"
-    camera.close()
 
 try:
     camera.resolution = (1067, 800)
