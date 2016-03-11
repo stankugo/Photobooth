@@ -20,13 +20,11 @@ def measure(portName):
 
     while time() < timeStart + maxwait:
        ch = ser.read()
-       sleep(0.5)
        rv += ch
-       if ch=='\r' or ch=='':
+       if ch=='\r':
            rv = rv.replace('\r','')
            if not rv.startswith('R'):
                # data received did not start with R
-               print 'not starting with R'
                continue
            try:
                sensorData = rv.decode('utf-8').lstrip('R')
