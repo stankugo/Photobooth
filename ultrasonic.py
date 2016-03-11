@@ -21,6 +21,7 @@ def measure(portName):
         if ser.inWaiting():
             bytesToRead = ser.inWaiting()
             testData = ser.read(bytesToRead)
+            print testData
             if not testData.startswith(b'R'):
                 # data received did not start with R
                 continue
