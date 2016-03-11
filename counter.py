@@ -144,6 +144,10 @@ try:
         tSetup.daemon = True
         tSetup.start()
         
+        tSnapshot = threading.Thread(name='snapshot', target=snapshot)
+        tSnapshot.daemon = True
+        tSnapshot.start()
+        
         sleep(5)
         
         # CHECK ULTRASONIC
