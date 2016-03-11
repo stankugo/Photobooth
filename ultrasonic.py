@@ -23,7 +23,7 @@ def measure(portName):
        if ch=='\r' or ch=='':
            print rv
        
-           if not rv.startswith('R'):
+           if not rv.find('R'):
                # data received did not start with R
                print 'does not start with R'
                continue
