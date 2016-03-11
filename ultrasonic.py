@@ -29,9 +29,9 @@ def measure(portName):
                continue
            try:
                sensorData = rv.decode('utf-8').lstrip('R')
-               print sensorData
+               print 'sensorData: ' + sensorData
            except UnicodeDecodeError:
-               print 'data received could not be decoded properly'
+               # data received could not be decoded properly
                continue
            try:
                mm = int(sensorData)
