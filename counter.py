@@ -62,9 +62,6 @@ misc = {
     'port' : '/dev/ttyUSB0'
 }
 
-overlay = subprocess
-counter = subprocess
-
 camera = picamera.PiCamera()
 camera.resolution = (misc['width'], misc['height'])
 camera.preview_fullscreen = False
@@ -88,7 +85,6 @@ def cleanupAndExit():
     
 def setup():
     global ready
-    global overlay
     
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):
@@ -99,7 +95,6 @@ def setup():
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + misc['images'][misc['image']] + '.png'])
 
 def counter():
-    global counter
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
 
 def snapshot():
