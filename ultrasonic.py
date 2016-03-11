@@ -15,7 +15,7 @@ maxwait = 3 # seconds to try for a good reading before quitting
 def measure(portName):
     ser = Serial(portName, 57600, 8, 'N', 1, timeout=1)
     timeStart = time()
-    valueCount = 0
+    rv = ""
 
     while time() < timeStart + maxwait:
        ch = ser.read()
