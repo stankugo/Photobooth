@@ -3,6 +3,11 @@ import picamera
 import os
 import subprocess
 
+def cleanupAndExit():
+	print "EXIT"
+	GPIO.cleanup()
+    camera.close()
+
 camera = picamera.PiCamera()
 try:
     camera.resolution = (1067, 800)
@@ -22,5 +27,11 @@ try:
     camera.stop_preview()
     p.terminate()
     
+except KeyboardInterrupt:
+	cleanupAndExit()
+except Exception:
+	cleanupAndExit()
+	traceback.print_exc(file=sys.stdout)
+sys.exit(0)
 finally:
     camera.close()
