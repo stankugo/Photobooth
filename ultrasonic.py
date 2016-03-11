@@ -23,11 +23,10 @@ def measure(portName):
        if ch=='\r' or ch=='':
            if not rv.find('R'):
                # data received did not start with R
-               print 'does not start with R'
                continue
            try:
                sensorData = rv.decode('utf-8').lstrip('R')
-               print 'sensorData: ' + sensorData
+               print 'sensorData' + sensorData
            except UnicodeDecodeError:
                # data received could not be decoded properly
                continue
