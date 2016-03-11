@@ -18,25 +18,26 @@ def measure(portName):
     valueCount = 0
 
     while time() < timeStart + maxwait:
-        if ser.inWaiting():
-            bytesToRead = ser.inWaiting()
-            testData = ser.read(bytesToRead)
-            print testData
-            if not testData.startswith(b'R'):
-                # data received did not start with R
-                continue
-            try:
-                sensorData = testData.decode('utf-8').lstrip('R')
-            except UnicodeDecodeError:
-                # data received could not be decoded properly
-                continue
-            try:
-                mm = int(sensorData)
-            except ValueError:
-                # value is not a number
-                continue
-            ser.close()
-            return(mm)
+       ch = ser.read()
+       rv += ch
+       if ch=='\r' or ch=='':
+           print rv
+       
+           if not rv.startswith(b'R'):
+               # data received did not start with R
+               continue
+           try:
+               sensorData = rv.decode('utf-8').lstrip('R')
+           except UnicodeDecodeError:
+               # data received could not be decoded properly
+               continue
+           try:
+               mm = int(sensorData)
+           except ValueError:
+               # value is not a number
+               continue
+           ser.close()
+           return(mm)
 
     ser.close()
     raise RuntimeError("Expected serial data not received")
