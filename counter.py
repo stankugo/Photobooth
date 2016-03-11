@@ -67,8 +67,6 @@ camera.preview_fullscreen = False
 camera.preview_window = (0,0,1067,800)
 camera.hflip = True
 camera.start_preview()
-filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
-camera.capture(misc['folder'] + filename + misc['ext'])
 
 overlay = None
 
@@ -107,8 +105,8 @@ def counter():
 def snapshot():
     global camera
     
-    # filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
-    # camera.capture(misc['folder'] + filename + misc['ext'])
+    filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
+    camera.capture(misc['folder'] + filename + misc['ext'])
 
 def upload(filename):
 	url = api['protocol'] + api['url'] + '/upload'
