@@ -116,7 +116,7 @@ def snapshot():
     background = Image.open(misc['snapshots'] + filename + misc['ext'])
     foreground = Image.open(misc['cards'] + str(misc['images'][misc['image']]) + '.png')
 
-    Image.alpha_composite(background, foreground).save(misc['compositions'] + filename + misc['ext'])
+    # Image.alpha_composite(background, foreground).save(misc['compositions'] + filename + misc['ext'])
     
     tUpload = threading.Thread(name='upload', target=upload, args=(filename,))
     tUpload.daemon = True
@@ -124,7 +124,7 @@ def snapshot():
 
 def upload(filename):
 	url = api['protocol'] + api['url'] + '/upload'
-	files = {'file': open(misc['compositions'] + filename + misc['ext'], 'rb')}
+	files = {'file': open(misc['snapshots'] + filename + misc['ext'], 'rb')}
 	data = {'image': misc['image']}
     
 	try:
