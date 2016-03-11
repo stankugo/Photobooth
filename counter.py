@@ -3,12 +3,12 @@ import picamera
 import os
 import subprocess
 
+camera = picamera.PiCamera()
+
 def cleanupAndExit():
 	print "EXIT"
-	GPIO.cleanup()
     camera.close()
 
-camera = picamera.PiCamera()
 try:
     camera.resolution = (1067, 800)
     camera.preview_fullscreen = False
