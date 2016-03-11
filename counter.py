@@ -86,6 +86,16 @@ def cleanupAndExit():
 def setup():
     global ready
     global overlay
+    
+    # CREATE A RANDOM NUMBER
+    while (misc['image'] == misc['random']):
+        misc['random'] = random.randrange(0,len(misc['images'])-1,1)
+        
+    misc['image'] = misc['random']
+    
+    # KILL EXISTING OVERLAY
+    if overlay.poll() is None:
+        overlay.terminate()
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + misc['images'][misc['image']] + '.png'])
 
 def counter():
@@ -126,14 +136,15 @@ def upload(filename):
 #       
 
 try:
+    
+	tSetup = threading.Thread(name='setup', target=setup)
+	tSetup.daemon = True
+	tSetup.start()
+    
     while True:
         print 'READY'
         
-        while (misc['image'] == misc['random']):
-            misc['random'] = random.randrange(0,len(misc['images'])-1,1)
-            print 'random: ', misc['random']
-            
-        misc['image'] = misc['random']
+        
         print misc['images'][misc['image']]
         sleep(1)
         
@@ -142,7 +153,6 @@ try:
         # if mm <= 2000 and ready['setup'] == True:
 
         # camera.stop_preview()
-        # p.terminate()
 except KeyboardInterrupt:
 	cleanupAndExit()
 except Exception:
