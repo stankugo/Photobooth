@@ -23,9 +23,9 @@ def measure(portName):
        if ch=='\r' or ch=='':
            print rv
        
-           if not rv.startswith(b'R'):
+           if not rv.startswith('R'):
                # data received did not start with R
-               print 'startswith R'
+               print 'does not start with R'
                continue
            try:
                sensorData = rv.decode('utf-8').lstrip('R')
