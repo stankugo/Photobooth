@@ -113,6 +113,8 @@ def snapshot():
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
     camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
     
+    print 'merging'
+    
     # MERGING IMAGES
     resize_canvas(misc['snapshots'] + filename + misc['ext'],misc['snapshots'] + filename + misc['ext'])
     background = Image.open(misc['snapshots'] + filename + misc['ext'])
@@ -123,6 +125,8 @@ def snapshot():
     tUpload = threading.Thread(name='upload', target=upload, args=(filename,))
     tUpload.daemon = True
     tUpload.start()
+    
+    print 'upload'
 
 def upload(filename):
 	url = api['protocol'] + api['url'] + '/upload'
