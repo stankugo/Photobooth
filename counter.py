@@ -15,7 +15,7 @@ import serial, time
 import requests
 import subprocess
 import Queue, threading
-# import ultrasonic
+import ultrasonic
 import picamera
 
 import urllib2
@@ -56,6 +56,7 @@ misc = {
     'width' : 1067,
     'height' : 800,
     'images' : [2,7,8,13,14,15,19,20,25,26,28],
+    'image' : 0,
     'port' : '/dev/ttyUSB0'
 }
 
@@ -80,15 +81,19 @@ camera.hflip = True
 #
 
 def cleanupAndExit():
-	print "EXIT"
+	print 'EXIT'
     
 def setup():
     global ready
     global overlay
-    overlay = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","3","/home/pi/Photobooth/cards/26.png"])
-    
+    overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + misc['image'] + '.png'])
+
+def counter():
+    global counter
+    counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
+
 def snapshot():
-	filename = time.strftime("%Y%m%d") + '-' + time.strftime("%H%M%S") + misc['ext']
+	filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S') + misc['ext']
     camera.capture(stream, format='jpeg', resize=(self.CAMERA_WIDTH, self.CAMERA_HEIGHT))
     
 def upload(filename):
@@ -122,27 +127,19 @@ def upload(filename):
 
 try:
     
-    # GET ULTRASONIC DATA
-    serialPort = "/dev/ttyUSB0"
-    maxRange = 5000
-    sleepTime = 5
-    minMM = 9999
-    maxMM = 0
-    
 	while True:
 	
 		# CHECK ULTRASONIC
-        mm = ultrasonic.measure(misc['port'])
-        if mm <= 2000 and ready['setup'] == True:
+        # mm = ultrasonic.measure(misc['port'])
+        # if mm <= 2000 and ready['setup'] == True:
+    
+    print 'READY'
     
     
+    # camera.stop_preview()
+    # p.terminate()    
     
-    c = subprocess.Popen(["/home/pi/raspidmx/spriteview/./spriteview","-b","0","-c","5","-l","5","-m","1000000","-i","0","/home/pi/Photobooth/counter/counter.png"])
     
-    time.sleep(10)
-    
-    camera.stop_preview()
-    p.terminate()    
 except KeyboardInterrupt:
 	cleanupAndExit()
 except Exception:
