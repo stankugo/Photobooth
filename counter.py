@@ -62,8 +62,8 @@ misc = {
     'port' : '/dev/ttyUSB0'
 }
 
-overlay = None
-counter = None
+overlay = 'none'
+counter = 'none'
 
 camera = picamera.PiCamera()
 camera.resolution = (misc['width'], misc['height'])
@@ -97,7 +97,7 @@ def setup():
     misc['image'] = misc['random']
     
     # KILL EXISTING OVERLAY
-    if overlay != None:
+    if overlay != 'none':
         overlay.terminate()
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + misc['images'][misc['image']] + '.png'])
 
