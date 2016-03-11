@@ -21,7 +21,7 @@ def measure(portName):
         if ser.inWaiting():
             bytesToRead = ser.inWaiting()
             valueCount += 1
-            if valueCount < 2: # 1st reading may be partial number; throw it out
+            if valueCount < 5: # 1st reading may be partial number; throw it out
                 continue
             testData = ser.read(bytesToRead)
             if not testData.startswith(b'R'):
