@@ -128,13 +128,14 @@ def upload(filename):
 try:
     
 	while True:
-	
+        print 'READY'
+
 		# CHECK ULTRASONIC
         # mm = ultrasonic.measure(misc['port'])
         # if mm <= 2000 and ready['setup'] == True:
-    
-    # camera.stop_preview()
-    # p.terminate()    
+
+        # camera.stop_preview()
+        # p.terminate()
     
     
 except KeyboardInterrupt:
