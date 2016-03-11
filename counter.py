@@ -115,7 +115,7 @@ def snapshot():
 def upload(filename):
 	url = api['protocol'] + api['url'] + '/upload'
 	files = {'file': open(misc['folder'] + filename + misc['ext'], 'rb')}
-    data = {'image': misc['image']}
+	data = {'image': misc['image']}
     
 	try:
 		r = requests.post(url, headers=api['header'], files=files, data=data)
