@@ -39,22 +39,33 @@ from datetime import datetime
 #
 #
 
-camera = picamera.PiCamera()
-
 api = {
 	'protocol' : 'http://',
 	'url' : 'mhq-verspielt.de',
 	'header' : {'user-agent': 'raspberry-pi/photobooth'}
 }
 
+ready = {
+	'action' : False,
+	'snapshot' : False
+}
+
 misc = {
 	'folder' : '/home/pi/Photobooth/snapshots/',
     'ext' : '.jpg',
+    'width' : 1067,
+    'height' : 800,
     'images' : [2,7,8,13,14,15,19,20,25,26,28],
     'port' : '/dev/ttyUSB0'
 }
 
 overlay, counter
+
+camera = picamera.PiCamera()
+camera.resolution = (misc['width'], misc['height'])
+camera.preview_fullscreen = False
+camera.preview_window = (0,0,1067,800)
+camera.hflip = True
 
 #
 #
@@ -72,11 +83,13 @@ def cleanupAndExit():
 	print "EXIT"
     
 def setup():
+    global ready
     global overlay
     overlay = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","3","/home/pi/Photobooth/cards/26.png"])
     
 def snapshot():
 	filename = time.strftime("%Y%m%d") + '-' + time.strftime("%H%M%S") + misc['ext']
+    camera.capture(stream, format='jpeg', resize=(self.CAMERA_WIDTH, self.CAMERA_HEIGHT))
     
 def upload(filename):
 	url = api['protocol'] + api['url'] + '/upload'
@@ -120,17 +133,9 @@ try:
 	
 		# CHECK ULTRASONIC
         mm = ultrasonic.measure(misc['port'])
-		# if GPIO.input(11) == False and ready['action'] == True:
+        if mm <= 2000 and ready['setup'] == True:
     
-    camera.resolution = (1067, 800)
-    camera.preview_fullscreen = False
-    camera.preview_window = (0,0,1067,800)
-    camera.hflip = True
     
-    camera.start_preview()
-    p = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","3","/home/pi/Photobooth/cards/26.png"])
-    
-    time.sleep(5)
     
     c = subprocess.Popen(["/home/pi/raspidmx/spriteview/./spriteview","-b","0","-c","5","-l","5","-m","1000000","-i","0","/home/pi/Photobooth/counter/counter.png"])
     
