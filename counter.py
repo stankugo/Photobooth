@@ -58,6 +58,7 @@ misc = {
     'height' : 800,
     'images' : [2,7,8,13,14,15,19,20,25,26,28],
     'image' : 0,
+    'random' : 0,
     'port' : '/dev/ttyUSB0'
 }
 
@@ -127,9 +128,13 @@ def upload(filename):
 try:
     while True:
         print 'READY'
-        misc['image'] = random.randrange(0,len(misc['images'])-1,1)
+        
+        while (misc['image'] == misc['random']):
+            misc['random'] = random.randrange(0,len(misc['images'])-1,1)
+            
+        misc['image'] = misc['random']
         print misc['images'][misc['image']]
-        sleep(5)
+        sleep(1)
         
         # CHECK ULTRASONIC
         # mm = ultrasonic.measure(misc['port'])
