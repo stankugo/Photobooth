@@ -20,9 +20,6 @@ def measure(portName):
     while time() < timeStart + maxwait:
         if ser.inWaiting():
             bytesToRead = ser.inWaiting()
-            valueCount += 1
-            if valueCount < 10: # 1st reading may be partial number; throw it out
-                continue
             testData = ser.read(bytesToRead)
             if not testData.startswith(b'R'):
                 # data received did not start with R
