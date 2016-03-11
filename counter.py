@@ -22,7 +22,6 @@ import random
 import urllib2
 import httplib
 
-from time import time
 from time import sleep
 from time import strftime
 from serial import Serial
