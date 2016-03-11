@@ -25,13 +25,12 @@ try:
     time.sleep(10)
     
     camera.stop_preview()
-    p.terminate()
-    
+    p.terminate()    
 except KeyboardInterrupt:
 	cleanupAndExit()
 except Exception:
 	cleanupAndExit()
 	traceback.print_exc(file=sys.stdout)
-sys.exit(0)
 finally:
     camera.close()
+sys.exit(0)
