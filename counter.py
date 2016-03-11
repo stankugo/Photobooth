@@ -17,6 +17,7 @@ import subprocess
 import Queue, threading
 import ultrasonic
 import picamera
+import random
 
 import urllib2
 import httplib
@@ -84,7 +85,7 @@ def cleanupAndExit():
 def setup():
     global ready
     global overlay
-    overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + misc['image'] + '.png'])
+    overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + misc['images'][misc['image']] + '.png'])
 
 def counter():
     global counter
@@ -126,6 +127,7 @@ def upload(filename):
 try:
     while True:
         print 'READY'
+        misc['image'] = random.randrange(0,len(misc['images'])-1,1)
         print misc['images'][misc['image']]
         sleep(5)
         
