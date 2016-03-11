@@ -57,8 +57,8 @@ misc = {
     'cards' : '/home/pi/Photobooth/cards/',
     'raster' : '/home/pi/Photobooth/raster/',
     'ext' : '.png',
-    'width' : 1067,
-    'height' : 800,
+    'width' : 800,
+    'height' : 1067,
     'images' : [2,7,8,13,14,15,19,20,25,26,28],
     'image' : 0,
     'random' : 0,
@@ -68,7 +68,7 @@ misc = {
 camera = picamera.PiCamera()
 camera.resolution = (misc['width'], misc['height'])
 camera.preview_fullscreen = False
-camera.preview_window = (0,0,1067,800)
+camera.preview_window = (0,0,800,1067)
 camera.hflip = True
 camera.start_preview()
 
