@@ -61,12 +61,12 @@ misc = {
     'port' : '/dev/ttyUSB0'
 }
 
-with picamera.PiCamera() as camera:
-    camera.resolution = (misc['width'], misc['height'])
-    camera.preview_fullscreen = False
-    camera.preview_window = (0,0,1067,800)
-    camera.hflip = True
-    camera.start_preview()
+camera = picamera.PiCamera()
+camera.resolution = (misc['width'], misc['height'])
+camera.preview_fullscreen = False
+camera.preview_window = (0,0,1067,800)
+camera.hflip = True
+camera.start_preview()
 
 overlay = None
 
