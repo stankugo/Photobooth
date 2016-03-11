@@ -6,7 +6,6 @@
 # Use as an importable module with "import ultrasonic"
 # Returns an integer value representing distance to target in millimeters
 
-from time import sleep
 from time import time
 from serial import Serial
 
@@ -22,13 +21,14 @@ def measure(portName):
        ch = ser.read()
        rv += ch
        if ch=='\r' or ch=='':
-           if not rv.find('R'):
+           rv = rv.replace('\n', '')
+           rv = rv.replace('\r', '')
+           if not rv.startswith('R'):
                # data received did not start with R
+               print 'not starting with R'
                continue
            try:
                sensorData = rv.decode('utf-8').lstrip('R')
-               print 'sensorData' + sensorData
-               sleep(2)
            except UnicodeDecodeError:
                # data received could not be decoded properly
                continue
