@@ -133,9 +133,6 @@ try:
         # mm = ultrasonic.measure(misc['port'])
         # if mm <= 2000 and ready['setup'] == True:
     
-        print 'READY'
-    
-    
     # camera.stop_preview()
     # p.terminate()    
     
