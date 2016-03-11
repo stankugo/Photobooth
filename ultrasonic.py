@@ -7,6 +7,7 @@
 # Returns an integer value representing distance to target in millimeters
 
 from time import time
+from time import sleep
 from serial import Serial
 
 serialDevice = "/dev/ttyUSB0" # default for RaspberryPi
@@ -19,6 +20,7 @@ def measure(portName):
 
     while time() < timeStart + maxwait:
        ch = ser.read()
+       sleep(0.5)
        rv += ch
        if ch=='\r' or ch=='':
            rv = rv.replace('\r','')
