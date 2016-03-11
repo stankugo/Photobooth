@@ -56,7 +56,7 @@ misc = {
     'compositions' : '/home/pi/Photobooth/compositions/',
     'cards' : '/home/pi/Photobooth/cards/',
     'raster' : '/home/pi/Photobooth/raster/',
-    'ext' : '.jpg',
+    'ext' : '.png',
     'width' : 1067,
     'height' : 800,
     'images' : [2,7,8,13,14,15,19,20,25,26,28],
@@ -110,7 +110,7 @@ def snapshot():
     global camera
     
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
-    camera.capture(misc['snapshots'] + filename + misc['ext'])
+    camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
     
     # MERGING IMAGES
     background = Image.open(misc['snapshots'] + filename + misc['ext'])
