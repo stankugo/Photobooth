@@ -125,10 +125,10 @@ def upload(filename):
 		if 'status' in response:
 			hashid = response['status']
             
-            # PRINT 
-            tPlot = threading.Thread(name='plot', target=plot, args=(hashid,))
-            tPlot.daemon = True
-            tPlot.start()
+			# PRINT 
+			tPlot = threading.Thread(name='plot', target=plot, args=(hashid,))
+			tPlot.daemon = True
+			tPlot.start()
             
 		del response
 		
