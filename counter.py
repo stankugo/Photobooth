@@ -134,13 +134,9 @@ try:
 
         # camera.stop_preview()
         # p.terminate()
-    
-    
 except KeyboardInterrupt:
 	cleanupAndExit()
 except Exception:
 	cleanupAndExit()
 	traceback.print_exc(file=sys.stdout)
-finally:
-    camera.close()
 sys.exit(0)
