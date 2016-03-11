@@ -107,6 +107,10 @@ def snapshot():
     
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
     camera.capture(misc['folder'] + filename + misc['ext'])
+    
+    tUpload = threading.Thread(name='upload', target=upload, args=(filename))
+    tUpload.daemon = True
+    tUpload.start()
 
 def upload(filename):
 	url = api['protocol'] + api['url'] + '/upload'
