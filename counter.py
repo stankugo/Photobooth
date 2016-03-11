@@ -15,12 +15,9 @@ try:
     
     time.sleep(5)
     
-    c = subprocess.Popen(["/home/pi/raspidmx/spriteview/./spriteview","-b","0","-c","5","-l","5","-r","4","/home/pi/Photobooth/counter/counter.png"])
+    c = subprocess.Popen(["/home/pi/raspidmx/spriteview/./spriteview","-b","0","-c","5","-l","5","-m","1000000","i","0","/home/pi/Photobooth/counter/counter.png"])
     
     time.sleep(10)
-    c.terminate()
-    
-    time.sleep(5)
     
     camera.stop_preview()
     p.terminate()
