@@ -119,16 +119,24 @@ def upload(filename):
     
 	try:
 		r = requests.post(url, headers=api['header'], files=files, data=data)
-		print r.text
 		response = r.json()
 
-		# CHECK FOR SUCCESS
+		# CHECK FOR HASH
 		if 'status' in response:
-			print response['status']
+			hashid = response['status']
+            
+            # PRINT 
+            tPlot = threading.Thread(name='plot', target=plot, args=(hashid,))
+            tPlot.daemon = True
+            tPlot.start()
+            
 		del response
 		
 	except requests.exceptions.RequestException as e:
 	    print e
+        
+def plot(hashid):
+    print api['protocol'] + api['url'] + '/' + hashid
  
 #
 #
