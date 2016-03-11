@@ -18,11 +18,11 @@ import Queue, threading
 import ultrasonic
 import picamera
 import random
-import Image
 
 import urllib2
 import httplib
 
+from PIL import Image
 from time import sleep
 from time import strftime
 from serial import Serial
