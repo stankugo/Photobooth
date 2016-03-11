@@ -136,14 +136,15 @@ def upload(filename):
 #       
 
 try:
-    tSetup = threading.Thread(name='setup', target=setup)
-    tSetup.daemon = True
-    tSetup.start()
     
     while True:
         print 'READY'
-        print misc['images'][misc['image']]
-        sleep(1)
+        
+        tSetup = threading.Thread(name='setup', target=setup)
+        tSetup.daemon = True
+        tSetup.start()
+        
+        sleep(5)
         
         # CHECK ULTRASONIC
         # mm = ultrasonic.measure(misc['port'])
