@@ -6,7 +6,6 @@
 # Use as an importable module with "import ultrasonic"
 # Returns an integer value representing distance to target in millimeters
 
-import re
 from time import time
 from serial import Serial
 
@@ -22,10 +21,9 @@ def measure(portName):
        ch = ser.read()
        rv += ch
        if ch=='\r':
-           data = re.findall("\d+", rv)
-           print data
+           rv = rv.replace('\r','').lstrip('R')
            try:
-               mm = int(data)
+               mm = int(rv)
            except ValueError:
                # value is not a number
                continue
