@@ -1,6 +1,3 @@
-#!/usr/bin/python3
-# Filename: rangefinder.py
-
 # sample script to read range values from Maxbotix ultrasonic rangefinder
 
 from time import sleep
