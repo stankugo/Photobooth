@@ -21,10 +21,10 @@ def measure(portName):
        ch = ser.read()
        rv += ch
        if ch=='\r':
-           rv = rv.replace('\r','').lstrip('R')
-           print rv
+           dt = rv.replace('\r','').lstrip('R')
+           print dt
            try:
-               mm = int(rv)
+               mm = int(dt)
            except ValueError:
                # value is not a number
                continue
