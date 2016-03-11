@@ -129,6 +129,7 @@ try:
     
 	while True:
         print 'READY'
+        sleep(5)
 
 		# CHECK ULTRASONIC
         # mm = ultrasonic.measure(misc['port'])
