@@ -131,6 +131,7 @@ try:
         
         while (misc['image'] == misc['random']):
             misc['random'] = random.randrange(0,len(misc['images'])-1,1)
+            print 'random: ' + misc['random']
             
         misc['image'] = misc['random']
         print misc['images'][misc['image']]
