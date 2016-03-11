@@ -113,10 +113,11 @@ def snapshot():
     camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
     
     # MERGING IMAGES
-    # background = Image.open(misc['snapshots'] + filename + misc['ext'])
-    # foreground = Image.open(misc['cards'] + str(misc['images'][misc['image']]) + '.png')
+    resize_canvas(misc['snapshots'] + filename + misc['ext'],misc['snapshots'] + filename + misc['ext'])
+    background = Image.open(misc['snapshots'] + filename + misc['ext'])
+    foreground = Image.open(misc['cards'] + str(misc['images'][misc['image']]) + '.png')
 
-    # Image.alpha_composite(background, foreground).save(misc['compositions'] + filename + misc['ext'])
+    Image.alpha_composite(background, foreground).save(misc['compositions'] + filename + misc['ext'])
     
     tUpload = threading.Thread(name='upload', target=upload, args=(filename,))
     tUpload.daemon = True
@@ -147,6 +148,28 @@ def upload(filename):
         
 def plot(hashid):
     print api['protocol'] + api['url'] + '/' + hashid
+    
+def resize_canvas(old_image_path, new_image_path,
+                  canvas_width=800, canvas_height=1280):
+
+    im = Image.open(old_image_path)
+    old_width, old_height = im.size
+
+    # Center the image
+    x1 = int(math.floor((canvas_width - old_width) / 2))
+    y1 = int(math.floor((canvas_height - old_height) / 2))
+
+    mode = im.mode
+    if len(mode) == 1:  # L, 1
+        new_background = (255)
+    if len(mode) == 3:  # RGB
+        new_background = (255, 255, 255)
+    if len(mode) == 4:  # RGBA, CMYK
+        new_background = (255, 255, 255, 255)
+
+    newImage = Image.new(mode, (canvas_width, canvas_height), new_background)
+    newImage.paste(im, (x1, y1, x1 + old_width, y1 + old_height))
+    newImage.save(new_image_path)
  
 #
 #
