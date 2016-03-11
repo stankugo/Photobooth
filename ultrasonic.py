@@ -10,7 +10,7 @@ from time import time
 from serial import Serial
 
 serialDevice = "/dev/ttyUSB0" # default for RaspberryPi
-maxwait = 3 # seconds to try for a good reading before quitting
+maxwait = 1 # seconds to try for a good reading before quitting
 
 def measure(portName):
     ser = Serial(portName, 57600, 8, 'N', 1, timeout=1)

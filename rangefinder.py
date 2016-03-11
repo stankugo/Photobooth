@@ -8,7 +8,7 @@ import ultrasonic
 
 serialPort = "/dev/ttyUSB0"
 maxRange = 5000  # change for 5m vs 10m sensor
-sleepTime = 5
+sleepTime = 2
 minMM = 9999
 maxMM = 0
 
