@@ -103,7 +103,7 @@ def setup():
     global ready
     global overlay
     
-    ready['setup'] = false
+    ready['setup'] = False
     
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):
@@ -147,7 +147,7 @@ def snapshot():
     tUpload.start()
     
     print 'upload'
-    ready['setup'] = true
+    ready['setup'] = True
     
     tSetup = threading.Thread(name='setup', target=setup)
     tSetup.daemon = True
