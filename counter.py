@@ -16,6 +16,7 @@ import requests
 import subprocess
 import Queue, threading
 import ultrasonic
+import printer
 import picamera
 import random
 import math
@@ -155,6 +156,22 @@ def upload(filename):
         
 def plot(hashid):
     print api['protocol'] + api['url'] + '/' + hashid
+    p = printer.ThermalPrinter(serialport=serialport)
+    
+    p.linefeed()
+    
+    p.upsidedown_on()
+    p.print_text(api['protocol'] + api['url'] + '/' + hashid + "\n")
+    p.upsidedown_off()
+
+    from PIL import Image, ImageDraw
+    i = Image.open("raster/neutral.png")
+    data = list(i.getdata())
+    w, h = i.size
+    p.print_bitmap(data, w, h, False)
+    
+    p.linefeed()
+    p.linefeed()
     
 def resize_canvas(old_image_path, new_image_path,
                   canvas_width=800, canvas_height=1280):
