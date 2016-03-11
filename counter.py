@@ -102,7 +102,7 @@ def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
 
 def snapshot():
-    filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S') + misc['ext']
+    filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
     camera.capture(misc['folder'] + filename + misc['ext'], format='jpeg', resize=(misc['width'], misc['height']))
 
 def upload(filename):
