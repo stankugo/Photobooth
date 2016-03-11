@@ -113,13 +113,15 @@ def snapshot():
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
     camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
     
-    print 'merging'
+    print 'resize'
     
     # MERGING IMAGES
     resize_canvas(misc['snapshots'] + filename + misc['ext'],misc['snapshots'] + filename + misc['ext'])
     background = Image.open(misc['snapshots'] + filename + misc['ext'])
     foreground = Image.open(misc['cards'] + str(misc['images'][misc['image']]) + '.png')
 
+    print 'merge'
+    
     Image.alpha_composite(background, foreground).save(misc['compositions'] + filename + misc['ext'])
     
     tUpload = threading.Thread(name='upload', target=upload, args=(filename,))
@@ -201,7 +203,7 @@ try:
         tSnapshot.daemon = True
         tSnapshot.start()
         
-        sleep(5)
+        sleep(20)
         
         # CHECK ULTRASONIC
         # mm = ultrasonic.measure(misc['port'])
