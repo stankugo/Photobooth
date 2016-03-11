@@ -15,14 +15,14 @@ maxwait = 3 # seconds to try for a good reading before quitting
 def measure(portName):
     ser = Serial(portName, 57600, 8, 'N', 1, timeout=1)
     timeStart = time()
-    rv = ""
+    rv = ''
 
     while time() < timeStart + maxwait:
        ch = ser.read()
        rv += ch
        if ch=='\r' or ch=='':
-           rv = rv.replace('\n', ' ')
-           rv = rv.replace('\r', ' ')
+           rv = rv.replace('\n', '')
+           rv = rv.replace('\r', '')
            print rv
            if not rv.startswith('R'):
                # data received did not start with R
