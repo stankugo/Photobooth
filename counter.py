@@ -60,8 +60,6 @@ misc = {
     'port' : '/dev/ttyUSB0'
 }
 
-overlay, counter
-
 camera = picamera.PiCamera()
 camera.resolution = (misc['width'], misc['height'])
 camera.preview_fullscreen = False
