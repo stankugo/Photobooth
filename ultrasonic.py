@@ -22,6 +22,7 @@ def measure(portName):
        rv += ch
        if ch=='\r':
            dt = rv.replace('\r','').lstrip('R')
+           rv = ''
            print dt
            try:
                mm = int(dt)
