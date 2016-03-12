@@ -67,7 +67,7 @@ misc = {
     'port' : '/dev/ttyUSB0'
 }
 
-pos = {
+pos = [
     {
         'x' : 157,
         'y' : 143
@@ -76,7 +76,7 @@ pos = {
         'x' : 157,
         'y' : 143
     }
-}
+]
 
 camera = picamera.PiCamera()
 camera.resolution = (misc['width'], misc['height'])
