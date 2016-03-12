@@ -225,9 +225,9 @@ try:
     while True:
         print 'READY'
         
-        tSetup = threading.Thread(name='setup', target=setup)
-        tSetup.daemon = True
-        tSetup.start()
+        # tSetup = threading.Thread(name='setup', target=setup)
+        # tSetup.daemon = True
+        # tSetup.start()
         
         tCounter = threading.Thread(name='counter', target=counter)
         tCounter.daemon = True
