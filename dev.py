@@ -118,7 +118,8 @@ def setup():
     while (misc['image'] == misc['random']):
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
         
-    misc['image'] = misc['random']
+    #misc['image'] = misc['random']
+    misc['image'] = 2
     
     if overlay != None:
         overlay.terminate()
@@ -236,9 +237,9 @@ try:
     while True:
         print 'READY'
         
-        # tSetup = threading.Thread(name='setup', target=setup)
-        # tSetup.daemon = True
-        # tSetup.start()
+        tSetup = threading.Thread(name='setup', target=setup)
+        tSetup.daemon = True
+        tSetup.start()
         
         tCounter = threading.Thread(name='counter', target=counter)
         tCounter.daemon = True
