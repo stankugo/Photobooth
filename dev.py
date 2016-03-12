@@ -59,8 +59,8 @@ misc = {
     'cards' : '/home/pi/Photobooth/cards/',
     'raster' : '/home/pi/Photobooth/raster/',
     'ext' : '.png',
-    'width' : 450,
-    'height' : 600,
+    'width' : 400,
+    'height' : 534,
     'images' : [2,7,8,13,14,15,19,20,25,26,28],
     'image' : 0,
     'random' : 0,
@@ -119,7 +119,7 @@ def setup():
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
         
     #misc['image'] = misc['random']
-    misc['image'] = 2
+    misc['image'] = 0
     
     if overlay != None:
         overlay.terminate()
