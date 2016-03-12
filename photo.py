@@ -243,7 +243,7 @@ try:
         mm = ultrasonic.measure(misc['port'])
         
         print 'ultrasonic: ', mm
-        print 'ready: ' + ready['setup']
+        print 'ready: ', ready['setup']
         
         if mm <= 2000 and ready['setup'] == True:
             
