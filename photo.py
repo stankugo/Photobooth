@@ -103,8 +103,6 @@ def setup():
     global ready
     global overlay
     
-    ready['setup'] = False
-    
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
@@ -114,6 +112,9 @@ def setup():
     if overlay != None:
         overlay.terminate()
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
+    
+    # READY FOR PICTURES
+    ready['setup'] = True
 
 def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
@@ -147,8 +148,7 @@ def snapshot():
     tUpload.start()
     
     print 'upload'
-    ready['setup'] = True
-    
+
     tSetup = threading.Thread(name='setup', target=setup)
     tSetup.daemon = True
     tSetup.start()
@@ -243,10 +243,12 @@ try:
         mm = ultrasonic.measure(misc['port'])
         if mm <= 2000 and ready['setup'] == True:
             
+            ready['setup'] = False
+            
             tCounter = threading.Thread(name='counter', target=counter)
             tCounter.daemon = True
             tCounter.start()
-            
+        
         sleep(1)
 
 except KeyboardInterrupt:
