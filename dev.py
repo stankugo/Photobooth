@@ -59,8 +59,8 @@ misc = {
     'cards' : '/home/pi/Photobooth/cards/',
     'raster' : '/home/pi/Photobooth/raster/',
     'ext' : '.png',
-    'width' : 400,
-    'height' : 534,
+    'width' : 800,
+    'height' : 1067,
     'images' : [2,7,8,13,14,15,19,20,25,26,28],
     'image' : 0,
     'random' : 0,
@@ -268,28 +268,24 @@ def resize_canvas(old_image_path, new_image_path,
 #
 #
 #
-#       
+#
 
 try:
     
+    print 'READY'
+    
+    tSetup = threading.Thread(name='setup', target=setup)
+    tSetup.daemon = True
+    tSetup.start()
+    
     while True:
-        print 'READY'
-        
-        tSetup = threading.Thread(name='setup', target=setup)
-        tSetup.daemon = True
-        tSetup.start()
-        
+
         tCounter = threading.Thread(name='counter', target=counter)
         tCounter.daemon = True
         tCounter.start()
         
-        sleep(30)
-        
-        # CHECK ULTRASONIC
-        # mm = ultrasonic.measure(misc['port'])
-        # if mm <= 2000 and ready['setup'] == True:
+        sleep(60)
 
-        # camera.stop_preview()
 except KeyboardInterrupt:
 	cleanupAndExit()
 except Exception:
