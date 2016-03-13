@@ -161,6 +161,8 @@ def setup():
     
     camera.preview_window = (pos[misc['image']]['x'],pos[misc['image']]['y'],(pos[misc['image']]['x'] + misc['width']),(pos[misc['image']]['y'] + misc['height']))
     camera.start_preview()
+    
+    ready['setup'] = True
 
 def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
@@ -195,6 +197,12 @@ def snapshot(image):
     tUpload.start()
     
     print 'upload'
+    
+    tSetup = threading.Thread(name='setup', target=setup)
+    tSetup.daemon = True
+    tSetup.start()
+    
+    print 'setup'
 
 def upload(filename,image):
 	url = api['protocol'] + api['url'] + '/upload'
