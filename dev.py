@@ -153,6 +153,7 @@ def setup():
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
         
     misc['image'] = misc['random']
+    print 'image: ', misc['image']
     
     if overlay != None:
         overlay.terminate()
@@ -171,6 +172,8 @@ def counter():
 
 def snapshot(image):
     global camera
+    print 'image: ', image
+    print 'real image: ', str(misc['images'][image]
     
     camera.stop_preview()
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
