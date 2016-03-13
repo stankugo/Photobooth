@@ -173,7 +173,7 @@ def counter():
 def snapshot(image):
     global camera
     print 'image: ', image
-    print 'real image: ', str(misc['images'][image]
+    print 'real image: ', str(misc['images'][image])
     
     camera.stop_preview()
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
