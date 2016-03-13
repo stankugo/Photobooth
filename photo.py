@@ -236,7 +236,7 @@ def plot(hashid,image):
     p.linefeed()
     
 def resize_canvas(old_image_path, new_image_path,
-                  x1=, y1=0,
+                  x1=0, y1=0,
                   canvas_width=800, canvas_height=1280):
 
     im = Image.open(old_image_path)
