@@ -8,6 +8,9 @@ createTunnel() {
   fi
 }
 
+a = /bin/pidof ssh
+echo a
+
 echo Creating new tunnel connection
-kill /bin/pidof ssh
+kill a
 createTunnel
