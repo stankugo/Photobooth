@@ -185,25 +185,25 @@ def snapshot(image):
     
     # MERGING IMAGES
     resize_canvas(misc['snapshots'] + filename + misc['ext'],misc['snapshots'] + filename + misc['ext'],pos[image]['x'],pos[image]['y'])
-    # background = Image.open(misc['snapshots'] + filename + misc['ext'])
-    background = Image.open(misc['cards'] + str(misc['images'][image]) + '.png')
-    foreground = Image.open(misc['cards'] + str(misc['images'][image]) + '.png')
+    background = Image.open(misc['snapshots'] + filename + misc['ext'])
+    foreground = Image.open(misc['snapshots'] + filename + misc['ext'])
+    # foreground = Image.open(misc['cards'] + str(misc['images'][image]) + '.png')
 
     print 'merge'
     
     Image.alpha_composite(background, foreground).save(misc['compositions'] + filename + misc['ext'])
     
+    print 'upload'
+    
     tUpload = threading.Thread(name='upload', target=upload, args=(filename,image,))
     tUpload.daemon = True
     tUpload.start()
     
-    print 'upload'
+    print 'setup'
     
     tSetup = threading.Thread(name='setup', target=setup)
     tSetup.daemon = True
     tSetup.start()
-    
-    print 'setup'
 
 def upload(filename,image):
 	url = api['protocol'] + api['url'] + '/upload'
