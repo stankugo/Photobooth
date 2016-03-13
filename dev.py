@@ -73,17 +73,51 @@ pos = [
         'y' : 143
     },
     {
-        'x' : 157,
-        'y' : 143
+        'x' : 176,
+        'y' : 116
+    },
+    {
+        'x' : 162,
+        'y' : 16
+    },
+    {
+        'x' : 185,
+        'y' : 100
+    },
+    {
+        'x' : 94,
+        'y' : 61
+    },
+    {
+        'x' : 191,
+        'y' : 71
+    },
+    {
+        'x' : 104,
+        'y' : 66
+    },
+    {
+        'x' : 197,
+        'y' : 37
+    },
+    {
+        'x' : 146,
+        'y' : 7
+    },
+    {
+        'x' : 159,
+        'y' : 31
+    },
+    {
+        'x' : 98,
+        'y' : 53
     }
 ]
 
 camera = picamera.PiCamera()
 camera.resolution = (misc['width'], misc['height'])
 camera.preview_fullscreen = False
-camera.preview_window = (pos[misc['image']]['x'],pos[misc['image']]['y'],(pos[misc['image']]['x'] + misc['width']),(pos[misc['image']]['y'] + misc['height']))
 camera.hflip = True
-camera.start_preview()
 
 if len(sys.argv) == 2:
     serialport = sys.argv[1]
@@ -118,48 +152,51 @@ def setup():
     while (misc['image'] == misc['random']):
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
         
-    #misc['image'] = misc['random']
-    misc['image'] = 0
+    misc['image'] = misc['random']
     
     if overlay != None:
         overlay.terminate()
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
+    
+    camera.preview_window = (pos[misc['image']]['x'],pos[misc['image']]['y'],(pos[misc['image']]['x'] + misc['width']),(pos[misc['image']]['y'] + misc['height']))
+    camera.start_preview()
 
 def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
     sleep(5)
     
-    tSnapshot = threading.Thread(name='snapshot', target=snapshot)
+    tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=(misc['image'],))
     tSnapshot.daemon = True
     tSnapshot.start()
 
-def snapshot():
+def snapshot(image):
     global camera
     
+    camera.stop_preview()
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
     camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
     
     print 'resize'
     
     # MERGING IMAGES
-    resize_canvas(misc['snapshots'] + filename + misc['ext'],misc['snapshots'] + filename + misc['ext'])
+    resize_canvas(misc['snapshots'] + filename + misc['ext'],misc['snapshots'] + filename + misc['ext'],pos[image]['x'],pos[image]['y'])
     background = Image.open(misc['snapshots'] + filename + misc['ext'])
-    foreground = Image.open(misc['cards'] + str(misc['images'][misc['image']]) + '.png')
+    foreground = Image.open(misc['cards'] + str(misc['images'][image]) + '.png')
 
     print 'merge'
     
     Image.alpha_composite(background, foreground).save(misc['compositions'] + filename + misc['ext'])
     
-    tUpload = threading.Thread(name='upload', target=upload, args=(filename,))
+    tUpload = threading.Thread(name='upload', target=upload, args=(filename,image,))
     tUpload.daemon = True
     tUpload.start()
     
     print 'upload'
 
-def upload(filename):
+def upload(filename,image):
 	url = api['protocol'] + api['url'] + '/upload'
 	files = {'file': open(misc['compositions'] + filename + misc['ext'], 'rb')}
-	data = {'image': misc['image']}
+	data = {'image': image}
     
 	try:
 		r = requests.post(url, headers=api['header'], files=files, data=data)
@@ -170,7 +207,7 @@ def upload(filename):
 			hashid = response['status']
             
 			# PRINT 
-			tPlot = threading.Thread(name='plot', target=plot, args=(hashid,))
+			tPlot = threading.Thread(name='plot', target=plot, args=(hashid,image,))
 			tPlot.daemon = True
 			tPlot.start()
             
@@ -179,7 +216,7 @@ def upload(filename):
 	except requests.exceptions.RequestException as e:
 	    print e
         
-def plot(hashid):
+def plot(hashid,image):
     print api['protocol'] + api['url'] + '/' + hashid
     p = printer.ThermalPrinter(serialport=serialport)
     
@@ -190,7 +227,7 @@ def plot(hashid):
     p.upsidedown_off()
 
     from PIL import Image, ImageDraw
-    i = Image.open(misc['raster'] + str(misc['images'][misc['image']]) + '.png')
+    i = Image.open(misc['raster'] + str(misc['images'][image]) + '.png')
     data = list(i.getdata())
     w, h = i.size
     p.print_bitmap(data, w, h, False)
@@ -199,14 +236,15 @@ def plot(hashid):
     p.linefeed()
     
 def resize_canvas(old_image_path, new_image_path,
+                  x1=, y1=0,
                   canvas_width=800, canvas_height=1280):
 
     im = Image.open(old_image_path)
     old_width, old_height = im.size
 
     # Center the image
-    x1 = int(math.floor((canvas_width - old_width) / 2))
-    y1 = int(math.floor((canvas_height - old_height) / 2))
+    # x1 = int(math.floor((canvas_width - old_width) / 2))
+    # y1 = int(math.floor((canvas_height - old_height) / 2))
 
     mode = im.mode
     if len(mode) == 1:  # L, 1
