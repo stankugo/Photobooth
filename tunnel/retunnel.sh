@@ -8,8 +8,8 @@ createTunnel() {
   fi
 }
 
-/bin/pidof ssh
-echo $?
+$pid = /bin/pidof ssh
+echo $pid
 
 echo create new tunnel
 # kill $?
