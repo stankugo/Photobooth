@@ -8,9 +8,8 @@ createTunnel() {
   fi
 }
 
-$pid = /bin/pidof ssh
-echo $pid
+echo killing all tunnels
+killall ssh
 
 echo create new tunnel
-# kill $?
 createTunnel
