@@ -183,8 +183,8 @@ def snapshot(image):
     
     # MERGING IMAGES
     resize_canvas(misc['snapshots'] + filename + misc['ext'],misc['snapshots'] + filename + misc['ext'],pos[image]['x'],pos[image]['y'])
-    background = Image.open(misc['snapshots'] + filename + misc['ext'])
-    foreground = Image.open(misc['cards'] + str(misc['images'][image]) + '.png')
+    # background = Image.open(misc['snapshots'] + filename + misc['ext'])
+    # foreground = Image.open(misc['cards'] + str(misc['images'][image]) + '.png')
 
     print 'merge'
     
