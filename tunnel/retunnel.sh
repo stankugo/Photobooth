@@ -8,10 +8,9 @@ createTunnel() {
   fi
 }
 
-declare -i number
-a = /bin/pidof ssh
-echo "$a"
+/bin/pidof ssh
+echo "$?"
 
 echo Creating new tunnel connection
-kill "$a"
+kill "$?"
 createTunnel
