@@ -9,8 +9,8 @@ createTunnel() {
 }
 
 /bin/pidof ssh
-echo "$?"
+echo $?
 
-echo Creating new tunnel connection
-kill "$?"
+echo create new tunnel
+# kill $?
 createTunnel
