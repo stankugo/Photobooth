@@ -128,6 +128,7 @@ if not os.path.exists(serialport):
     sys.exit("ERROR: Serial port not found at: %s" % serialport)
 
 overlay = None
+merci = None
 
 #
 #
@@ -147,6 +148,7 @@ def cleanupAndExit():
 def setup():
     global ready
     global overlay
+    global merci
     
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):
@@ -162,6 +164,9 @@ def setup():
     camera.preview_window = (pos[misc['image']]['x'],pos[misc['image']]['y'],(pos[misc['image']]['x'] + misc['width']),(pos[misc['image']]['y'] + misc['height']))
     camera.start_preview()
     
+    if merci != None:
+        merci.terminate()
+    
     ready['setup'] = True
 
 def counter():
@@ -173,6 +178,7 @@ def counter():
     tSnapshot.start()
 
 def snapshot(image):
+    global merci
     global camera
     print 'image: ', image
     print 'real image: ', str(misc['images'][image])
@@ -199,6 +205,9 @@ def snapshot(image):
     tUpload.daemon = True
     tUpload.start()
     
+    merci = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','4','/home/pi/Photobooth/merci/merci.png'])
+    sleep(10)
+
     print 'setup'
     
     tSetup = threading.Thread(name='setup', target=setup)
