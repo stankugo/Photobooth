@@ -128,6 +128,7 @@ if not os.path.exists(serialport):
     sys.exit("ERROR: Serial port not found at: %s" % serialport)
 
 overlay = None
+merci = None
 
 #
 #
@@ -147,12 +148,14 @@ def cleanupAndExit():
 def setup():
     global ready
     global overlay
+    global merci
     
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
         
     misc['image'] = misc['random']
+    print 'image: ', misc['image']
     
     if overlay != None:
         overlay.terminate()
@@ -160,6 +163,11 @@ def setup():
     
     camera.preview_window = (pos[misc['image']]['x'],pos[misc['image']]['y'],(pos[misc['image']]['x'] + misc['width']),(pos[misc['image']]['y'] + misc['height']))
     camera.start_preview()
+    
+    if merci != None:
+        merci.terminate()
+    
+    ready['setup'] = True
 
 def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
@@ -170,7 +178,10 @@ def counter():
     tSnapshot.start()
 
 def snapshot(image):
+    global merci
     global camera
+    print 'image: ', image
+    print 'real image: ', str(misc['images'][image])
     
     camera.stop_preview()
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
@@ -181,17 +192,27 @@ def snapshot(image):
     # MERGING IMAGES
     resize_canvas(misc['snapshots'] + filename + misc['ext'],misc['snapshots'] + filename + misc['ext'],pos[image]['x'],pos[image]['y'])
     background = Image.open(misc['snapshots'] + filename + misc['ext'])
-    foreground = Image.open(misc['cards'] + str(misc['images'][image]) + '.png')
+    foreground = Image.open(misc['snapshots'] + filename + misc['ext'])
+    # foreground = Image.open(misc['cards'] + str(misc['images'][image]) + '.png')
 
     print 'merge'
     
     Image.alpha_composite(background, foreground).save(misc['compositions'] + filename + misc['ext'])
     
+    print 'upload'
+    
     tUpload = threading.Thread(name='upload', target=upload, args=(filename,image,))
     tUpload.daemon = True
     tUpload.start()
     
-    print 'upload'
+    merci = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','4','/home/pi/Photobooth/merci/merci.png'])
+    sleep(10)
+
+    print 'setup'
+    
+    tSetup = threading.Thread(name='setup', target=setup)
+    tSetup.daemon = True
+    tSetup.start()
 
 def upload(filename,image):
 	url = api['protocol'] + api['url'] + '/upload'
