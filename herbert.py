@@ -191,6 +191,12 @@ def snapshot(image):
     tSetup = threading.Thread(name='setup', target=setup)
     tSetup.daemon = True
     tSetup.start()
+    
+    sleep(10)
+    
+    tCounter = threading.Thread(name='counter', target=counter)
+    tCounter.daemon = True
+    tCounter.start()
 
 def upload(filename,image):
 	url = api['protocol'] + api['url'] + '/upload'
