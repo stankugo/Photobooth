@@ -308,7 +308,7 @@ try:
         print 'ultrasonic: %s' % mm
         print 'ready: %s' % ready['setup']
         
-        if mm <= 2000 and ready['setup'] == True:
+        if mm != None and mm > 10 and mm <= 2000 and ready['setup'] == True:
             
             ready['setup'] = False
             
