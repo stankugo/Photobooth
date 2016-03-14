@@ -154,9 +154,11 @@ def setup():
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
-        
+      
+    print 'image: ', misc['image']
+    print 'add one'
     # misc['image'] = misc['random']
-	misc['image'] += 1
+    misc['image'] += 1
     print 'image: ', misc['image']
 	
     if merci != None:
@@ -308,7 +310,7 @@ try:
         tCounter.daemon = True
         tCounter.start()
         
-        sleep(60)
+        sleep(30)
 
 except KeyboardInterrupt:
 	cleanupAndExit()
