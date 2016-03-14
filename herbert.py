@@ -154,7 +154,7 @@ def setup():
         overlay.terminate()
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
-    camera.preview_window = (pos[misc['image']]['x'] - 80,pos[misc['image']]['y'] + 20,(pos[misc['image']]['x'] + misc['width'] - 80),(pos[misc['image']]['y'] + misc['height'] + 20))
+    camera.preview_window = (pos[misc['image']]['x'] - 80,pos[misc['image']]['y'] + 10,(pos[misc['image']]['x'] + misc['width'] - 80),(pos[misc['image']]['y'] + misc['height'] + 10))
     camera.start_preview()
 	
     ready['setup'] = True
