@@ -62,7 +62,7 @@ misc = {
     'width' : 367,
     'height' : 490,
     'images' : [2,7,8,13,14,15,19,20,25,26,28],
-    'image' : 0,
+    'image' : -1,
     'random' : 0,
     'port' : '/dev/ttyUSB0'
 }
