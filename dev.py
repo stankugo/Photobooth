@@ -170,7 +170,7 @@ def setup():
         overlay.terminate()
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
-    camera.preview_window = (pos[misc['image']]['x'],pos[misc['image']]['y'],(pos[misc['image']]['x'] + misc['width']),(pos[misc['image']]['y'] + misc['height']))
+    camera.preview_window = (pos[misc['image']]['x'] - 80,pos[misc['image']]['y'] + 10,(pos[misc['image']]['x'] + misc['width'] - 80),(pos[misc['image']]['y'] + misc['height'] + 10))
     camera.start_preview()
     
     ready['setup'] = True
@@ -310,7 +310,7 @@ try:
         tCounter.daemon = True
         tCounter.start()
         
-        sleep(30)
+        sleep(15)
 
 except KeyboardInterrupt:
 	cleanupAndExit()
