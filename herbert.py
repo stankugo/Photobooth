@@ -137,18 +137,10 @@ def setup():
     global ready
     global overlay
     global merci
-    
-    # CREATE A RANDOM NUMBER
-    while (misc['image'] == misc['random']):
-        misc['random'] = random.randrange(0,len(misc['images'])-1,1)
+    global misc
         
-    misc['image'] = misc['random']
+    misc['image'] += 1
     print 'image: ', misc['image']
-    
-    if merci != None:
-        merci.terminate()
-		
-	sleep(2)
     
     if overlay != None:
         overlay.terminate()
@@ -161,7 +153,7 @@ def setup():
 
 def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
-    sleep(5)
+    sleep(15)
     
     tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=(misc['image'],))
     tSnapshot.daemon = True
@@ -193,9 +185,6 @@ def snapshot(image):
     tUpload = threading.Thread(name='upload', target=upload, args=(filename,image,))
     tUpload.daemon = True
     tUpload.start()
-    
-    merci = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','4','/home/pi/Photobooth/merci/merci.png'])
-    sleep(10)
 
     print 'setup'
     
@@ -225,25 +214,6 @@ def upload(filename,image):
 		
 	except requests.exceptions.RequestException as e:
 	    print e
-        
-def plot(hashid,image):
-    print api['protocol'] + api['url'] + '/' + hashid
-    p = printer.ThermalPrinter(serialport=serialport)
-    
-    p.linefeed()
-    
-    p.upsidedown_on()
-    p.print_text(api['protocol'] + api['url'] + '/' + hashid + "\n")
-    p.upsidedown_off()
-
-    from PIL import Image, ImageDraw
-    i = Image.open(misc['raster'] + str(misc['images'][image]) + '.png')
-    data = list(i.getdata())
-    w, h = i.size
-    p.print_bitmap(data, w, h, False)
-    
-    p.linefeed()
-    p.linefeed()
     
 def resize_canvas(old_image_path, new_image_path,
                   x1=0, y1=0,
@@ -288,23 +258,11 @@ try:
     tSetup.daemon = True
     tSetup.start()
     
-    while True:
-
-        # CHECK ULTRASONIC
-        mm = ultrasonic.measure(misc['port'])
-
-        print 'ultrasonic: %s' % mm
-        print 'ready: %s' % ready['setup']
-        
-        if mm != None and mm > 10 and mm <= 2000 and ready['setup'] == True:
-            
-            ready['setup'] = False
-            
-            tCounter = threading.Thread(name='counter', target=counter)
-            tCounter.daemon = True
-            tCounter.start()
-        
-        sleep(1)
+    sleep(10)
+    
+    tCounter = threading.Thread(name='counter', target=counter)
+    tCounter.daemon = True
+    tCounter.start()
 
 except KeyboardInterrupt:
 	cleanupAndExit()
