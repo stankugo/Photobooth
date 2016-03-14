@@ -4,7 +4,7 @@ case "$1" in
   start)
     echo "Starting Photobooth"
     # run application you want to start
-    python /home/pi/Photobooth/photo.py >/dev/null 2>&1 &
+    python /home/pi/Photobooth/photo.py > /var/log/photobooth.log 2>&1 &
     ;;
   stop)
     echo "Stopping Photobooth"

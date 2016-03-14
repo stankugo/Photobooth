@@ -32,7 +32,7 @@ def measure(portName):
            return(mm)
 
     ser.close()
-    raise RuntimeError("Expected serial data not received")
+    # raise RuntimeError("Expected serial data not received")
 
 if __name__ == '__main__':
     measurement = measure(serialDevice)
