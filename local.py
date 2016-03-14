@@ -12,7 +12,7 @@
 
 import sys, traceback, os
 import time
-import requests
+
 import subprocess
 import Queue, threading
 import random
@@ -90,6 +90,10 @@ def cleanupAndExit():
 
 def snapshot():
     
+    global misc
+    misc['image'] += 1
+    print misc['image']
+    
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
     image = 'asdf'
     
@@ -123,7 +127,7 @@ try:
         tSnapshot.daemon = True
         tSnapshot.start()
         
-        sleep(30)
+        sleep(5)
         
 except KeyboardInterrupt:
 	cleanupAndExit()
