@@ -263,6 +263,10 @@ try:
     tCounter = threading.Thread(name='counter', target=counter)
     tCounter.daemon = True
     tCounter.start()
+    
+    while True:
+        sleep(10)
+        print 'alive'
 
 except KeyboardInterrupt:
 	cleanupAndExit()
