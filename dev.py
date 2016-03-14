@@ -146,7 +146,7 @@ def cleanupAndExit():
 	print 'EXIT'
     
 def setup():
-	global misc
+    global misc
     global ready
     global overlay
     global merci
