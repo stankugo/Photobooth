@@ -317,7 +317,7 @@ try:
             tCounter.start()
         
         print dev
-        dev++
+        dev += 1
         
         sleep(1)
 
