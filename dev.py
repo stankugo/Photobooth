@@ -200,7 +200,7 @@ def snapshot(image):
     
     Image.alpha_composite(background, foreground).save(misc['compositions'] + filename + misc['ext'])
     
-    print 'upload'
+    print 'prepare'
     
     tPrepare = threading.Thread(name='prepare', target=prepare, args=(filename,misc['images'][image],))
     tPrepare.daemon = True
@@ -244,6 +244,8 @@ def prepare(filename,image):
         print e
 
 def upload(id,hashid,filename,image):
+    
+    print 'upload'
         
     url = api['protocol'] + api['url'] + '/upload'
     files = {'file': open(misc['compositions'] + filename + misc['ext'], 'rb')}
@@ -251,6 +253,7 @@ def upload(id,hashid,filename,image):
     
     try:
         r = requests.post(url, headers=api['header'], files=files, data=data)
+        print r.text
         response = r.json()
         del response
     
