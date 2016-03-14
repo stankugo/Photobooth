@@ -175,7 +175,7 @@ def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
     sleep(5)
     
-    tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=([misc['image'],))
+    tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=(misc['image'],))
     tSnapshot.daemon = True
     tSnapshot.start()
 
