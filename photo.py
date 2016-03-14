@@ -49,7 +49,7 @@ api = {
 }
 
 ready = {
-	'action' : False,
+	'setup' : False,
 	'snapshot' : False
 }
 
