@@ -155,7 +155,7 @@ def setup():
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
         
     # misc['image'] = misc['random']
-	misc['image'] += 1
+	misc['image'] = misc['image'] + 1
     print 'image: ', misc['image']
 	
     if merci != None:
