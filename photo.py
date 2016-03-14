@@ -157,16 +157,18 @@ def setup():
     misc['image'] = misc['random']
     print 'image: ', misc['image']
     
+    if merci != None:
+        merci.terminate()
+		
+	sleep(2)
+    
     if overlay != None:
         overlay.terminate()
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
     camera.preview_window = (pos[misc['image']]['x'],pos[misc['image']]['y'],(pos[misc['image']]['x'] + misc['width']),(pos[misc['image']]['y'] + misc['height']))
     camera.start_preview()
-    
-    if merci != None:
-        merci.terminate()
-    
+	
     ready['setup'] = True
 
 def counter():

@@ -157,6 +157,11 @@ def setup():
     # misc['image'] = misc['random']
 	misc['image'] += 1
     print 'image: ', misc['image']
+	
+    if merci != None:
+        merci.terminate()
+		
+	sleep(2)
     
     if overlay != None:
         overlay.terminate()
@@ -164,9 +169,6 @@ def setup():
     
     camera.preview_window = (pos[misc['image']]['x'],pos[misc['image']]['y'],(pos[misc['image']]['x'] + misc['width']),(pos[misc['image']]['y'] + misc['height']))
     camera.start_preview()
-    
-    if merci != None:
-        merci.terminate()
     
     ready['setup'] = True
 
