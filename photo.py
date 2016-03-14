@@ -293,6 +293,7 @@ def resize_canvas(old_image_path, new_image_path,
 try:
     
     print 'READY'
+    dev = 0
     
     tSetup = threading.Thread(name='setup', target=setup)
     tSetup.daemon = True
@@ -306,13 +307,17 @@ try:
         print 'ultrasonic: %s' % mm
         print 'ready: %s' % ready['setup']
         
-        if mm <= 2000 and ready['setup'] == True:
+        #if mm <= 2000 and ready['setup'] == True:
+        if dev > 30 and ready['setup'] == True:
             
             ready['setup'] = False
             
             tCounter = threading.Thread(name='counter', target=counter)
             tCounter.daemon = True
             tCounter.start()
+        
+        print dev
+        dev++
         
         sleep(1)
 
