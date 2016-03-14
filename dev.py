@@ -62,57 +62,57 @@ misc = {
     'width' : 367,
     'height' : 490,
     'images' : [2,7,8,13,14,15,19,20,25,26,28],
-    'image' : -1,
+    'image' : 0,
     'random' : 0,
     'port' : '/dev/ttyUSB0'
 }
 
-pos = [
-    {
-        'x' : 244,
-        'y' : 11
+pos = {
+    2: {
+        'x' : 241,
+        'y' : 13
     },
-    {
+    7: {
         'x' : 261,
-        'y' : -19
+        'y' : -11
     },
-    {
-        'x' : 245,
-        'y' : 121
+    8: {
+        'x' : 246,
+        'y' : -116
     },
-    {
-        'x' : 262,
-        'y' : -47
+    13: {
+        'x' : 268,
+        'y' : -53
     },
-    {
-        'x' : 186,
-        'y' : 69
+    14: {
+        'x' : 179,
+        'y' : -69
     },
-    {
+    15: {
         'x' : 280,
+        'y' : -64
+    },
+    19: {
+        'x' : 193,
         'y' : -63
     },
-    {
-        'x' : 195,
-        'y' : -67
+    20: {
+        'x' : 281,
+        'y' : 10
     },
-    {
-        'x' : 280,
-        'y' : 5
+    25: {
+        'x' : 223,
+        'y' : -132
     },
-    {
-        'x' : 227,
-        'y' : -134
+    26: {
+        'x' : 246,
+        'y' : -100
     },
-    {
-        'x' : 245,
-        'y' : -101
-    },
-    {
-        'x' : 181,
+    28: {
+        'x' : 179,
         'y' : -81
     }
-]
+}
 
 camera = picamera.PiCamera()
 camera.resolution = (misc['width'], misc['height'])
@@ -146,7 +146,6 @@ def cleanupAndExit():
 	print 'EXIT'
     
 def setup():
-    global misc
     global ready
     global overlay
     global merci
@@ -154,13 +153,10 @@ def setup():
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
-      
+        
+    misc['image'] = misc['random']
     print 'image: ', misc['image']
-    print 'add one'
-    # misc['image'] = misc['random']
-    misc['image'] += 1
-    print 'image: ', misc['image']
-	
+    
     if merci != None:
         merci.terminate()
 		
@@ -170,16 +166,16 @@ def setup():
         overlay.terminate()
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
-    camera.preview_window = (pos[misc['image']]['x'] - 80,pos[misc['image']]['y'] + 10,(pos[misc['image']]['x'] + misc['width'] - 80),(pos[misc['image']]['y'] + misc['height'] + 10))
+    camera.preview_window = (pos[misc['images'][misc['image']]]['x'] - 80,pos[misc['images'][misc['image']]]['y'] + 10,(pos[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(pos[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
     camera.start_preview()
-    
+	
     ready['setup'] = True
 
 def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
     sleep(5)
     
-    tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=(misc['image'],))
+    tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=([misc['image'],))
     tSnapshot.daemon = True
     tSnapshot.start()
 
@@ -196,7 +192,7 @@ def snapshot(image):
     print 'resize'
     
     # MERGING IMAGES
-    resize_canvas(misc['snapshots'] + filename + misc['ext'],misc['snapshots'] + filename + misc['ext'],pos[image]['x'],pos[image]['y'])
+    resize_canvas(misc['snapshots'] + filename + misc['ext'],misc['snapshots'] + filename + misc['ext'],pos[misc['images'][image]]['x'],pos[misc['images'][image]]['y'])
     background = Image.open(misc['snapshots'] + filename + misc['ext'])
     foreground = Image.open(misc['cards'] + str(misc['images'][image]) + '.png')
 
@@ -206,7 +202,7 @@ def snapshot(image):
     
     print 'upload'
     
-    tUpload = threading.Thread(name='upload', target=upload, args=(filename,image,))
+    tUpload = threading.Thread(name='upload', target=upload, args=(filename,misc['images'][image],))
     tUpload.daemon = True
     tUpload.start()
     
@@ -219,28 +215,47 @@ def snapshot(image):
     tSetup.daemon = True
     tSetup.start()
 
-def upload(filename,image):
-	url = api['protocol'] + api['url'] + '/upload'
-	files = {'file': open(misc['compositions'] + filename + misc['ext'], 'rb')}
-	data = {'image': image}
+def prepare(filename,image):
     
-	try:
-		r = requests.post(url, headers=api['header'], files=files, data=data)
-		response = r.json()
-
-		# CHECK FOR HASH
-		if 'status' in response:
-			hashid = response['status']
+    url = api['protocol'] + api['url'] + '/prepare'
+    
+    try:
+        r = requests.get(url, headers=api['header'])
+        response = r.json()
+        
+        # CHECK FOR HASH
+        if 'status' in response:
+            id = response['id']
+            hashid = response['hashid']
             
-			# PRINT 
-			tPlot = threading.Thread(name='plot', target=plot, args=(hashid,image,))
-			tPlot.daemon = True
-			tPlot.start()
+            # UPLOAD
+            tUpload = threading.Thread(name='upload', target=upload, args=(id,hashid,filename,image,))
+            tUpload.daemon = True
+            tUpload.start()
             
-		del response
+            # PRINT 
+            tPlot = threading.Thread(name='plot', target=plot, args=(hashid,image,))
+            tPlot.daemon = True
+            tPlot.start()
+            
+        del response
 		
-	except requests.exceptions.RequestException as e:
-	    print e
+    except requests.exceptions.RequestException as e:
+        print e
+
+def upload(id,hashid,filename,image):
+        
+    url = api['protocol'] + api['url'] + '/upload'
+    files = {'file': open(misc['compositions'] + filename + misc['ext'], 'rb')}
+    data = {'id': id, 'hashid': hashid, 'image': image}
+    
+    try:
+        r = requests.post(url, headers=api['header'], files=files, data=data)
+        response = r.json()
+        del response
+    
+    except requests.exceptions.RequestException as e:
+        print e
         
 def plot(hashid,image):
     print api['protocol'] + api['url'] + '/' + hashid
@@ -306,11 +321,16 @@ try:
     
     while True:
 
-        tCounter = threading.Thread(name='counter', target=counter)
-        tCounter.daemon = True
-        tCounter.start()
+        print 'ready: %s' % ready['setup']        
+        if ready['setup'] == True:
+            
+            ready['setup'] = False
+            
+            tCounter = threading.Thread(name='counter', target=counter)
+            tCounter.daemon = True
+            tCounter.start()
         
-        sleep(15)
+        sleep(5)
 
 except KeyboardInterrupt:
 	cleanupAndExit()

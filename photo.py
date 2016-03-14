@@ -215,35 +215,47 @@ def snapshot(image):
     tSetup.daemon = True
     tSetup.start()
 
-def upload(filename,image):
+def prepare(filename,image):
     
-    #
-    #
-    # get hashid without completely uploading the image
-    #
-    #
+    url = api['protocol'] + api['url'] + '/prepare'
     
-	url = api['protocol'] + api['url'] + '/upload'
-	files = {'file': open(misc['compositions'] + filename + misc['ext'], 'rb')}
-	data = {'image': image}
-    
-	try:
-		r = requests.post(url, headers=api['header'], files=files, data=data)
-		response = r.json()
-
-		# CHECK FOR HASH
-		if 'status' in response:
-			hashid = response['status']
+    try:
+        r = requests.get(url, headers=api['header'])
+        response = r.json()
+        
+        # CHECK FOR HASH
+        if 'status' in response:
+            id = response['id']
+            hashid = response['hashid']
             
-			# PRINT 
-			tPlot = threading.Thread(name='plot', target=plot, args=(hashid,image,))
-			tPlot.daemon = True
-			tPlot.start()
+            # UPLOAD
+            tUpload = threading.Thread(name='upload', target=upload, args=(id,hashid,filename,image,))
+            tUpload.daemon = True
+            tUpload.start()
             
-		del response
+            # PRINT 
+            tPlot = threading.Thread(name='plot', target=plot, args=(hashid,image,))
+            tPlot.daemon = True
+            tPlot.start()
+            
+        del response
 		
-	except requests.exceptions.RequestException as e:
-	    print e
+    except requests.exceptions.RequestException as e:
+        print e
+
+def upload(id,hashid,filename,image):
+        
+    url = api['protocol'] + api['url'] + '/upload'
+    files = {'file': open(misc['compositions'] + filename + misc['ext'], 'rb')}
+    data = {'id': id, 'hashid': hashid, 'image': image}
+    
+    try:
+        r = requests.post(url, headers=api['header'], files=files, data=data)
+        response = r.json()
+        del response
+    
+    except requests.exceptions.RequestException as e:
+        print e
         
 def plot(hashid,image):
     print api['protocol'] + api['url'] + '/' + hashid

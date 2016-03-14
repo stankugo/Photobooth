@@ -17,6 +17,7 @@ import subprocess
 import Queue, threading
 import random
 import math
+import requests
 
 import urllib2
 import httplib
@@ -39,7 +40,7 @@ from datetime import datetime
 
 api = {
 	'protocol' : 'http://',
-	'url' : 'mhq-verspielt.de',
+	'url' : 'fotobox.local',
 	'header' : {'user-agent': 'raspberry-pi/photobooth'}
 }
 
@@ -49,10 +50,10 @@ ready = {
 }
 
 misc = {
-	'snapshots' : '/home/pi/Photobooth/snapshots/',
-    'compositions' : '/home/pi/Photobooth/compositions/',
-    'cards' : '/home/pi/Photobooth/cards/',
-    'raster' : '/home/pi/Photobooth/raster/',
+	'snapshots' : '/Users/stephan/GIT/Photobooth/snapshots/',
+    'compositions' : '/Users/stephan/GIT/Photobooth/compositions/',
+    'cards' : '/Users/stephan/GIT/Photobooth/cards/',
+    'raster' : '/Users/stephan/GIT/Photobooth/raster/',
     'ext' : '.png',
     'width' : 367,
     'height' : 490,
@@ -149,20 +150,70 @@ def snapshot(image):
     global misc
     
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
-    image = 'asdf'
+    filename = '20160314-201800'
     
-    tUpload = threading.Thread(name='upload', target=upload, args=(filename,image,))
-    tUpload.daemon = True
-    tUpload.start()
-
-def upload(filename,image):
-
-    print filename
-    print image
+    image = 2
     
-    tSetup = threading.Thread(name='setup', target=setup)
-    tSetup.daemon = True
-    tSetup.start()
+    tPrepare = threading.Thread(name='prepare', target=prepare, args=(filename,image,))
+    tPrepare.daemon = True
+    tPrepare.start()
+    
+def prepare(filename,image):
+    
+    url = api['protocol'] + api['url'] + '/prepare'
+    
+    try:
+        r = requests.get(url, headers=api['header'])
+        
+        print r.text
+        response = r.json()
+        
+        # CHECK FOR HASH
+        if 'status' in response:
+            id = response['id']
+            hashid = response['hashid']
+            
+            print 'id: ', id
+            print 'hashid', hashid
+            
+            # UPLOAD
+            tUpload = threading.Thread(name='upload', target=upload, args=(id,hashid,filename,image,))
+            tUpload.daemon = True
+            tUpload.start()
+            
+            # PRINT 
+            tPlot = threading.Thread(name='plot', target=plot, args=(hashid,image,))
+            tPlot.daemon = True
+            tPlot.start()
+            
+        del response
+		
+    except requests.exceptions.RequestException as e:
+        print e
+        
+    # GET BACK TO NORMAL
+
+def upload(id,hashid,filename,image):
+    
+    print 'UPLOAD: ', id, ', ', hashid, ', ', image
+    
+    url = api['protocol'] + api['url'] + '/upload'
+    files = {'file': open(misc['compositions'] + filename + misc['ext'], 'rb')}
+    data = {'id': id, 'hashid': hashid, 'image': image}
+    
+    try:
+        r = requests.post(url, headers=api['header'], files=files, data=data)
+        print r.text
+        response = r.json()
+        print response
+        del response
+    
+    except requests.exceptions.RequestException as e:
+        print e
+        
+def plot(hashid,image):
+    
+    print 'PLOT: ', hashid, ', ', image
  
 #
 #
@@ -183,11 +234,6 @@ try:
     tSetup.start()
     
     while True:
-        print ' '
-        print ' '
-        print ' '
-        print ' '
-        print 'ready: ', ready['setup']
         
         if ready['setup'] == True:
 
@@ -197,6 +243,11 @@ try:
             tSnapshot.start()
         
         sleep(5)
+        print ' '
+        print ' '
+        print ' '
+        print ' '
+        print 'ready: ', ready['setup']
         
 except KeyboardInterrupt:
 	cleanupAndExit()
