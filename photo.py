@@ -202,9 +202,9 @@ def snapshot(image):
     
     print 'upload'
     
-    tUpload = threading.Thread(name='upload', target=upload, args=(filename,misc['images'][image],))
-    tUpload.daemon = True
-    tUpload.start()
+    tPrepare = threading.Thread(name='prepare', target=prepare, args=(filename,misc['images'][image],))
+    tPrepare.daemon = True
+    tPrepare.start()
     
     merci = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','4','/home/pi/Photobooth/merci/merci.png'])
     sleep(10)
