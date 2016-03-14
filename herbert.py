@@ -62,7 +62,7 @@ misc = {
     'width' : 367,
     'height' : 490,
     'images' : [2,7,13,15,20,25,26,28],
-    'image' : 0,
+    'image' : -1,
     'random' : 0,
     'port' : '/dev/ttyUSB0'
 }
@@ -204,11 +204,6 @@ def upload(filename,image):
 		# CHECK FOR HASH
 		if 'status' in response:
 			hashid = response['status']
-            
-			# PRINT 
-			tPlot = threading.Thread(name='plot', target=plot, args=(hashid,image,))
-			tPlot.daemon = True
-			tPlot.start()
             
 		del response
 		
