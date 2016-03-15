@@ -3,21 +3,85 @@ import picamera
 import os
 import subprocess
 
+misc = {
+	'snapshots' : '/home/pi/Photobooth/snapshots/',
+    'compositions' : '/home/pi/Photobooth/compositions/',
+    'cards' : '/home/pi/Photobooth/cards/',
+    'raster' : '/home/pi/Photobooth/raster/',
+    'ext' : '.png',
+    'width' : 367,
+    'height' : 490,
+    'images' : [2,7,13,20],
+    'image' : 0,
+    'random' : 0,
+    'port' : '/dev/ttyUSB0'
+}
+
+pos = {
+    2: {
+        'x' : 241,
+        'y' : 13
+    },
+    7: {
+        'x' : 261,
+        'y' : -11
+    },
+    8: {
+        'x' : 246,
+        'y' : -116
+    },
+    13: {
+        'x' : 268,
+        'y' : -53
+    },
+    14: {
+        'x' : 179,
+        'y' : -69
+    },
+    15: {
+        'x' : 280,
+        'y' : -64
+    },
+    19: {
+        'x' : 193,
+        'y' : -63
+    },
+    20: {
+        'x' : 281,
+        'y' : 10
+    },
+    25: {
+        'x' : 223,
+        'y' : -132
+    },
+    26: {
+        'x' : 246,
+        'y' : -100
+    },
+    28: {
+        'x' : 179,
+        'y' : -81
+    }
+}
+
 camera = picamera.PiCamera()
+camera.resolution = (misc['width'], misc['height'])
+camera.preview_fullscreen = False
+camera.hflip = True
+
 try:
-    camera.resolution = (1067, 800)
-    camera.preview_fullscreen = False
-    camera.preview_window = (0,0,1067,800)
-    camera.hflip = True
+
+    global misc
+    global pos
     
+    camera.preview_window = (pos[misc['images'][misc['image']]]['x'] - 80,pos[misc['images'][misc['image']]]['y'] + 10,(pos[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(pos[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
     camera.start_preview()
-    # p = subprocess.Popen(["/home/pi/raspidmx/pngview/./pngview","-b","0","-l","3","/home/pi/Photobooth/cards/26.png"])
-    # os.system("/home/pi/raspidmx/pngview/./pngview -b 0 -l 3 /home/pi/Photobooth/cards/26.png")
-    
+
     time.sleep(10)
     
     camera.stop_preview()
-    p.terminate()
+    filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
+    camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
     
 finally:
     camera.close()
