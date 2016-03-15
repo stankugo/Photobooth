@@ -70,9 +70,6 @@ camera.preview_fullscreen = False
 camera.hflip = True
 
 try:
-
-    global misc
-    global pos
     
     camera.preview_window = (pos[misc['images'][misc['image']]]['x'] - 80,pos[misc['images'][misc['image']]]['y'] + 10,(pos[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(pos[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
     camera.start_preview()
