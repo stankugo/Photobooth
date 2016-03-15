@@ -64,6 +64,8 @@ pos = {
     }
 }
 
+print 'ready'
+
 camera = picamera.PiCamera()
 camera.resolution = (misc['width'], misc['height'])
 camera.preview_fullscreen = False
