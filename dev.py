@@ -221,7 +221,7 @@ def snapshot(image):
     #
     if misc['image'] < len(misc['images'])-1:
         misc['image'] += 1
-    elif:
+    else:
         misc['image'] = 0
     #
     #
