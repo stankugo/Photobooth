@@ -328,8 +328,17 @@ try:
         # CHECK ULTRASONIC
         mm = ultrasonic.measure(misc['port'])
 
+        print ''
+        print ''
+        print '----------'
+        print ''
+        print 'timestamp: %s' % time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
         print 'ultrasonic: %s' % mm
         print 'ready: %s' % ready['setup']
+        print ''
+        print ''
+        print '----------'
+        print ''
         
         if mm != None and mm > 10 and (mm <= 2000 or mm > 3000) and ready['setup'] == True:
             
