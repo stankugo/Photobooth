@@ -144,15 +144,15 @@ merci = None
 
 def cleanupAndExit():
 	print 'SHUTDOWN'
-    camera.close()
+	camera.close()
     
-    if overlay != None:
-        overlay.terminate()
+	if overlay != None:
+		overlay.terminate()
         
-    if merci != None:
-        merci.terminate()
+	if merci != None:
+		merci.terminate()
     
-    print 'EXIT'
+	print 'EXIT'
     
 def setup():
     global ready
