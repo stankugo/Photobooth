@@ -219,7 +219,15 @@ def snapshot(image):
     #
     #
     #
-    misc['image'] += 1
+    if misc['image'] < len(misc['images'])-1:
+        misc['image'] += 1
+    elif:
+        misc['image'] = 0
+    #
+    #
+    #
+    #
+    #
     
     tSetup = threading.Thread(name='setup', target=setup)
     tSetup.daemon = True
