@@ -68,7 +68,7 @@ print 'ready'
 
 camera = picamera.PiCamera()
 camera.resolution = (misc['width'], misc['height'])
-# camera.preview_fullscreen = False
+camera.preview_fullscreen = False
 camera.hflip = True
 
 print 'try'
@@ -77,7 +77,7 @@ try:
     
     print 'camera preview'
     
-    # camera.preview_window = (pos[misc['images'][misc['image']]]['x'] - 80,pos[misc['images'][misc['image']]]['y'] + 10,(pos[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(pos[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
+    camera.preview_window = (0,0,misc['width'],misc['height'])
     camera.start_preview()
 
     time.sleep(10)
