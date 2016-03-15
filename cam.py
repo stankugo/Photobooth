@@ -77,7 +77,8 @@ try:
     
     print 'camera preview'
     
-    camera.preview_window = (0,0,misc['width'],misc['height'])
+    camera.preview_window = (pos[misc['images'][misc['image']]]['x'],pos[misc['images'][misc['image']]]['y'],(pos[misc['images'][misc['image']]]['x'] + misc['width']),(pos[misc['images'][misc['image']]]['y'] + misc['height']))
+    #camera.preview_window = (0,0,misc['width'],misc['height'])
     camera.start_preview()
 
     time.sleep(10)
