@@ -61,7 +61,7 @@ misc = {
     'ext' : '.png',
     'width' : 367,
     'height' : 490,
-    'images' : [2,7,8,13,14,15,19,20,25,26,28],
+    'images' : [2,7,13,20],
     'image' : 0,
     'random' : 0,
     'port' : '/dev/ttyUSB0'
