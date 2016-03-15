@@ -149,6 +149,7 @@ def setup():
     global ready
     global overlay
     global merci
+    global misc
     
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):

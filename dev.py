@@ -149,12 +149,13 @@ def setup():
     global ready
     global overlay
     global merci
+    global misc
     
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
         
-    misc['image'] = misc['random']
+    # misc['image'] = misc['random']
     print 'image: ', misc['image']
     
     if merci != None:
@@ -210,6 +211,15 @@ def snapshot(image):
     sleep(10)
 
     print 'setup'
+    
+    # FAKE FAKE FAKE FAKE
+    #
+    #
+    #
+    #
+    #
+    #
+    misc['image'] += 1
     
     tSetup = threading.Thread(name='setup', target=setup)
     tSetup.daemon = True
