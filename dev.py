@@ -60,8 +60,8 @@ misc = {
     'ext' : '.png',
     'width' : 367,
     'height' : 490,
-    'images' : [2,7,13,20],
-    'image' : 0,
+    'images' : [8,14,15,19,25,26,28],
+    'image' : -1,
     'random' : 0,
     'port' : '/dev/ttyUSB0',
     'sensor' : 0
@@ -164,7 +164,8 @@ def setup():
     while (misc['image'] == misc['random']):
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
         
-    misc['image'] = misc['random']
+    # misc['image'] = misc['random']
+    misc['image'] += 1
     print 'image: ', misc['image']
     
     if overlay != None:
