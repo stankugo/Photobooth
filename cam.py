@@ -3,7 +3,7 @@ import picamera
 import os
 import subprocess
 
-misc = {
+global misc = {
 	'snapshots' : '/home/pi/Photobooth/snapshots/',
     'compositions' : '/home/pi/Photobooth/compositions/',
     'cards' : '/home/pi/Photobooth/cards/',
@@ -17,7 +17,7 @@ misc = {
     'port' : '/dev/ttyUSB0'
 }
 
-pos = {
+global pos = {
     2: {
         'x' : 241,
         'y' : 13
@@ -66,20 +66,18 @@ pos = {
 
 print 'ready'
 
-camera = picamera.PiCamera()
+global camera = picamera.PiCamera()
 camera.resolution = (misc['width'], misc['height'])
 camera.preview_fullscreen = False
 camera.hflip = True
 
-overlay = None
+global overlay = None
 
 print 'try'
 
 try:
 
     while misc['image'] < len(misc['images'])-1:
-        
-        global misc
         
         misc['image'] = misc['random']
         print 'image: ', misc['image']
