@@ -145,7 +145,6 @@ merci = None
 def cleanupAndExit():
 	print 'SHUTDOWN'
 	camera.close()
-	sensor.stop()
     
 	if overlay != None:
 		overlay.terminate()
@@ -172,8 +171,12 @@ def setup():
         overlay.terminate()
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
+    sleep(1)
+    
     camera.preview_window = (pos[misc['images'][misc['image']]]['x'] - 80,pos[misc['images'][misc['image']]]['y'] + 10,(pos[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(pos[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
     camera.start_preview()
+    
+    sleep(1)
     
     if merci != None:
         merci.terminate()
@@ -212,9 +215,9 @@ def snapshot(image):
     
     print 'prepare'
     
-    tPrepare = threading.Thread(name='prepare', target=prepare, args=(filename,misc['images'][image],))
-    tPrepare.daemon = True
-    tPrepare.start()
+    # tPrepare = threading.Thread(name='prepare', target=prepare, args=(filename,misc['images'][image],))
+    # tPrepare.daemon = True
+    # tPrepare.start()
     
     merci = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','4','/home/pi/Photobooth/merci/merci.png'])
     sleep(10)
