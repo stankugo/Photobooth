@@ -50,7 +50,7 @@ api = {
 
 ready = {
 	'setup' : False,
-	'snapshot' : False
+	'timestamp' : 0
 }
 
 misc = {
@@ -167,19 +167,18 @@ def setup():
     misc['image'] = misc['random']
     print 'image: ', misc['image']
     
-    if merci != None:
-        merci.terminate()
-		
-	sleep(2)
-    
     if overlay != None:
         overlay.terminate()
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
     camera.preview_window = (pos[misc['images'][misc['image']]]['x'] - 80,pos[misc['images'][misc['image']]]['y'] + 10,(pos[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(pos[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
     camera.start_preview()
+    
+    if merci != None:
+        merci.terminate()
 	
     ready['setup'] = True
+    ready['timestamp'] = int(time.time())
 
 def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
@@ -311,6 +310,19 @@ def resize_canvas(old_image_path, new_image_path,
     newImage = Image.new(mode, (canvas_width, canvas_height), new_background)
     newImage.paste(im, (x1, y1, x1 + old_width, y1 + old_height))
     newImage.save(new_image_path)
+    
+def watchdog():
+    
+    while True:
+        sleep(60)
+        print ready['timestamp']
+        print int(time.time())
+        
+        if ( int(time.time()) - ready['timestamp'] ) > ( 60 * 5 ):
+            print 're-setup'
+            tSetup = threading.Thread(name='setup', target=setup)
+            tSetup.daemon = True
+            tSetup.start()
  
 #
 #
@@ -334,7 +346,7 @@ try:
     
     while True:
 
-        # CHECK ULTRASONIC
+        # CHECK ULTRASONIC – http://home.wlu.edu/~levys/software/pymaxbotix/
         mm = ultrasonic.measure(misc['port'])
 
         print ''
