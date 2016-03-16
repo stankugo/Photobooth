@@ -71,9 +71,18 @@ camera.resolution = (misc['width'], misc['height'])
 camera.preview_fullscreen = False
 camera.hflip = True
 
+overlay = None
+
 print 'try'
 
 try:
+    
+    misc['image'] = misc['random']
+    print 'image: ', misc['image']
+    
+    if overlay != None:
+        overlay.terminate()
+    overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
     print 'camera preview'
     
