@@ -77,6 +77,8 @@ print 'try'
 
 try:
     
+    global misc
+    
     while misc['image'] < len(misc['images'])-1:
         misc['image'] = misc['random']
         print 'image: ', misc['image']
