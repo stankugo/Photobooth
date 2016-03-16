@@ -24,6 +24,7 @@ import httplib
 from time import sleep
 from time import strftime
 from datetime import datetime
+from maxbotix import USB_ProxSonar
 
 #
 #
@@ -59,7 +60,8 @@ misc = {
     'images' : [2,7,8,13,14,15,19,20,25,26,28],
     'image' : 0,
     'random' : 0,
-    'port' : '/dev/ttyUSB0'
+    'port' : '/dev/ttyUSB0',
+    'sensor' : 0
 }
 
 pos = {
@@ -123,6 +125,7 @@ pos = {
 
 def cleanupAndExit():
 	print 'EXIT'
+    sensor.stop()
 
 def setup():
     global ready
@@ -186,6 +189,18 @@ def watchdog():
             tSetup = threading.Thread(name='setup', target=setup)
             tSetup.daemon = True
             tSetup.start()
+            
+            
+class MySensor(USB_ProxSonar):
+
+    def __init__(self, port):
+
+        USB_ProxSonar.__init__(self, port)
+
+    def handleUpdate(self, distanceMillimeters):
+
+        # print('%d mm' % distanceMillimeters)
+        misc['sensor'] = distanceMillimeters
  
 #
 #
@@ -209,6 +224,9 @@ try:
     tWatchdog.daemon = True
     tWatchdog.start()
     
+    sensor = MySensor(misc['port'])
+    sensor.start()
+    
     while True:
         
         if ready['setup'] == True:
@@ -224,6 +242,7 @@ try:
         print ' '
         print ' '
         print 'ready: ', ready['setup']
+        print 'sensor: ', misc['sensor']
         
 except KeyboardInterrupt:
 	cleanupAndExit()
