@@ -327,7 +327,7 @@ def watchdog():
         print ready['timestamp']
         print int(time.time())
         
-        if ( int(time.time()) - ready['timestamp'] ) > ( 60 * 5 ):
+        if ( int(time.time()) - ready['timestamp'] ) > ( 60 * 15 ):
             print 're-setup'
             tSetup = threading.Thread(name='setup', target=setup)
             tSetup.daemon = True
