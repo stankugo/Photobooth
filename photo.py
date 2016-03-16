@@ -15,7 +15,6 @@ import serial, time
 import requests
 import subprocess
 import Queue, threading
-import ultrasonic
 import printer
 import picamera
 import random
@@ -29,6 +28,7 @@ from time import sleep
 from time import strftime
 from serial import Serial
 from datetime import datetime
+from maxbotix import USB_ProxSonar
 
 #
 #
@@ -64,7 +64,8 @@ misc = {
     'images' : [2,7,13,20],
     'image' : 0,
     'random' : 0,
-    'port' : '/dev/ttyUSB0'
+    'port' : '/dev/ttyUSB0',
+    'sensor' : 0
 }
 
 pos = {
@@ -145,6 +146,7 @@ merci = None
 def cleanupAndExit():
 	print 'SHUTDOWN'
 	camera.close()
+	sensor.stop()
     
 	if overlay != None:
 		overlay.terminate()
@@ -184,9 +186,16 @@ def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
     sleep(5)
     
-    tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=(misc['image'],))
-    tSnapshot.daemon = True
-    tSnapshot.start()
+    if misc['sensor'] != 0 and (misc['sensor'] <= 2000 or misc['sensor'] > 3000) and ready['setup'] == True:
+        sleep(2)
+        tSetup = threading.Thread(name='setup', target=setup)
+        tSetup.daemon = True
+        tSetup.start()
+    
+    else:
+        tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=(misc['image'],))
+        tSnapshot.daemon = True
+        tSnapshot.start()
 
 def snapshot(image):
     global merci
@@ -323,6 +332,17 @@ def watchdog():
             tSetup = threading.Thread(name='setup', target=setup)
             tSetup.daemon = True
             tSetup.start()
+
+class MySensor(USB_ProxSonar):
+
+    def __init__(self, port):
+
+        USB_ProxSonar.__init__(self, port)
+
+    def handleUpdate(self, distanceMillimeters):
+
+        # print('%d mm' % distanceMillimeters)
+        misc['sensor'] = distanceMillimeters
  
 #
 #
@@ -344,24 +364,30 @@ try:
     tSetup.daemon = True
     tSetup.start()
     
+    tWatchdog = threading.Thread(name='watchdog', target=watchdog)
+    tWatchdog.daemon = True
+    tWatchdog.start()
+    
+    sensor = MySensor(misc['port'])
+    sensor.start()
+    
     while True:
 
         # CHECK ULTRASONIC – http://home.wlu.edu/~levys/software/pymaxbotix/
-        mm = ultrasonic.measure(misc['port'])
 
         print ''
         print ''
         print '----------'
         print ''
         print 'timestamp: %s' % time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
-        print 'ultrasonic: %s' % mm
+        print 'ultrasonic: %s' % misc['sensor']
         print 'ready: %s' % ready['setup']
         print ''
         print ''
         print '----------'
         print ''
         
-        if mm != None and mm > 10 and (mm <= 2000 or mm > 3000) and ready['setup'] == True:
+        if misc['sensor'] != 0 and (misc['sensor'] <= 2000 or misc['sensor'] > 3000) and ready['setup'] == True:
             
             ready['setup'] = False
             

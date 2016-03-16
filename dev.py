@@ -15,7 +15,6 @@ import serial, time
 import requests
 import subprocess
 import Queue, threading
-import ultrasonic
 import printer
 import picamera
 import random
@@ -29,6 +28,7 @@ from time import sleep
 from time import strftime
 from serial import Serial
 from datetime import datetime
+from maxbotix import USB_ProxSonar
 
 #
 #
@@ -64,7 +64,8 @@ misc = {
     'images' : [2,7,13,20],
     'image' : 0,
     'random' : 0,
-    'port' : '/dev/ttyUSB0'
+    'port' : '/dev/ttyUSB0',
+    'sensor' : 0
 }
 
 pos = {
@@ -146,6 +147,7 @@ blank = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','1
 def cleanupAndExit():
 	print 'SHUTDOWN'
 	camera.close()
+	sensor.stop()
     
 	if overlay != None:
 		overlay.terminate()
@@ -327,7 +329,17 @@ def watchdog():
             tSetup = threading.Thread(name='setup', target=setup)
             tSetup.daemon = True
             tSetup.start()
- 
+
+class MySensor(USB_ProxSonar):
+
+    def __init__(self, port):
+
+        USB_ProxSonar.__init__(self, port)
+
+    def handleUpdate(self, distanceMillimeters):
+
+        # print('%d mm' % distanceMillimeters)
+        misc['sensor'] = distanceMillimeters
 #
 #
 #
@@ -348,9 +360,16 @@ try:
     tSetup.daemon = True
     tSetup.start()
     
+    tWatchdog = threading.Thread(name='watchdog', target=watchdog)
+    tWatchdog.daemon = True
+    tWatchdog.start()
+    
+    sensor = MySensor(misc['port'])
+    sensor.start()
+    
     while True:
 
-        print 'ready: %s' % ready['setup']        
+        print 'ready: %s' % ready['setup']     
         if ready['setup'] == True:
             
             ready['setup'] = False
