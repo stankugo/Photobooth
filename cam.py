@@ -76,9 +76,7 @@ overlay = None
 print 'try'
 
 try:
-    
-    global misc
-    
+
     while misc['image'] < len(misc['images'])-1:
         misc['image'] = misc['random']
         print 'image: ', misc['image']
@@ -101,6 +99,7 @@ try:
         camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
         
         misc['image'] += 1
+        print 'upcoming image: ', misc['image']
     
 finally:
     overlay.terminate()
