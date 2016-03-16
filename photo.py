@@ -173,14 +173,23 @@ def setup():
         overlay.terminate()
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
+    print 'overlay: done'
+    
     camera.preview_window = (pos[misc['images'][misc['image']]]['x'] - 80,pos[misc['images'][misc['image']]]['y'] + 10,(pos[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(pos[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
     camera.start_preview()
     
+    print 'camera preview: done'
+    
     if merci != None:
         merci.terminate()
+        
+    print 'merci: done'
 	
     ready['setup'] = True
     ready['timestamp'] = int(time.time())
+    
+    print 'ready setup: ', ready['setup']
+    print 'timestamp setup: ', ready['timestamp']
 
 def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
