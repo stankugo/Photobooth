@@ -28,7 +28,6 @@ from time import sleep
 from time import strftime
 from serial import Serial
 from datetime import datetime
-from maxbotix import USB_ProxSonar
 
 #
 #
@@ -130,7 +129,6 @@ if not os.path.exists(serialport):
 
 overlay = None
 merci = None
-blank = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','1','/home/pi/Photobooth/img/blank.png'])
 
 #
 #
@@ -154,9 +152,6 @@ def cleanupAndExit():
         
 	if merci != None:
 		merci.terminate()
-        
-	if blank != None:
-		blank.terminate()
     
 	print 'EXIT'
     
@@ -324,22 +319,12 @@ def watchdog():
         print ready['timestamp']
         print int(time.time())
         
-        if ( int(time.time()) - ready['timestamp'] ) > ( 60 * 5 ):
+        if ( int(time.time()) - ready['timestamp'] ) > ( 60 * 15 ):
             print 're-setup'
             tSetup = threading.Thread(name='setup', target=setup)
             tSetup.daemon = True
             tSetup.start()
-
-class MySensor(USB_ProxSonar):
-
-    def __init__(self, port):
-
-        USB_ProxSonar.__init__(self, port)
-
-    def handleUpdate(self, distanceMillimeters):
-
-        # print('%d mm' % distanceMillimeters)
-        misc['sensor'] = distanceMillimeters
+ 
 #
 #
 #
@@ -364,12 +349,19 @@ try:
     tWatchdog.daemon = True
     tWatchdog.start()
     
-    sensor = MySensor(misc['port'])
-    sensor.start()
-    
     while True:
 
-        print 'ready: %s' % ready['setup']     
+        print ''
+        print ''
+        print '----------'
+        print ''
+        print 'timestamp: %s' % time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
+        print 'ready: %s' % ready['setup']
+        print ''
+        print ''
+        print '----------'
+        print ''
+        
         if ready['setup'] == True:
             
             ready['setup'] = False
@@ -378,7 +370,7 @@ try:
             tCounter.daemon = True
             tCounter.start()
         
-        sleep(5)
+        sleep(1)
 
 except KeyboardInterrupt:
 	cleanupAndExit()
