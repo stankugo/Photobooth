@@ -129,6 +129,7 @@ if not os.path.exists(serialport):
 
 overlay = None
 merci = None
+blank = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','1','/home/pi/Photobooth/img/blank.png'])
 
 #
 #
@@ -151,6 +152,9 @@ def cleanupAndExit():
         
 	if merci != None:
 		merci.terminate()
+        
+	if blank != None:
+		blank.terminate()
     
 	print 'EXIT'
     
