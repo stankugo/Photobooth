@@ -125,7 +125,7 @@ pos = {
 
 def cleanupAndExit():
 	print 'EXIT'
-    sensor.stop()
+	sensor.stop()
 
 def setup():
     global ready
