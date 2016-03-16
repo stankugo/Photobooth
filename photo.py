@@ -373,7 +373,7 @@ try:
     
     while True:
 
-        # CHECK ULTRASONIC – http://home.wlu.edu/~levys/software/pymaxbotix/
+        # CHECK ULTRASONIC - http://home.wlu.edu/~levys/software/pymaxbotix/
 
         print ''
         print ''
