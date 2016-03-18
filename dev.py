@@ -168,7 +168,9 @@ def setup():
     print 'image: ', misc['image']
     
     if overlay != None:
+        print 'overlay: terminate'
         overlay.terminate()
+        sleep(1)
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
     print 'overlay: done'
@@ -181,7 +183,9 @@ def setup():
     sleep(1)
     
     if merci != None:
+        print 'merci: terminate'
         merci.terminate()
+        sleep(1)
         
     print 'merci: done'
 	
