@@ -43,7 +43,7 @@ from datetime import datetime
 
 api = {
 	'protocol' : 'http://',
-	'url' : 'mhq-verspielt.de',
+	'url' : '192.168.178.30',
 	'header' : {'user-agent': 'raspberry-pi/photobooth'}
 }
 
@@ -200,8 +200,13 @@ def snapshot(image):
     print 'real image: ', str(misc['images'][image])
     
     camera.stop_preview()
+    print 'camera: stop preview'
+    
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
+    print 'filename: ' + filename
+    
     camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
+    print 'camera: capture'
     
     print 'resize'
     
@@ -374,7 +379,7 @@ try:
             tCounter.daemon = True
             tCounter.start()
         
-        sleep(1)
+        sleep(5)
 
 except KeyboardInterrupt:
 	cleanupAndExit()
