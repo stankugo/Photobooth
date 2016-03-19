@@ -334,6 +334,8 @@ def resize_canvas(old_image_path, new_image_path,
     newImage.save(new_image_path)
     
 def watchdog():
+    global merci
+    global ready
     
     while True:
         sleep(60)
@@ -342,6 +344,11 @@ def watchdog():
         
         if ( int(time.time()) - ready['timestamp'] ) > ( 60 * 15 ):
             print 're-setup'
+            ready['setup'] = False
+            
+            merci = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','4','/home/pi/Photobooth/merci/hello.png'])
+            sleep(2)
+            
             tSetup = threading.Thread(name='setup', target=setup)
             tSetup.daemon = True
             tSetup.start()
