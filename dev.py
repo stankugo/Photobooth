@@ -375,7 +375,7 @@ try:
     tWatchdog.daemon = True
     tWatchdog.start()
     
-    counter = 0
+    count = 0
     
     while True:
 
@@ -390,10 +390,10 @@ try:
         print '----------'
         print ''
         
-        if ready['setup'] == True and counter < 10:
+        if ready['setup'] == True and count < 10:
             
             ready['setup'] = False
-            counter += 1
+            count += 1
             
             tCounter = threading.Thread(name='counter', target=counter)
             tCounter.daemon = True
