@@ -65,7 +65,8 @@ misc = {
     'image' : 0,
     'random' : 0,
     'port' : '/dev/ttyUSB0',
-    'sensor' : 0
+    'sensor' : 0,
+    'counter' : 0
 }
 
 pos = {
@@ -196,13 +197,24 @@ def setup():
     print 'timestamp setup: ', ready['timestamp']
 
 def counter():
+    global misc
+    
     print 'counter: start'
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
-    sleep(5)
+    
+    countup = 0
+    misc['counter'] = 0
+    
+    while countup < 5:
+        if misc['sensor'] <= 2000 or misc['sensor'] > 3000:
+            misc['counter'] += 1
+        countup += 1
+        sleep(1)
     
     print 'counter: done'
+    print 'counter: ', misc['counter']
     
-    if misc['sensor'] <= 2000 or misc['sensor'] > 3000:
+    if misc['counter'] > 5:
         print 'still occupied'
         tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=(misc['image'],))
         tSnapshot.daemon = True
@@ -215,12 +227,12 @@ def counter():
         tSetup.start()
 
 def snapshot(image):
+    global misc
     global merci
     global camera
     print 'image: ', image
     print 'real image: ', str(misc['images'][image])
-    
-    camera.stop_preview()
+
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
     camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
     
@@ -230,6 +242,9 @@ def snapshot(image):
     resize_canvas(misc['snapshots'] + filename + misc['ext'],misc['snapshots'] + filename + misc['ext'],pos[misc['images'][image]]['x'],pos[misc['images'][image]]['y'])
     background = Image.open(misc['snapshots'] + filename + misc['ext'])
     foreground = Image.open(misc['cards'] + str(misc['images'][image]) + '.png')
+    
+    print 'stop camera live'
+    camera.stop_preview()
 
     print 'merge'
     

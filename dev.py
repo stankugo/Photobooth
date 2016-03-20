@@ -64,7 +64,8 @@ misc = {
     'image' : -1,
     'random' : 0,
     'port' : '/dev/ttyUSB0',
-    'sensor' : 0
+    'sensor' : 0,
+    'counter' : 0
 }
 
 pos = {
@@ -196,12 +197,34 @@ def setup():
     print 'timestamp setup: ', ready['timestamp']
 
 def counter():
-    counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
-    sleep(5)
+    global misc
     
-    tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=(misc['image'],))
-    tSnapshot.daemon = True
-    tSnapshot.start()
+    print 'counter: start'
+    counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
+    
+    countup = 0
+    misc['counter'] = 0
+    
+    while countup < 5:
+        if misc['sensor'] == 0:
+            misc['counter'] += 1
+        countup += 1
+        sleep(1)
+    
+    print 'counter: done'
+    print 'counter: ', misc['counter']
+    
+    if misc['counter'] > 5:
+        print 'still occupied'
+        tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=(misc['image'],))
+        tSnapshot.daemon = True
+        tSnapshot.start()
+    
+    else:
+        print 'abort'
+        tSetup = threading.Thread(name='setup', target=setup)
+        tSetup.daemon = True
+        tSetup.start()
 
 def snapshot(image):
     global merci
