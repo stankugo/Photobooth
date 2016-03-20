@@ -199,16 +199,15 @@ def counter():
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
     sleep(5)
     
-    if misc['sensor'] != 0 and (misc['sensor'] <= 2000 or misc['sensor'] > 3000) and ready['setup'] == True:
-        sleep(2)
-        tSetup = threading.Thread(name='setup', target=setup)
-        tSetup.daemon = True
-        tSetup.start()
-    
-    else:
+    if misc['sensor'] <= 2000 or misc['sensor'] > 3000:
         tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=(misc['image'],))
         tSnapshot.daemon = True
         tSnapshot.start()
+    
+    else:
+        tSetup = threading.Thread(name='setup', target=setup)
+        tSetup.daemon = True
+        tSetup.start()
 
 def snapshot(image):
     global merci
