@@ -172,7 +172,7 @@ def setup():
         print 'overlay: terminate'
         overlay.terminate()
         sleep(1)
-    overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
+    overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','-x','0','-y','0','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
     print 'overlay: done'
     sleep(1)
@@ -214,7 +214,7 @@ def counter():
     print 'counter: done'
     print 'counter: ', misc['counter']
     
-    if misc['counter'] > 5:
+    if misc['counter'] > 3:
         print 'still occupied'
         tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=(misc['image'],))
         tSnapshot.daemon = True
