@@ -196,15 +196,20 @@ def setup():
     print 'timestamp setup: ', ready['timestamp']
 
 def counter():
+    print 'counter: start'
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
     sleep(5)
     
+    print 'counter: done'
+    
     if misc['sensor'] <= 2000 or misc['sensor'] > 3000:
+        print 'still occupied'
         tSnapshot = threading.Thread(name='snapshot', target=snapshot, args=(misc['image'],))
         tSnapshot.daemon = True
         tSnapshot.start()
     
     else:
+        print 'abort'
         tSetup = threading.Thread(name='setup', target=setup)
         tSetup.daemon = True
         tSetup.start()
