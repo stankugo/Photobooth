@@ -61,7 +61,7 @@ misc = {
     'ext' : '.png',
     'width' : 367,
     'height' : 490,
-    'images' : [2,7,13,20],
+    'images' : [2,7,8,13,14,15,19,20,25,26,28],
     'image' : 0,
     'random' : 0,
     'port' : '/dev/ttyUSB0',
@@ -116,6 +116,53 @@ pos = {
     }
 }
 
+live = {
+    2: {
+        'x' : 241,
+        'y' : 13
+    },
+    7: {
+        'x' : 261,
+        'y' : -11
+    },
+    8: {
+        'x' : 240,
+        'y' : -70
+    },
+    13: {
+        'x' : 258,
+        'y' : -43
+    },
+    14: {
+        'x' : 199,
+        'y' : -39
+    },
+    15: {
+        'x' : 262,
+        'y' : -30
+    },
+    19: {
+        'x' : 210,
+        'y' : -36
+    },
+    20: {
+        'x' : 268,
+        'y' : 9
+    },
+    25: {
+        'x' : 228,
+        'y' : -82
+    },
+    26: {
+        'x' : 236,
+        'y' : -60
+    },
+    28: {
+        'x' : 197,
+        'y' : -45
+    }
+}
+
 camera = picamera.PiCamera()
 camera.resolution = (misc['width'], misc['height'])
 camera.preview_fullscreen = False
@@ -162,6 +209,8 @@ def setup():
     global overlay
     global merci
     global misc
+    global pos
+    global live
     
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):
@@ -178,7 +227,7 @@ def setup():
     print 'overlay: done'
     sleep(1)
     
-    camera.preview_window = (pos[misc['images'][misc['image']]]['x'] - 80,pos[misc['images'][misc['image']]]['y'] + 10,(pos[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(pos[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
+    camera.preview_window = (live[misc['images'][misc['image']]]['x'] - 80,live[misc['images'][misc['image']]]['y'] + 10,(live[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(live[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
     camera.start_preview()
     
     print 'camera preview: done'
