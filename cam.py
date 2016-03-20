@@ -12,7 +12,7 @@ misc = {
     'width' : 367,
     'height' : 490,
     'images' : [2,7,8,13,14,15,19,20,25,26,28],
-    'image' : 0,
+    'image' : 10,
     'random' : 0,
     'port' : '/dev/ttyUSB0',
     'sensor' : 0,
@@ -29,40 +29,40 @@ pos = {
         'y' : -11
     },
     8: {
-        'x' : 246,
-        'y' : -116
+        'x' : 240,
+        'y' : -70
     },
     13: {
-        'x' : 268,
-        'y' : -53
+        'x' : 258,
+        'y' : -43
     },
     14: {
-        'x' : 179,
-        'y' : -69
+        'x' : 199,
+        'y' : -39
     },
     15: {
-        'x' : 280,
-        'y' : -64
+        'x' : 262,
+        'y' : -30
     },
     19: {
-        'x' : 193,
-        'y' : -63
+        'x' : 210,
+        'y' : -36
     },
     20: {
-        'x' : 281,
-        'y' : 10
+        'x' : 268,
+        'y' : 9
     },
     25: {
-        'x' : 223,
-        'y' : -132
+        'x' : 228,
+        'y' : -82
     },
     26: {
-        'x' : 246,
-        'y' : -100
+        'x' : 236,
+        'y' : -60
     },
     28: {
-        'x' : 179,
-        'y' : -81
+        'x' : 197,
+        'y' : -45
     }
 }
 
@@ -87,10 +87,16 @@ try:
 
     print 'camera preview'
 
+    print 'x no: ', pos[misc['images'][misc['image']]]['x']
+    print 'x of: ', pos[misc['images'][misc['image']]]['x'] - 80
+
+    print 'y no: ', pos[misc['images'][misc['image']]]['y']
+    print 'y of: ', pos[misc['images'][misc['image']]]['y'] + 10
+
     camera.preview_window = (pos[misc['images'][misc['image']]]['x'] - 80,pos[misc['images'][misc['image']]]['y'] + 10,(pos[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(pos[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
     camera.start_preview()
 
-    time.sleep(10)
+    time.sleep(5)
     
 finally:
     overlay.terminate()
