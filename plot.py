@@ -196,7 +196,6 @@ merci = None
 def cleanupAndExit():
     print 'SHUTDOWN'
     camera.close()
-    sensor.stop()
     
     if overlay != None:
         # overlay.terminate()
@@ -398,11 +397,11 @@ def plot(hashid,image):
     p.print_text(api['protocol'] + api['url'] + '/' + hashid + "\n")
     p.upsidedown_off()
 
-    from PIL import Image, ImageDraw
-    i = Image.open(misc['raster'] + str(image) + '.png')
-    data = list(i.getdata())
-    w, h = i.size
-    p.print_bitmap(data, w, h, False)
+    #from PIL import Image, ImageDraw
+    #i = Image.open(misc['raster'] + str(image) + '.png')
+    #data = list(i.getdata())
+    #w, h = i.size
+    #p.print_bitmap(data, w, h, False)
     
     p.linefeed()
     p.linefeed()
