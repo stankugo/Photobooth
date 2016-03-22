@@ -250,9 +250,9 @@ def setup():
     
     camera.preview_window = (live[misc['images'][misc['image']]]['x'] - 80,live[misc['images'][misc['image']]]['y'] + 10,(live[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(live[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
     camera.start_preview()
-    
-    print 'camera start preview (setup): done'
-    sleep(2)
+
+	print 'camera start preview (setup): done'
+	sleep(2)
 
 	if merci != None:
 		# merci.terminate()
