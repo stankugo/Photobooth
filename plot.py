@@ -393,41 +393,19 @@ def plot(hashid,image):
     
     p.linefeed()
     
-    p.upsidedown_on()
+    p.upsidedown()
     p.print_text(api['protocol'] + api['url'] + '/' + hashid + "\n")
-    p.upsidedown_off()
+    p.upsidedown(False)
 
     from PIL import Image, ImageDraw
     i = Image.open(misc['raster'] + str(image) + '.png')
     data = list(i.getdata())
     w, h = i.size
     
-    sleep(1)
-    
-    p.print_bitmap(data, w, h, True)
-    
-    
+    p.print_bitmap(data, w, h, False)
     
     p.linefeed()
-    
-    p.upsidedown_on()
-    p.print_text(api['protocol'] + api['url'] + '/' + hashid + "\n")
-    p.upsidedown_off()
-    
     p.linefeed()
-    
-    p.upsidedown_on()
-    p.print_text(api['protocol'] + api['url'] + '/' + hashid + "\n")
-    p.upsidedown_off()
-    
-    p.linefeed()
-    
-    p.upsidedown_on()
-    p.print_text(api['protocol'] + api['url'] + '/' + hashid + "\n")
-    p.upsidedown_off()
-    
-    # p.linefeed()
-    # p.linefeed()
     
 def resize_canvas(old_image_path, new_image_path,
                   x1=0, y1=0,
