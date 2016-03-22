@@ -234,10 +234,12 @@ def setup():
     if overlay != None:
         # overlay.terminate()
         os.kill(overlay.pid, signal.SIGTERM)
+        print 'overlay: kill'
         time.sleep(2)
         if overlay.poll() is None:
             time.sleep(3)
             os.kill(overlay.pid, signal.SIGKILL)
+            print 'overlay: forcekill'
             
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','-x','0','-y','0','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
@@ -257,10 +259,12 @@ def setup():
     if merci != None:
         # merci.terminate()
         os.kill(merci.pid, signal.SIGTERM)
+        print 'merci: kill'
         time.sleep(2)
         if merci.poll() is None:
             time.sleep(3)
             os.kill(merci.pid, signal.SIGKILL)
+            print 'merci: forcekill'
         
     print 'merci: done'
     
