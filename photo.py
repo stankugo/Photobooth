@@ -11,6 +11,8 @@
 #
 
 import sys, traceback, os
+import os
+import signal
 import serial, time
 import requests
 import subprocess
@@ -197,10 +199,20 @@ def cleanupAndExit():
 	sensor.stop()
     
 	if overlay != None:
-		overlay.terminate()
+        # overlay.terminate()
+        os.kill(overlay.pid, signal.SIGTERM)
+        time.sleep(2)
+        if overlay.poll() is None:
+            time.sleep(3)
+            os.kill(overlay.pid, signal.SIGKILL)
         
 	if merci != None:
-		merci.terminate()
+		# merci.terminate()
+        os.kill(merci.pid, signal.SIGTERM)
+        time.sleep(2)
+        if merci.poll() is None:
+            time.sleep(3)
+            os.kill(merci.pid, signal.SIGKILL)
     
 	print 'EXIT'
     
@@ -219,23 +231,35 @@ def setup():
     misc['image'] = misc['random']
     print 'image: ', misc['image']
     
-    if overlay != None:
-        overlay.terminate()
-        sleep(1)
+	if overlay != None:
+        # overlay.terminate()
+        os.kill(overlay.pid, signal.SIGTERM)
+        time.sleep(2)
+        if overlay.poll() is None:
+            time.sleep(3)
+            os.kill(overlay.pid, signal.SIGKILL)
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','-x','0','-y','0','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
     print 'overlay: done'
-    sleep(1)
+    sleep(2)
+    
+    camera.stop_preview()
+    print 'camera stop preview (setup): done'
+    sleep(2)
     
     camera.preview_window = (live[misc['images'][misc['image']]]['x'] - 80,live[misc['images'][misc['image']]]['y'] + 10,(live[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(live[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
     camera.start_preview()
     
-    print 'camera preview: done'
-    sleep(1)
+    print 'camera start preview (setup): done'
+    sleep(2)
     
-    if merci != None:
-        merci.terminate()
-        sleep(1)
+	if merci != None:
+		# merci.terminate()
+        os.kill(merci.pid, signal.SIGTERM)
+        time.sleep(2)
+        if merci.poll() is None:
+            time.sleep(3)
+            os.kill(merci.pid, signal.SIGKILL)
         
     print 'merci: done'
 	
