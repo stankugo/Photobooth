@@ -45,18 +45,18 @@ from maxbotix import USB_ProxSonar
 #
 
 api = {
-	'protocol' : 'http://',
-	'url' : 'mhq-verspielt.de',
-	'header' : {'user-agent': 'raspberry-pi/photobooth'}
+    'protocol' : 'http://',
+    'url' : 'mhq-verspielt.de',
+    'header' : {'user-agent': 'raspberry-pi/photobooth'}
 }
 
 ready = {
-	'setup' : False,
-	'timestamp' : 0
+    'setup' : False,
+    'timestamp' : 0
 }
 
 misc = {
-	'snapshots' : '/home/pi/Photobooth/snapshots/',
+    'snapshots' : '/home/pi/Photobooth/snapshots/',
     'compositions' : '/home/pi/Photobooth/compositions/',
     'cards' : '/home/pi/Photobooth/cards/',
     'raster' : '/home/pi/Photobooth/raster/',
@@ -194,27 +194,27 @@ merci = None
 #
 
 def cleanupAndExit():
-	print 'SHUTDOWN'
-	camera.close()
-	sensor.stop()
+    print 'SHUTDOWN'
+    camera.close()
+    sensor.stop()
     
-	if overlay != None:
-		# overlay.terminate()
-		os.kill(overlay.pid, signal.SIGTERM)
-		time.sleep(2)
-		if overlay.poll() is None:
-			time.sleep(3)
-			os.kill(overlay.pid, signal.SIGKILL)
+    if overlay != None:
+        # overlay.terminate()
+        os.kill(overlay.pid, signal.SIGTERM)
+        time.sleep(2)
+        if overlay.poll() is None:
+            time.sleep(3)
+            os.kill(overlay.pid, signal.SIGKILL)
 
-	if merci != None:
-		# merci.terminate()
-		os.kill(merci.pid, signal.SIGTERM)
-		time.sleep(2)
-		if merci.poll() is None:
-			time.sleep(3)
-			os.kill(merci.pid, signal.SIGKILL)
+    if merci != None:
+        # merci.terminate()
+        os.kill(merci.pid, signal.SIGTERM)
+        time.sleep(2)
+        if merci.poll() is None:
+            time.sleep(3)
+            os.kill(merci.pid, signal.SIGKILL)
 
-	print 'EXIT'
+    print 'EXIT'
     
 def setup():
     global ready
@@ -228,17 +228,17 @@ def setup():
     while (misc['image'] == misc['random']):
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
         
-	misc['image'] = misc['random']
-	print 'image: ', misc['image']
+    misc['image'] = misc['random']
+    print 'image: ', misc['image']
 
-	if overlay != None:
-		# overlay.terminate()
-		os.kill(overlay.pid, signal.SIGTERM)
-		time.sleep(2)
-		if overlay.poll() is None:
-			time.sleep(3)
-			os.kill(overlay.pid, signal.SIGKILL)
-			
+    if overlay != None:
+        # overlay.terminate()
+        os.kill(overlay.pid, signal.SIGTERM)
+        time.sleep(2)
+        if overlay.poll() is None:
+            time.sleep(3)
+            os.kill(overlay.pid, signal.SIGKILL)
+            
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','-x','0','-y','0','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
     print 'overlay: done'
@@ -251,19 +251,19 @@ def setup():
     camera.preview_window = (live[misc['images'][misc['image']]]['x'] - 80,live[misc['images'][misc['image']]]['y'] + 10,(live[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(live[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
     camera.start_preview()
 
-	print 'camera start preview (setup): done'
+    print 'camera start preview (setup): done'
     sleep(2)
 
     if merci != None:
-		# merci.terminate()
-		os.kill(merci.pid, signal.SIGTERM)
-		time.sleep(2)
-		if merci.poll() is None:
-			time.sleep(3)
-			os.kill(merci.pid, signal.SIGKILL)
+        # merci.terminate()
+        os.kill(merci.pid, signal.SIGTERM)
+        time.sleep(2)
+        if merci.poll() is None:
+            time.sleep(3)
+            os.kill(merci.pid, signal.SIGKILL)
         
     print 'merci: done'
-	
+    
     ready['setup'] = True
     ready['timestamp'] = int(time.time())
     
@@ -363,7 +363,7 @@ def prepare(filename,image):
             tPlot.start()
             
         del response
-		
+        
     except requests.exceptions.RequestException as e:
         print e
 
@@ -511,8 +511,8 @@ try:
         sleep(1)
 
 except KeyboardInterrupt:
-	cleanupAndExit()
+    cleanupAndExit()
 except Exception:
-	cleanupAndExit()
-	traceback.print_exc(file=sys.stdout)
+    cleanupAndExit()
+    traceback.print_exc(file=sys.stdout)
 sys.exit(0)
