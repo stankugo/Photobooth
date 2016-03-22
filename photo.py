@@ -253,7 +253,7 @@ def setup():
     
     print 'camera start preview (setup): done'
     sleep(2)
-    
+
 	if merci != None:
 		# merci.terminate()
 		os.kill(merci.pid, signal.SIGTERM)
