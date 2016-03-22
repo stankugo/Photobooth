@@ -392,6 +392,8 @@ def plot(hashid,image):
     print api['protocol'] + api['url'] + '/' + hashid
     p = printer.ThermalPrinter(serialport=serialport)
     
+    image = 0
+    
     p.linefeed()
     
     p.upsidedown()
