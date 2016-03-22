@@ -478,7 +478,7 @@ try:
     print 'READY'
     
     # PRINT 
-    tPlot = threading.Thread(name='plot', target=plot, args=('avc',2,))
+    tPlot = threading.Thread(name='plot', target=plot, args=('avc',0,))
     tPlot.daemon = True
     tPlot.start()
     

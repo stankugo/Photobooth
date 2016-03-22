@@ -368,9 +368,9 @@ def plot(hashid,image):
     
     p.linefeed()
     
-    p.upsidedown_on()
+    p.upsidedown()
     p.print_text(api['protocol'] + api['url'] + '/' + hashid + "\n")
-    p.upsidedown_off()
+    p.upsidedown(False)
 
     from PIL import Image, ImageDraw
     i = Image.open(misc['raster'] + str(image) + '.png')
