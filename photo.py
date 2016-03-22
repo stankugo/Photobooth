@@ -199,21 +199,21 @@ def cleanupAndExit():
 	sensor.stop()
     
 	if overlay != None:
-        # overlay.terminate()
-        os.kill(overlay.pid, signal.SIGTERM)
-        time.sleep(2)
-        if overlay.poll() is None:
-            time.sleep(3)
-            os.kill(overlay.pid, signal.SIGKILL)
-        
+		# overlay.terminate()
+		os.kill(overlay.pid, signal.SIGTERM)
+		time.sleep(2)
+		if overlay.poll() is None:
+			time.sleep(3)
+			os.kill(overlay.pid, signal.SIGKILL)
+
 	if merci != None:
 		# merci.terminate()
-        os.kill(merci.pid, signal.SIGTERM)
-        time.sleep(2)
-        if merci.poll() is None:
-            time.sleep(3)
-            os.kill(merci.pid, signal.SIGKILL)
-    
+		os.kill(merci.pid, signal.SIGTERM)
+		time.sleep(2)
+		if merci.poll() is None:
+			time.sleep(3)
+			os.kill(merci.pid, signal.SIGKILL)
+
 	print 'EXIT'
     
 def setup():
@@ -232,12 +232,13 @@ def setup():
     print 'image: ', misc['image']
     
 	if overlay != None:
-        # overlay.terminate()
-        os.kill(overlay.pid, signal.SIGTERM)
-        time.sleep(2)
-        if overlay.poll() is None:
-            time.sleep(3)
-            os.kill(overlay.pid, signal.SIGKILL)
+		# overlay.terminate()
+		os.kill(overlay.pid, signal.SIGTERM)
+		time.sleep(2)
+		if overlay.poll() is None:
+			time.sleep(3)
+			os.kill(overlay.pid, signal.SIGKILL)
+			
     overlay = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','3','-x','0','-y','0','/home/pi/Photobooth/cards/' + str(misc['images'][misc['image']]) + '.png'])
     
     print 'overlay: done'
@@ -255,11 +256,11 @@ def setup():
     
 	if merci != None:
 		# merci.terminate()
-        os.kill(merci.pid, signal.SIGTERM)
-        time.sleep(2)
-        if merci.poll() is None:
-            time.sleep(3)
-            os.kill(merci.pid, signal.SIGKILL)
+		os.kill(merci.pid, signal.SIGTERM)
+		time.sleep(2)
+		if merci.poll() is None:
+			time.sleep(3)
+			os.kill(merci.pid, signal.SIGKILL)
         
     print 'merci: done'
 	
