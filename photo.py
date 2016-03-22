@@ -228,9 +228,9 @@ def setup():
     while (misc['image'] == misc['random']):
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
         
-    misc['image'] = misc['random']
-    print 'image: ', misc['image']
-    
+	misc['image'] = misc['random']
+	print 'image: ', misc['image']
+
 	if overlay != None:
 		# overlay.terminate()
 		os.kill(overlay.pid, signal.SIGTERM)
