@@ -312,7 +312,12 @@ def snapshot(image):
     print 'real image: ', str(misc['images'][image])
 
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
+    
+    print 'filename: ', filename
+    
+    print 'camera: capture start'
     camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
+    print 'camera: capture done'
     
     print 'resize'
     
@@ -320,9 +325,6 @@ def snapshot(image):
     resize_canvas(misc['snapshots'] + filename + misc['ext'],misc['snapshots'] + filename + misc['ext'],pos[misc['images'][image]]['x'],pos[misc['images'][image]]['y'])
     background = Image.open(misc['snapshots'] + filename + misc['ext'])
     foreground = Image.open(misc['cards'] + str(misc['images'][image]) + '.png')
-    
-    print 'stop camera live'
-    camera.stop_preview()
 
     print 'merge'
     
