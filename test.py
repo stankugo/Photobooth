@@ -315,7 +315,12 @@ def snapshot(image):
     print 'filename: ', filename
     
     print 'camera: capture start'
-    camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
+    
+    try:
+        camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
+    except PiCameraError:
+        print 'something went wrong with the camera'
+    
     print 'camera: capture done'
     
     print 'resize'
