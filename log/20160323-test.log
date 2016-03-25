@@ -1,0 +1,12884 @@
+READY
+image:  7
+
+
+----------
+
+timestamp: 20160324-000510
+ultrasonic: 0
+ready: False
+
+
+----------
+
+overlay: done
+camera stop preview (setup): done
+camera start preview (setup): done
+merci: done
+ready setup:  True
+timestamp setup:  1458774316
+
+
+----------
+
+timestamp: 20160324-000608
+ultrasonic: 2604
+ready: True
+
+
+----------
+
+counter: start
+counter: done
+counter:  5
+still occupied
+image:  7
+real image:  20
+filename:  20160324-000613
+camera: capture start
+camera: capture done
+resize
+merge
+prepare
+upload
+http://mhq-verspielt.de/4Dy
+Bitmap size 384
+ => single channel
+setup
+image:  9
+overlay: kill
+overlay: done
+camera stop preview (setup): done
+camera start preview (setup): done
+merci: kill
+1458774316
+1458774398
+
+
+----------
+
+timestamp: 20160324-000638
+ultrasonic: 2610
+ready: False
+
+
+----------
+
+merci: done
+ready setup:  True
+timestamp setup:  1458774399
+{"status":"upload successful"}
+
+
+----------
+
+timestamp: 20160324-000708
+ultrasonic: 2606
+ready: True
+
+
+----------
+
+counter: start
+counter: done
+counter:  5
+still occupied
+image:  9
+real image:  26
+filename:  20160324-000713
+camera: capture start
+camera: capture done
+resize
+merge
+prepare
+upload
+http://mhq-verspielt.de/74V
+Bitmap size 384
+ => single channel
+setup
+image:  5
+overlay: kill
+overlay: done
+camera stop preview (setup): done
+camera start preview (setup): done
+merci: kill
+1458774399
+1458774458
+
+
+----------
+
+timestamp: 20160324-000738
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+merci: done
+ready setup:  True
+timestamp setup:  1458774459
+{"status":"upload successful"}
+
+
+----------
+
+timestamp: 20160324-000808
+ultrasonic: 2605
+ready: True
+
+
+----------
+
+counter: start
+counter: done
+counter:  5
+still occupied
+image:  5
+real image:  15
+filename:  20160324-000813
+camera: capture start
+camera: capture done
+resize
+merge
+prepare
+upload
+http://mhq-verspielt.de/o3x
+Bitmap size 384
+ => single channel
+setup
+image:  7
+overlay: kill
+overlay: done
+camera stop preview (setup): done
+camera start preview (setup): done
+merci: kill
+1458774459
+1458774518
+
+
+----------
+
+timestamp: 20160324-000838
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+merci: done
+ready setup:  True
+timestamp setup:  1458774519
+{"status":"upload successful"}
+
+
+----------
+
+timestamp: 20160324-000908
+ultrasonic: 2605
+ready: True
+
+
+----------
+
+counter: start
+counter: done
+counter:  5
+still occupied
+image:  7
+real image:  20
+filename:  20160324-000913
+camera: capture start
+camera: capture done
+resize
+merge
+prepare
+upload
+http://mhq-verspielt.de/AL1
+Bitmap size 384
+ => single channel
+setup
+image:  8
+overlay: kill
+overlay: done
+camera stop preview (setup): done
+camera start preview (setup): done
+merci: kill
+1458774519
+1458774578
+
+
+----------
+
+timestamp: 20160324-000938
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+merci: done
+ready setup:  True
+timestamp setup:  1458774579
+{"status":"upload successful"}
+
+
+----------
+
+timestamp: 20160324-001008
+ultrasonic: 2605
+ready: True
+
+
+----------
+
+counter: start
+counter: done
+counter:  5
+still occupied
+image:  8
+real image:  25
+filename:  20160324-001013
+camera: capture start
+camera: capture done
+resize
+merge
+prepare
+upload
+http://mhq-verspielt.de/gRx
+Bitmap size 384
+ => single channel
+setup
+image:  1
+overlay: kill
+overlay: done
+camera stop preview (setup): done
+camera start preview (setup): done
+merci: kill
+1458774579
+1458774638
+
+
+----------
+
+timestamp: 20160324-001038
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+merci: done
+ready setup:  True
+timestamp setup:  1458774639
+{"status":"upload successful"}
+
+
+----------
+
+timestamp: 20160324-001108
+ultrasonic: 2605
+ready: True
+
+
+----------
+
+counter: start
+counter: done
+counter:  5
+still occupied
+image:  1
+real image:  7
+filename:  20160324-001114
+camera: capture start
+camera: capture done
+resize
+merge
+prepare
+upload
+http://mhq-verspielt.de/2ko
+Bitmap size 384
+ => single channel
+setup
+image:  7
+overlay: kill
+overlay: done
+camera stop preview (setup): done
+camera start preview (setup): done
+merci: kill
+1458774639
+1458774698
+
+
+----------
+
+timestamp: 20160324-001139
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+merci: done
+ready setup:  True
+timestamp setup:  1458774699
+{"status":"upload successful"}
+
+
+----------
+
+timestamp: 20160324-001209
+ultrasonic: 2606
+ready: True
+
+
+----------
+
+counter: start
+counter: done
+counter:  5
+still occupied
+image:  7
+real image:  20
+filename:  20160324-001214
+camera: capture start
+camera: capture done
+resize
+merge
+prepare
+upload
+http://mhq-verspielt.de/ZK7
+Bitmap size 384
+ => single channel
+setup
+image:  6
+overlay: kill
+overlay: done
+camera stop preview (setup): done
+camera start preview (setup): done
+merci: kill
+1458774699
+1458774758
+
+
+----------
+
+timestamp: 20160324-001239
+ultrasonic: 2611
+ready: False
+
+
+----------
+
+merci: done
+ready setup:  True
+timestamp setup:  1458774759
+{"status":"upload successful"}
+
+
+----------
+
+timestamp: 20160324-001309
+ultrasonic: 2606
+ready: True
+
+
+----------
+
+counter: start
+counter: done
+counter:  5
+still occupied
+image:  6
+real image:  19
+filename:  20160324-001314
+camera: capture start
+camera: capture done
+resize
+merge
+prepare
+upload
+http://mhq-verspielt.de/Ojn
+Bitmap size 384
+ => single channel
+setup
+image:  2
+overlay: kill
+overlay: done
+camera stop preview (setup): done
+camera start preview (setup): done
+merci: kill
+1458774759
+1458774819
+
+
+----------
+
+timestamp: 20160324-001339
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+merci: done
+ready setup:  True
+timestamp setup:  1458774819
+{"status":"upload successful"}
+
+
+----------
+
+timestamp: 20160324-001409
+ultrasonic: 2604
+ready: True
+
+
+----------
+
+counter: start
+counter: done
+counter:  5
+still occupied
+image:  2
+real image:  8
+filename:  20160324-001414
+camera: capture start
+camera: capture done
+resize
+merge
+prepare
+upload
+http://mhq-verspielt.de/Mjg
+Bitmap size 384
+ => single channel
+setup
+image:  0
+overlay: kill
+overlay: done
+camera stop preview (setup): done
+camera start preview (setup): done
+merci: kill
+1458774819
+1458774879
+
+
+----------
+
+timestamp: 20160324-001439
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+merci: done
+ready setup:  True
+timestamp setup:  1458774879
+{"status":"upload successful"}
+
+
+----------
+
+timestamp: 20160324-001509
+ultrasonic: 2605
+ready: True
+
+
+----------
+
+counter: start
+counter: done
+counter:  5
+still occupied
+image:  0
+real image:  2
+filename:  20160324-001514
+camera: capture start
+camera: capture done
+resize
+merge
+prepare
+upload
+http://mhq-verspielt.de/v61
+Bitmap size 384
+ => single channel
+setup
+image:  5
+overlay: kill
+overlay: done
+camera stop preview (setup): done
+camera start preview (setup): done
+merci: kill
+1458774879
+1458774939
+
+
+----------
+
+timestamp: 20160324-001539
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+merci: done
+ready setup:  True
+timestamp setup:  1458774940
+{"status":"upload successful"}
+
+
+----------
+
+timestamp: 20160324-001609
+ultrasonic: 2605
+ready: True
+
+
+----------
+
+counter: start
+counter: done
+counter:  5
+still occupied
+image:  5
+real image:  15
+filename:  20160324-001614
+camera: capture start
+camera: capture done
+resize
+merge
+prepare
+upload
+http://mhq-verspielt.de/e5V
+Bitmap size 384
+ => single channel
+setup
+image:  9
+overlay: kill
+overlay: done
+camera stop preview (setup): done
+camera start preview (setup): done
+merci: kill
+1458774940
+1458774999
+
+
+----------
+
+timestamp: 20160324-001639
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+merci: done
+ready setup:  True
+timestamp setup:  1458774999
+{"status":"upload successful"}
+
+
+----------
+
+timestamp: 20160324-001709
+ultrasonic: 2605
+ready: True
+
+
+----------
+
+counter: start
+counter: done
+counter:  5
+still occupied
+image:  9
+real image:  26
+filename:  20160324-001714
+camera: capture start
+1458774999
+1458775059
+
+
+----------
+
+timestamp: 20160324-001739
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-001809
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458775119
+
+
+----------
+
+timestamp: 20160324-001839
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-001909
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458775179
+
+
+----------
+
+timestamp: 20160324-001939
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-002009
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458775239
+
+
+----------
+
+timestamp: 20160324-002039
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-002109
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458775299
+
+
+----------
+
+timestamp: 20160324-002139
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-002209
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458775359
+
+
+----------
+
+timestamp: 20160324-002239
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-002309
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458775419
+
+
+----------
+
+timestamp: 20160324-002339
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-002409
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458775479
+
+
+----------
+
+timestamp: 20160324-002439
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-002509
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458775539
+
+
+----------
+
+timestamp: 20160324-002539
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-002609
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458775599
+
+
+----------
+
+timestamp: 20160324-002639
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-002709
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458775659
+
+
+----------
+
+timestamp: 20160324-002739
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-002810
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458775719
+
+
+----------
+
+timestamp: 20160324-002840
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-002910
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458775779
+
+
+----------
+
+timestamp: 20160324-002940
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-003010
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458775840
+
+
+----------
+
+timestamp: 20160324-003040
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-003110
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458775900
+re-setup
+
+
+----------
+
+timestamp: 20160324-003140
+ultrasonic: 2603
+ready: False
+
+
+----------
+
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-003210
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-003240
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458775962
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-003310
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-003340
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458776024
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-003410
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-003440
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458776086
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-003510
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-003540
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458776148
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-003610
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-003640
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458776210
+re-setup
+image:  4
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-003710
+ultrasonic: 2603
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-003740
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458776272
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-003810
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-003840
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458776334
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-003910
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-003940
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458776396
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-004010
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-004040
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458776458
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-004110
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-004140
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458776520
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-004210
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-004240
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458776582
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-004310
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-004340
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458776644
+re-setup
+image:  6
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-004410
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-004440
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458776707
+re-setup
+image:  8
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-004511
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-004541
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458776769
+re-setup
+
+
+----------
+
+timestamp: 20160324-004611
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-004641
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-004711
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458776831
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-004741
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-004811
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458776893
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-004841
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-004911
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+1458774999
+1458776955
+re-setup
+image:  4
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-004941
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-005011
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458777017
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-005041
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-005111
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458777079
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-005141
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-005211
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458777141
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-005241
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-005311
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458777203
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-005341
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-005411
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458777265
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-005441
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-005511
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458777327
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-005541
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-005611
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458777389
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-005641
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-005711
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458777451
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-005741
+ultrasonic: 2603
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-005811
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458777514
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-005841
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-005911
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458777576
+re-setup
+image:  3
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-005941
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-010011
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458777638
+re-setup
+image:  5
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-010041
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-010111
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458777700
+re-setup
+
+
+----------
+
+timestamp: 20160324-010142
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-010212
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-010242
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458777762
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-010312
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-010342
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458777824
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-010412
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-010442
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458777886
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-010512
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-010542
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458777948
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-010612
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-010642
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458778010
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-010712
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-010742
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458778072
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-010812
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-010842
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458778134
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-010912
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-010942
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458778196
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-011012
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-011042
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458778259
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-011112
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-011142
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458778321
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-011212
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-011242
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458778383
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-011312
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-011342
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458778445
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-011412
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-011442
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458778507
+re-setup
+image:  5
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-011512
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-011542
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458778569
+re-setup
+image:  6
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-011612
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-011642
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458778631
+re-setup
+
+
+----------
+
+timestamp: 20160324-011712
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-011742
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-011813
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458778693
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-011843
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-011913
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458778755
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-011943
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-012013
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458778817
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-012043
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-012113
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458778880
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-012143
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-012213
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458778942
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-012243
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-012313
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+1458774999
+1458779004
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-012343
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-012413
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458779066
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-012443
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-012513
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458779128
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-012543
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-012613
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458779190
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-012643
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-012713
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458779252
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-012743
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-012813
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458779314
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-012843
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-012913
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458779376
+re-setup
+image:  3
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-012943
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-013013
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458779438
+re-setup
+image:  2
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-013043
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-013113
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458779501
+re-setup
+image:  6
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-013143
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-013213
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458779563
+re-setup
+
+
+----------
+
+timestamp: 20160324-013243
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-013313
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-013343
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458779625
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-013414
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-013444
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458779687
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-013514
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-013544
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458779749
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-013614
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-013644
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458779811
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-013714
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-013744
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458779873
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-013814
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-013844
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458779935
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-013914
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-013944
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458779997
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-014014
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-014044
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458780059
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-014114
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-014144
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458780122
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-014214
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-014244
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458780184
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-014314
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-014344
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458780246
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-014414
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-014444
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458780308
+re-setup
+image:  9
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-014514
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-014544
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458780370
+re-setup
+image:  4
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-014614
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-014644
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458780432
+re-setup
+image:  3
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-014714
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-014744
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+1458774999
+1458780494
+re-setup
+
+
+----------
+
+timestamp: 20160324-014814
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-014844
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-014914
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458780556
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-014944
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-015014
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458780618
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-015044
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-015115
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458780680
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-015145
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-015215
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458780743
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-015245
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-015315
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458780805
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-015345
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-015415
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458780867
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-015445
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-015515
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458780929
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-015545
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-015615
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458780991
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-015645
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-015715
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458781053
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-015745
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-015815
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458781115
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-015845
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-015915
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458781177
+re-setup
+image:  4
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-015945
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-020015
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458781239
+re-setup
+image:  3
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-020045
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-020115
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458781302
+re-setup
+image:  6
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-020145
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-020215
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458781364
+re-setup
+
+
+----------
+
+timestamp: 20160324-020245
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+image:  4
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-020315
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-020345
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458781426
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-020415
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-020445
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458781488
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-020515
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-020545
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458781550
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-020615
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-020645
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+1458774999
+1458781612
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-020715
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-020746
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458781674
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-020816
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-020846
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458781736
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-020916
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-020946
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458781799
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-021016
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-021046
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458781861
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-021116
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-021146
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458781923
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-021216
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-021246
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458781985
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-021316
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-021346
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458782047
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-021416
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-021446
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458782109
+re-setup
+image:  3
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-021516
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-021546
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458782171
+re-setup
+image:  9
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-021616
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-021646
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458782233
+re-setup
+image:  4
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-021716
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-021746
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458782296
+re-setup
+
+
+----------
+
+timestamp: 20160324-021816
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-021846
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-021916
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458782358
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-021946
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-022016
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458782420
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-022046
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-022116
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458782482
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-022146
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-022216
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458782544
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-022246
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-022316
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458782606
+re-setup
+image:  4
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-022346
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-022416
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458782668
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-022447
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-022517
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458782730
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-022547
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-022617
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458782793
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-022647
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-022717
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458782855
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-022747
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-022817
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458782917
+re-setup
+image:  4
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-022847
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-022917
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458782979
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-022947
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-023017
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458783041
+re-setup
+image:  9
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-023047
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-023117
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458783103
+re-setup
+image:  1
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-023147
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-023217
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458783165
+re-setup
+
+
+----------
+
+timestamp: 20160324-023247
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-023317
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-023347
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458783228
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-023417
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-023447
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458783290
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-023517
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-023547
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458783352
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-023617
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-023647
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458783414
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-023717
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-023747
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458783476
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-023817
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-023847
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458783538
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-023917
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-023947
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458783600
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-024017
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-024047
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458783663
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-024118
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-024148
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458783725
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-024218
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-024248
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458783787
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-024318
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-024348
+ultrasonic: 2603
+ready: False
+
+
+----------
+
+1458774999
+1458783849
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-024418
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-024448
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458783911
+re-setup
+image:  0
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-024518
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-024548
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458783973
+re-setup
+image:  9
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-024618
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-024648
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458784035
+re-setup
+image:  1
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-024718
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-024748
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458784098
+re-setup
+
+
+----------
+
+timestamp: 20160324-024818
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-024848
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-024918
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458784160
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-024948
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-025018
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458784222
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-025048
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-025118
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458784284
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-025148
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-025218
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458784346
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-025248
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-025318
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458784408
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-025348
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-025418
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458784470
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-025448
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-025518
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458784533
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-025548
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-025618
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458784595
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-025648
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-025718
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458784657
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-025748
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-025819
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458784719
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-025849
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-025919
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458784781
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-025949
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-030019
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458784843
+re-setup
+image:  0
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-030049
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-030119
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458784905
+re-setup
+image:  5
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-030149
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-030219
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458784968
+re-setup
+
+
+----------
+
+timestamp: 20160324-030249
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-030319
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-030349
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458785030
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-030419
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-030449
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458785092
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-030519
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-030549
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458785154
+re-setup
+image:  4
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-030619
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-030649
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458785216
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-030719
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-030749
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458785278
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-030819
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-030849
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458785341
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-030919
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-030949
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458785403
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-031019
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-031049
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458785465
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-031119
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-031149
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458785527
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-031219
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-031249
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458785589
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-031319
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-031349
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458785651
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-031419
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-031449
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458785714
+re-setup
+image:  8
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-031520
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-031550
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458785776
+re-setup
+image:  7
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-031620
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-031650
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458785838
+re-setup
+
+
+----------
+
+timestamp: 20160324-031720
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+image:  4
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-031750
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-031820
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458785900
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-031850
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-031920
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458785962
+re-setup
+image:  4
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-031950
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-032020
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458786024
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-032050
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-032120
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458786087
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-032150
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-032220
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458786149
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-032250
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-032320
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458786211
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-032350
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-032420
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458786273
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-032450
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-032520
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458786335
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-032550
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-032620
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458786398
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-032650
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-032720
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458786460
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-032750
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-032820
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458786522
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-032850
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-032920
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458786584
+re-setup
+image:  5
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-032950
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-033020
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458786646
+re-setup
+image:  8
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-033050
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-033121
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458786709
+re-setup
+
+
+----------
+
+timestamp: 20160324-033151
+ultrasonic: 2603
+ready: False
+
+
+----------
+
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-033221
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-033251
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458786771
+re-setup
+image:  4
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-033321
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-033351
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458786833
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-033421
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-033451
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458786895
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-033521
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-033551
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458786957
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-033621
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-033651
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458787020
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-033721
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-033751
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458787082
+re-setup
+image:  4
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-033821
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-033851
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458787144
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-033921
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-033951
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458787206
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-034021
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-034051
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458787268
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-034121
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-034151
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458787331
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-034221
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-034251
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458787393
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-034321
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-034351
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458787455
+re-setup
+image:  5
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-034421
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-034451
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458787517
+re-setup
+image:  3
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-034521
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-034551
+ultrasonic: 2603
+ready: False
+
+
+----------
+
+1458774999
+1458787579
+re-setup
+
+
+----------
+
+timestamp: 20160324-034621
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-034651
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-034721
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458787642
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-034751
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-034822
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458787704
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-034852
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-034922
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458787766
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-034952
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-035022
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458787828
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-035052
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-035122
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458787890
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-035152
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-035222
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458787953
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-035252
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-035322
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458788015
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-035352
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-035422
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458788077
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-035452
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-035522
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458788139
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-035552
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-035622
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458788201
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-035652
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-035722
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458788264
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-035752
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-035822
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458788326
+re-setup
+image:  4
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-035852
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-035922
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458788388
+re-setup
+image:  1
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-035952
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-040022
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458788450
+re-setup
+
+
+----------
+
+timestamp: 20160324-040052
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-040122
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-040152
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458788513
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-040222
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-040252
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458788575
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-040322
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-040352
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458788637
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-040422
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-040452
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458788699
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-040522
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-040552
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458788762
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-040623
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-040653
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458788824
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-040723
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-040753
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458788886
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-040823
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-040853
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458788948
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-040923
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-040953
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458789010
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-041023
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-041053
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458789073
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-041123
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-041153
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458789135
+re-setup
+image:  1
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-041223
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-041253
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458789197
+re-setup
+image:  4
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-041323
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-041353
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458789259
+re-setup
+image:  3
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-041423
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-041453
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458789322
+re-setup
+
+
+----------
+
+timestamp: 20160324-041523
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-041553
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-041623
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458789384
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-041653
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-041723
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458789446
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-041753
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-041823
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458789508
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-041853
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-041923
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458789571
+re-setup
+image:  4
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-041953
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-042023
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458789633
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-042053
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-042123
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458789695
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-042153
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-042224
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458789757
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-042254
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-042324
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458789820
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-042354
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+tiException in thread watchdog:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/threading.py", line 810, in __bootstrap_inner
+    self.run()
+  File "/usr/lib/python2.7/threading.py", line 763, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/pi/Photobooth/test.py", line 452, in watchdog
+    tSetup.start()
+  File "/usr/lib/python2.7/threading.py", line 745, in start
+    _start_new_thread(self.__bootstrap, ())
+error: can't start new thread
+
+mestamp: 20160324-042424
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458789882
+re-setup
+image:  3
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-042454
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-042524
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458789944
+re-setup
+image:  0
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-042554
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-042624
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458790007
+re-setup
+image:  7
+overlay: kill
+overlay: forcekill
+
+
+----------
+
+timestamp: 20160324-042654
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: done
+
+
+----------
+
+timestamp: 20160324-042724
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458790069
+re-setup
+image:  2
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-042754
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-042824
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+1458774999
+1458790131
+re-setup
+image:  1
+overlay: kill
+
+
+----------
+
+timestamp: 20160324-042854
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-042924
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458790193
+re-setup
+
+
+----------
+
+timestamp: 20160324-042954
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+image:  7
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-043024
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-043054
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+1458774999
+1458790256
+re-setup
+image:  4
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-043124
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-043154
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458790318
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-043224
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-043254
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458790380
+re-setup
+image:  5
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-043324
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-043354
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+1458774999
+1458790442
+re-setup
+image:  6
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-043424
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-043454
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458790505
+re-setup
+image:  8
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-043524
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-043554
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458790567
+re-setup
+image:  2
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-043624
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-043654
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458790629
+re-setup
+image:  9
+overlay: kill
+overlay: forcekill
+overlay: done
+
+
+----------
+
+timestamp: 20160324-043724
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-043754
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+1458774999
+1458790692
+re-setup
+
+
+----------
+
+timestamp: 20160324-043824
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-043854
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-043925
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-043955
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044025
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044055
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044125
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044155
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044225
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044255
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044325
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044355
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044425
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044455
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044525
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044555
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044625
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044655
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044725
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044755
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044825
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044855
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044925
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-044955
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045025
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045055
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045125
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045155
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045225
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045255
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045325
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045355
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045425
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045455
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045525
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045556
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045626
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045656
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045726
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045756
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045826
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045856
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045926
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-045956
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050026
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050056
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050126
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050156
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050226
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050256
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050326
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050356
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050426
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050456
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050526
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050556
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050626
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050656
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050726
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050756
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050826
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050856
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050926
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-050956
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051026
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051056
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051126
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051157
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051227
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051257
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051327
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051357
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051427
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051457
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051527
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051557
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051627
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051657
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051727
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051757
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051827
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051857
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051927
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-051957
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052027
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052057
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052127
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052157
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052227
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052257
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052327
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052357
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052427
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052457
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052527
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052557
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052627
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052657
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052727
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052757
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052827
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052858
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052928
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-052958
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053028
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053058
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053128
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053158
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053228
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053258
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053328
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053358
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053428
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053458
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053528
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053558
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053628
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053658
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053728
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053758
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053828
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053858
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053928
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-053958
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054028
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054058
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054128
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054158
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054228
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054258
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054328
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054358
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054428
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054458
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054529
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054559
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054629
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054659
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054729
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054759
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054829
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054859
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054929
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-054959
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055029
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055059
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055129
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055159
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055229
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055259
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055329
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055359
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055429
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055459
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055529
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055559
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055629
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055659
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055729
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055759
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055829
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055859
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055929
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-055959
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060029
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060059
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060129
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060159
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060230
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060300
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060330
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060400
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060430
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060500
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060530
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060600
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060630
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060700
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060730
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060800
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060830
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060900
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-060930
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061000
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061030
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061100
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061130
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061200
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061230
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061300
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061330
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061400
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061430
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061500
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061530
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061600
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061630
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061700
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061730
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061800
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061830
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061901
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-061931
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062001
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062031
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062101
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062131
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062201
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062231
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062301
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062331
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062401
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062431
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062501
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062531
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062601
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062631
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062701
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062731
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062801
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062831
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062901
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-062931
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063001
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063031
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063101
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063131
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063201
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063231
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063301
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063331
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063401
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063431
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063501
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063531
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063602
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063632
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063702
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063732
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063802
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063832
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063902
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-063932
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064002
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064032
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064102
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064132
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064202
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064232
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064302
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064332
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064402
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064432
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064502
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064532
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064602
+ultrasonic: 2603
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064632
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064702
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064732
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064802
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064832
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064902
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-064932
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065002
+ultrasonic: 2603
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065032
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065102
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065132
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065203
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065233
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065303
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065333
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065403
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065433
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065503
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065533
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065603
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065633
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065703
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065733
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065803
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065833
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065903
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-065933
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070003
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070033
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070103
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070133
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070203
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070233
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070303
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070333
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070403
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070433
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070503
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070533
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070603
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070633
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070703
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070733
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070803
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070834
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070904
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-070934
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071004
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071034
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071104
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071134
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071204
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071234
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071304
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071334
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071404
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071434
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071504
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071534
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071604
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071634
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071704
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071734
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071804
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071834
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071904
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-071934
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072004
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072034
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072104
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072134
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072204
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072234
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072304
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072334
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072404
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072434
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072505
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072535
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072605
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072635
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072705
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072735
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072805
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072835
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072905
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-072935
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073005
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073035
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073105
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073135
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073205
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073235
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073305
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073335
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073405
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073435
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073505
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073535
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073605
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073635
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073705
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073735
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073805
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073835
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073905
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-073935
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074005
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074035
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074105
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074136
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074206
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074236
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074306
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074336
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074406
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074436
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074506
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074536
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074606
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074636
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074706
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074736
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074806
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074836
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074906
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-074936
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075006
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075036
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075106
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075136
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075206
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075236
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075306
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075336
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075406
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075436
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075506
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075536
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075606
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075636
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075706
+ultrasonic: 2609
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075736
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075806
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075836
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075907
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-075937
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080007
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080037
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080107
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080137
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080207
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080237
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080307
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080337
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080407
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080437
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080507
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080537
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080607
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080637
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080707
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080737
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080807
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080837
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080907
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-080937
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081007
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081037
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081107
+ultrasonic: 2608
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081137
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081207
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081237
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081307
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081337
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081407
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081437
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081507
+ultrasonic: 2603
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081538
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081608
+ultrasonic: 2607
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081638
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081708
+ultrasonic: 2605
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081738
+ultrasonic: 2606
+ready: False
+
+
+----------
+
+
+
+----------
+
+timestamp: 20160324-081808
+ultrasonic: 2604
+ready: False
+
+
+----------
+
+
+
+----------
+
+timesta
