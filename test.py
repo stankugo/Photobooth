@@ -458,7 +458,7 @@ def watchdog():
         print '----------'
         print ''
         print 'current time: %s' % time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
-        print 'last action:  %s' % int(time.time()) - ready['timestamp']
+        print 'last action:  %s' % (int(time.time()) - int(ready['timestamp']))
         print 'ultrasonic: %s' % misc['sensor']
         print 'ready (setup): %s' % ready['setup']
         print 'ready (print): %s' % ready['print']
