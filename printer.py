@@ -48,7 +48,7 @@ class ThermalPrinter(object):
     # default serial port for the Beagle Bone
     #SERIALPORT = '/dev/ttyO2'
     # this might work better on a Raspberry Pi
-    SERIALPORT = '/dev/ttyS0'
+    SERIALPORT = '/dev/ttyAMA0'
 
     BAUDRATE = 19200
     TIMEOUT = 3
