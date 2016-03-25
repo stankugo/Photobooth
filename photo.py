@@ -470,7 +470,7 @@ def watchdog():
         
         timetime = int(time.time())
         capdiff = timetime - ready['capture']
-        
+       
         # if capture process takes more than a minute ---> reboot
         if ( capdiff < timetime and capdiff > 60 ):
             print 'shutdown -r now'
