@@ -288,8 +288,8 @@ def counter():
     misc['counter'] = 0
     
     while countup < 5:
-        if misc['sensor'] <= 2000 or misc['sensor'] > 3000:
-            misc['counter'] += 1
+        # if misc['sensor'] <= 2000 or misc['sensor'] > 3000:
+        misc['counter'] += 1
         countup += 1
         sleep(1)
     
@@ -466,10 +466,6 @@ def watchdog():
         print 'ready (capture): %s' % ready['capture']
         print ''
         print '----------'
-        
-        
-        print ready['timestamp']
-        print int(time.time())
         
         # if capture process takes more than a minute ---> reboot
         if ( int(time.time()) - ready['capture'] ) > ( 60 ) and ready['upload'] == True and ready['capture'] == True:
