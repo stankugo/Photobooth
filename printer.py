@@ -427,7 +427,7 @@ il inverse left
 
     # runtime dependency on Python Imaging Library
     from PIL import Image
-    i = Image.open("example-lammas.png")
+    i = Image.open("raster/2.png")
     data = list(i.getdata())
     w, h = i.size
     p.print_bitmap(data, w, h, True)
