@@ -52,7 +52,10 @@ api = {
 
 ready = {
     'setup' : False,
-    'timestamp' : 0
+    'timestamp' : 0,
+    'upload' : True,
+    'print' : True,
+    'capture' : 0
 }
 
 misc = {
@@ -180,6 +183,7 @@ if not os.path.exists(serialport):
 
 overlay = None
 merci = None
+reboot = None
 
 #
 #
@@ -305,6 +309,7 @@ def counter():
         tSetup.start()
 
 def snapshot(image):
+    global ready
     global misc
     global merci
     global camera
@@ -312,7 +317,18 @@ def snapshot(image):
     print 'real image: ', str(misc['images'][image])
 
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
+    
+    print 'filename: ', filename
+    
+    ready['capture'] = int(time.time())
     camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
+    ready['capture'] = 0
+    
+    ready['upload'] = False
+    ready['print'] = False
+    
+    print 'ready (upload): ', ready['upload']
+    print 'ready (print): ', ready['print']
     
     print 'resize'
     
@@ -435,12 +451,42 @@ def watchdog():
     global ready
     
     while True:
-        sleep(60)
+        
+        sleep(15)
+        
+        print ''
+        print ''
+        print '----------'
+        print ''
+        print 'current time: %s' % time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
+        print 'last action:  %s' % int(time.time()) - ready['timestamp']
+        print 'ultrasonic: %s' % misc['sensor']
+        print 'ready (setup): %s' % ready['setup']
+        print 'ready (print): %s' % ready['print']
+        print 'ready (upload): %s' % ready['upload']
+        print 'ready (capture): %s' % ready['capture']
+        print ''
+        print '----------'
+        
+        
         print ready['timestamp']
         print int(time.time())
         
-        if ( int(time.time()) - ready['timestamp'] ) > ( 60 * 15 ):
+        # if capture process takes more than a minute –––> reboot
+        if ( int(time.time()) - ready['capture'] ) > ( 60 ) and ready['upload'] == True and ready['capture'] == True:
+            reboot = subprocess.Popen(['sudo reboot'])
+        
+        # if installation has been idle for 15 minutes –––> setup
+        elif ( int(time.time()) - ready['timestamp'] ) > ( 60 * 15 ):
+            
+            print ''
+            print ''
+            print '=========='
+            print ''
             print 're-setup'
+            print ''
+            print '=========='
+            
             ready['setup'] = False
             
             merci = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','4','/home/pi/Photobooth/merci/hello.png'])
@@ -489,20 +535,6 @@ try:
     sensor.start()
     
     while True:
-
-        # CHECK ULTRASONIC - http://home.wlu.edu/~levys/software/pymaxbotix/
-
-        print ''
-        print ''
-        print '----------'
-        print ''
-        print 'timestamp: %s' % time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
-        print 'ultrasonic: %s' % misc['sensor']
-        print 'ready: %s' % ready['setup']
-        print ''
-        print ''
-        print '----------'
-        print ''
         
         if misc['sensor'] != 0 and (misc['sensor'] <= 2000 or misc['sensor'] > 3000) and ready['setup'] == True:
             
