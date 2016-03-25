@@ -464,11 +464,12 @@ def watchdog():
         print 'ready (print): %s' % ready['print']
         print 'ready (upload): %s' % ready['upload']
         print 'ready (capture): %s' % ready['capture']
+        print 'timestamp: %s' % int(time.time())
         print ''
         print '----------'
         
         # if capture process takes more than a minute ---> reboot
-        if ( int(time.time()) - ready['capture'] ) > ( 60 ) and ready['upload'] == True and ready['capture'] == True:
+        if ( int(time.time()) - ready['capture'] ) > ( 60 ):
             reboot = subprocess.Popen('sudo shutdown -r -f now', stdout=PIPE, stderr=PIPE, shell=True)
         
         # if installation has been idle for 15 minutes ---> setup
