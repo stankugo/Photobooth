@@ -320,9 +320,10 @@ def snapshot(image):
     
     print 'filename: ', filename
     
-<<<<<<< HEAD
     ready['capture'] = int(time.time())
+    print 'camera: capture start'
     camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
+    print 'camera: capture done'
     ready['capture'] = 0
     
     ready['upload'] = False
@@ -330,11 +331,6 @@ def snapshot(image):
     
     print 'ready (upload): ', ready['upload']
     print 'ready (print): ', ready['print']
-=======
-    print 'camera: capture start'
-    camera.capture(misc['snapshots'] + filename + misc['ext'], format='png')
-    print 'camera: capture done'
->>>>>>> origin/master
     
     print 'resize'
     
