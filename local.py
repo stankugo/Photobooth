@@ -453,6 +453,10 @@ def resize_canvas(old_image_path, new_image_path,
 def status(status):
     
     print 'status update'
+    
+    if status == 'init':
+        # wait some more time for network stuff
+        sleep(15)
         
     url = api['protocol'] + api['url'] + '/status'
     data = {'status': status}
