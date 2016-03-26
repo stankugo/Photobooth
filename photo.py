@@ -453,7 +453,7 @@ def status(status):
     data = {'status': status}
     
     try:
-        r = requests.post(url, headers=api['header'], files=files, data=data)
+        r = requests.post(url, headers=api['header'], data=data)
         print r.text
         response = r.json()
         del response
