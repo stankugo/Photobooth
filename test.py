@@ -313,8 +313,8 @@ def counter():
     misc['counter'] = 0
     
     while countup < 5:
-        if misc['sensor'] <= 2000 or misc['sensor'] > 4000:
-            misc['counter'] += 1
+        #if misc['sensor'] <= 2000 or misc['sensor'] > 4000:
+        misc['counter'] += 1
         countup += 1
         sleep(1)
     
@@ -653,7 +653,7 @@ try:
             tCounter.daemon = True
             tCounter.start()
         
-        sleep(30)
+        sleep(123)
 
 except KeyboardInterrupt:
     cleanupAndExit()
