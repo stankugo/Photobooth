@@ -445,6 +445,22 @@ def resize_canvas(old_image_path, new_image_path,
     newImage.paste(im, (x1, y1, x1 + old_width, y1 + old_height))
     newImage.save(new_image_path)
     
+def status(status):
+    
+    print 'status update'
+        
+    url = api['protocol'] + api['url'] + '/status'
+    data = {'status': status}
+    
+    try:
+        r = requests.post(url, headers=api['header'], files=files, data=data)
+        print r.text
+        response = r.json()
+        del response
+    
+    except requests.exceptions.RequestException as e:
+        print e
+    
 def watchdog():
     global merci
     global ready
@@ -477,6 +493,13 @@ def watchdog():
         # if capture process takes more than a minute ---> reboot
         if ( capdiff < timetime and capdiff > 60 ):
             print 'shutdown -r now'
+            
+            tStatus = threading.Thread(name='status', target=status, args=('reboot',))
+            tStatus.daemon = True
+            tStatus.start()
+            
+            sleep(5)
+            
             reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
         
         # if installation has been idle for 15 minutes ---> setup
@@ -492,7 +515,22 @@ def watchdog():
             
             ready['setup'] = False
             
+            tStatus = threading.Thread(name='status', target=status, args=('re-setup',))
+            tStatus.daemon = True
+            tStatus.start()
+            
+            if merci != None and merci.poll() is None:
+                # merci.terminate()
+                os.kill(merci.pid, signal.SIGTERM)
+                print 'merci (hello): kill'
+                time.sleep(2)
+                if merci.poll() is None:
+                    time.sleep(3)
+                    os.kill(merci.pid, signal.SIGKILL)
+                    print 'merci (hello): forcekill'
+            
             merci = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','4','/home/pi/Photobooth/merci/hello.png'])
+            print 'merci (hello): done'
             sleep(2)
             
             tSetup = threading.Thread(name='setup', target=setup)
@@ -525,6 +563,10 @@ class MySensor(USB_ProxSonar):
 try:
     
     print 'READY'
+    
+    tStatus = threading.Thread(name='status', target=status, args=('init',))
+    tStatus.daemon = True
+    tStatus.start()
     
     tSetup = threading.Thread(name='setup', target=setup)
     tSetup.daemon = True
