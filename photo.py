@@ -169,11 +169,6 @@ live = {
     }
 }
 
-camera = picamera.PiCamera()
-camera.resolution = (misc['width'], misc['height'])
-camera.preview_fullscreen = False
-camera.hflip = True
-
 if len(sys.argv) == 2:
     serialport = sys.argv[1]
 else:
@@ -182,6 +177,7 @@ else:
 if not os.path.exists(serialport):
     sys.exit("ERROR: Serial port not found at: %s" % serialport)
 
+camera = None
 overlay = None
 merci = None
 reboot = None
@@ -244,7 +240,7 @@ def setup():
         os.kill(overlay.pid, signal.SIGTERM)
         print 'overlay: kill'
         time.sleep(2)
-        if overlay.poll() is None:
+        while overlay.poll() is None:
             time.sleep(3)
             os.kill(overlay.pid, signal.SIGKILL)
             print 'overlay: forcekill'
@@ -254,13 +250,22 @@ def setup():
     print 'overlay: done'
     sleep(2)
     
-    camera.stop_preview()
-    print 'camera stop preview (setup): done'
-    sleep(2)
     
+    print 'camera close (setup)'
+    camera.close()
+    print 'camera close (setup): done'
+    sleep(5)
+    
+    
+    print 'camera init (setup)'
+    camera = picamera.PiCamera()
+    camera.resolution = (misc['width'], misc['height'])
+    camera.preview_fullscreen = False
+    camera.hflip = True
     camera.preview_window = (live[misc['images'][misc['image']]]['x'] - 80,live[misc['images'][misc['image']]]['y'] + 10,(live[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(live[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
+    print 'camera init (setup): done'
+    
     camera.start_preview()
-
     print 'camera start preview (setup): done'
     sleep(2)
 
@@ -269,7 +274,7 @@ def setup():
         os.kill(merci.pid, signal.SIGTERM)
         print 'merci: kill'
         time.sleep(2)
-        if merci.poll() is None:
+        while merci.poll() is None:
             time.sleep(3)
             os.kill(merci.pid, signal.SIGKILL)
             print 'merci: forcekill'
@@ -293,7 +298,7 @@ def counter():
     misc['counter'] = 0
     
     while countup < 5:
-        if misc['sensor'] <= 2000 or misc['sensor'] > 3000:
+        if misc['sensor'] <= 2000 or misc['sensor'] > 4000:
             misc['counter'] += 1
         countup += 1
         sleep(1)
@@ -515,7 +520,7 @@ def watchdog():
             reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
         
         # if installation has been idle for 15 minutes ---> setup
-        elif ( int(time.time()) - ready['timestamp'] ) > ( 60 * 15 ):
+        elif ready['setup'] == True and ( int(time.time()) - ready['timestamp'] ) > ( 60 * 15 ):
             
             print ''
             print ''
@@ -536,7 +541,7 @@ def watchdog():
                 os.kill(merci.pid, signal.SIGTERM)
                 print 'merci (hello): kill'
                 time.sleep(2)
-                if merci.poll() is None:
+                while merci.poll() is None:
                     time.sleep(3)
                     os.kill(merci.pid, signal.SIGKILL)
                     print 'merci (hello): forcekill'
@@ -593,7 +598,7 @@ try:
     
     while True:
         
-        if misc['sensor'] != 0 and (misc['sensor'] <= 2000 or misc['sensor'] > 3000) and ready['setup'] == True:
+        if misc['sensor'] != 0 and (misc['sensor'] <= 2000 or misc['sensor'] > 4000) and ready['setup'] == True:
             
             ready['setup'] = False
             
