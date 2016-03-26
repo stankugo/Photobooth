@@ -562,11 +562,11 @@ def watchdog():
             print ''
             print '=========='
             
-            ready['setup'] = False
+            # ready['setup'] = False
             
-            tStatus = threading.Thread(name='status', target=status, args=('re-setup',))
-            tStatus.daemon = True
-            tStatus.start()
+            # tStatus = threading.Thread(name='status', target=status, args=('re-setup',))
+            # tStatus.daemon = True
+            # tStatus.start()
             
             with open('/proc/uptime', 'r') as f:
                 uptime_seconds = float(f.readline().split()[0])
@@ -577,6 +577,9 @@ def watchdog():
             tStatus.daemon = True
             tStatus.start()
             
+            ready['timestamp'] = int(time.time())
+            
+            '''
             if merci != None and merci.poll() is None:
                 # merci.terminate()
                 os.kill(merci.pid, signal.SIGTERM)
@@ -594,6 +597,7 @@ def watchdog():
             tSetup = threading.Thread(name='setup', target=setup)
             tSetup.daemon = True
             tSetup.start()
+            '''
 
 class MySensor(USB_ProxSonar):
 

@@ -28,6 +28,7 @@ import httplib
 from PIL import Image
 from time import sleep
 from time import strftime
+from datetime import timedelta
 from serial import Serial
 from datetime import datetime
 from maxbotix import USB_ProxSonar
@@ -51,6 +52,7 @@ api = {
 }
 
 ready = {
+    'setuptime' : 0,
     'setup' : False,
     'timestamp' : 0,
     'upload' : True,
@@ -168,11 +170,6 @@ live = {
     }
 }
 
-camera = picamera.PiCamera()
-camera.resolution = (misc['width'], misc['height'])
-camera.preview_fullscreen = False
-camera.hflip = True
-
 if len(sys.argv) == 2:
     serialport = sys.argv[1]
 else:
@@ -181,6 +178,7 @@ else:
 if not os.path.exists(serialport):
     sys.exit("ERROR: Serial port not found at: %s" % serialport)
 
+camera = None
 overlay = None
 merci = None
 reboot = None
@@ -198,11 +196,19 @@ reboot = None
 #
 
 def cleanupAndExit():
+    global ready
+    global overlay
+    global merci
+    global misc
+    global pos
+    global live
+    global camera
+    
     print 'SHUTDOWN'
     camera.close()
     sensor.stop()
     
-    if overlay != None:
+    if overlay != None and overlay.poll() is None:
         # overlay.terminate()
         os.kill(overlay.pid, signal.SIGTERM)
         time.sleep(2)
@@ -210,7 +216,7 @@ def cleanupAndExit():
             time.sleep(3)
             os.kill(overlay.pid, signal.SIGKILL)
 
-    if merci != None:
+    if merci != None and merci.poll() is None:
         # merci.terminate()
         os.kill(merci.pid, signal.SIGTERM)
         time.sleep(2)
@@ -227,6 +233,10 @@ def setup():
     global misc
     global pos
     global live
+    global camera
+    
+    # MEASURE SETUP TIME
+    ready['setuptime'] = int(time.time())
     
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):
@@ -235,12 +245,12 @@ def setup():
     misc['image'] = misc['random']
     print 'image: ', misc['image']
 
-    if overlay != None:
+    if overlay != None and overlay.poll() is None:
         # overlay.terminate()
         os.kill(overlay.pid, signal.SIGTERM)
         print 'overlay: kill'
         time.sleep(2)
-        if overlay.poll() is None:
+        while overlay.poll() is None:
             time.sleep(3)
             os.kill(overlay.pid, signal.SIGKILL)
             print 'overlay: forcekill'
@@ -250,28 +260,39 @@ def setup():
     print 'overlay: done'
     sleep(2)
     
-    camera.stop_preview()
-    print 'camera stop preview (setup): done'
-    sleep(2)
+    if camera != None:
+        print 'camera close (setup)'
+        camera.close()
+        print 'camera close (setup): done'
+        sleep(5)
     
+    
+    print 'camera init (setup)'
+    camera = picamera.PiCamera()
+    camera.resolution = (misc['width'], misc['height'])
+    camera.preview_fullscreen = False
+    camera.hflip = True
     camera.preview_window = (live[misc['images'][misc['image']]]['x'] - 80,live[misc['images'][misc['image']]]['y'] + 10,(live[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(live[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
+    print 'camera init (setup): done'
+    
+    print 'camera start preview (setup)'
     camera.start_preview()
-
     print 'camera start preview (setup): done'
     sleep(2)
 
-    if merci != None:
+    if merci != None and merci.poll() is None:
         # merci.terminate()
         os.kill(merci.pid, signal.SIGTERM)
         print 'merci: kill'
         time.sleep(2)
-        if merci.poll() is None:
+        while merci.poll() is None:
             time.sleep(3)
             os.kill(merci.pid, signal.SIGKILL)
             print 'merci: forcekill'
         
     print 'merci: done'
     
+    ready['setuptime'] = 0
     ready['setup'] = True
     ready['timestamp'] = int(time.time())
     
@@ -281,6 +302,10 @@ def setup():
 def counter():
     global misc
     
+    tStatus = threading.Thread(name='status', target=status, args=('counter',))
+    tStatus.daemon = True
+    tStatus.start()
+    
     print 'counter: start'
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
     
@@ -288,8 +313,8 @@ def counter():
     misc['counter'] = 0
     
     while countup < 5:
-        # if misc['sensor'] <= 2000 or misc['sensor'] > 3000:
-        misc['counter'] += 1
+        if misc['sensor'] <= 2000 or misc['sensor'] > 4000:
+            misc['counter'] += 1
         countup += 1
         sleep(1)
     
@@ -304,21 +329,34 @@ def counter():
     
     else:
         print 'abort'
+        tStatus = threading.Thread(name='status', target=status, args=('abort',))
+        tStatus.daemon = True
+        tStatus.start()
+        
         tSetup = threading.Thread(name='setup', target=setup)
         tSetup.daemon = True
         tSetup.start()
 
 def snapshot(image):
     global ready
-    global misc
+    global overlay
     global merci
+    global misc
+    global pos
+    global live
     global camera
+    
     print 'image: ', image
     print 'real image: ', str(misc['images'][image])
 
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
     
     print 'filename: ', filename
+    
+    message = 'snapshot: ', filename
+    tStatus = threading.Thread(name='status', target=status, args=(message,))
+    tStatus.daemon = True
+    tStatus.start()
     
     ready['capture'] = int(time.time())
     print 'camera: capture start'
@@ -389,6 +427,10 @@ def prepare(filename,image):
 def upload(id,hashid,filename,image):
     
     print 'upload'
+    
+    tStatus = threading.Thread(name='status', target=status, args=('upload',))
+    tStatus.daemon = True
+    tStatus.start()
         
     url = api['protocol'] + api['url'] + '/upload'
     files = {'file': open(misc['compositions'] + filename + misc['ext'], 'rb')}
@@ -445,6 +487,26 @@ def resize_canvas(old_image_path, new_image_path,
     newImage.paste(im, (x1, y1, x1 + old_width, y1 + old_height))
     newImage.save(new_image_path)
     
+def status(status):
+    
+    print 'status update'
+    
+    if status == 'init':
+        # wait some more time for network stuff
+        sleep(15)
+        
+    url = api['protocol'] + api['url'] + '/status'
+    data = {'status': status}
+    
+    try:
+        r = requests.post(url, headers=api['header'], data=data)
+        print r.text
+        response = r.json()
+        del response
+    
+    except requests.exceptions.RequestException as e:
+        print e
+    
 def watchdog():
     global merci
     global ready
@@ -470,17 +532,27 @@ def watchdog():
         
         timetime = int(time.time())
         capdiff = timetime - ready['capture']
+        setupdiff = timetime - ready['setuptime']
         
         print 'capdiff: ', capdiff
+        print 'setupdiff: ', setupdiff
         print 'timetime: ', timetime
        
         # if capture process takes more than a minute ---> reboot
-        if ( capdiff < timetime and capdiff > 60 ):
+        # if setup process takes more than 30 seconds ---> reboot
+        if ( capdiff < timetime and capdiff > 60 ) or ( setupdiff < timetime and setupdiff > 30 ):
             print 'shutdown -r now'
-            reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
             
+            tStatus = threading.Thread(name='status', target=status, args=('reboot',))
+            tStatus.daemon = True
+            tStatus.start()
+            
+            sleep(5)
+            
+            # reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
+        
         # if installation has been idle for 15 minutes ---> setup
-        elif ( int(time.time()) - ready['timestamp'] ) > ( 60 * 15 ):
+        elif ready['setup'] == True and ( int(time.time()) - ready['timestamp'] ) > ( 60 * 5 ):
             
             print ''
             print ''
@@ -490,14 +562,42 @@ def watchdog():
             print ''
             print '=========='
             
-            ready['setup'] = False
+            # ready['setup'] = False
+            
+            # tStatus = threading.Thread(name='status', target=status, args=('re-setup',))
+            # tStatus.daemon = True
+            # tStatus.start()
+            
+            with open('/proc/uptime', 'r') as f:
+                uptime_seconds = float(f.readline().split()[0])
+                uptime_string = str(timedelta(seconds = int(uptime_seconds)))
+            
+            message = 'uptime: ' + uptime_string
+            tStatus = threading.Thread(name='status', target=status, args=(message,))
+            tStatus.daemon = True
+            tStatus.start()
+            
+            ready['timestamp'] = int(time.time())
+            
+            '''
+            if merci != None and merci.poll() is None:
+                # merci.terminate()
+                os.kill(merci.pid, signal.SIGTERM)
+                print 'merci (hello): kill'
+                time.sleep(2)
+                while merci.poll() is None:
+                    time.sleep(3)
+                    os.kill(merci.pid, signal.SIGKILL)
+                    print 'merci (hello): forcekill'
             
             merci = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','4','/home/pi/Photobooth/merci/hello.png'])
+            print 'merci (hello): done'
             sleep(2)
             
             tSetup = threading.Thread(name='setup', target=setup)
             tSetup.daemon = True
             tSetup.start()
+            '''
 
 class MySensor(USB_ProxSonar):
 
@@ -526,6 +626,10 @@ try:
     
     print 'READY'
     
+    tStatus = threading.Thread(name='status', target=status, args=('init',))
+    tStatus.daemon = True
+    tStatus.start()
+    
     tSetup = threading.Thread(name='setup', target=setup)
     tSetup.daemon = True
     tSetup.start()
@@ -536,7 +640,7 @@ try:
     
     sensor = MySensor(misc['port'])
     sensor.start()
-    
+
     while True:
         
         if ready['setup'] == True:
