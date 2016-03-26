@@ -351,9 +351,9 @@ def snapshot(image):
 
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
     
-    print 'filename: ', filename
+    print 'filename: ' + filename
     
-    message = 'snapshot: ', filename
+    message = 'snapshot: ' + filename
     tStatus = threading.Thread(name='status', target=status, args=(message,))
     tStatus.daemon = True
     tStatus.start()
