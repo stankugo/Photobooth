@@ -195,6 +195,14 @@ reboot = None
 #
 
 def cleanupAndExit():
+    global ready
+    global overlay
+    global merci
+    global misc
+    global pos
+    global live
+    global camera
+    
     print 'SHUTDOWN'
     camera.close()
     sensor.stop()
@@ -224,6 +232,7 @@ def setup():
     global misc
     global pos
     global live
+    global camera
     
     # MEASURE SETUP TIME
     ready['setuptime'] = int(time.time())
@@ -320,9 +329,13 @@ def counter():
 
 def snapshot(image):
     global ready
-    global misc
+    global overlay
     global merci
+    global misc
+    global pos
+    global live
     global camera
+    
     print 'image: ', image
     print 'real image: ', str(misc['images'][image])
 
