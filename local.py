@@ -51,6 +51,7 @@ api = {
 }
 
 ready = {
+    'setuptime' : 0,
     'setup' : False,
     'timestamp' : 0,
     'upload' : True,
@@ -66,7 +67,7 @@ misc = {
     'ext' : '.png',
     'width' : 367,
     'height' : 490,
-    'images' : [2,7,8,13,14,15,19,20,25,26,28],
+    'images' : [2,7,8,14,15,19,20,25,26,28],
     'image' : 0,
     'random' : 0,
     'port' : '/dev/ttyUSB0',
@@ -202,7 +203,7 @@ def cleanupAndExit():
     camera.close()
     sensor.stop()
     
-    if overlay != None:
+    if overlay != None and overlay.poll() is None:
         # overlay.terminate()
         os.kill(overlay.pid, signal.SIGTERM)
         time.sleep(2)
@@ -210,7 +211,7 @@ def cleanupAndExit():
             time.sleep(3)
             os.kill(overlay.pid, signal.SIGKILL)
 
-    if merci != None:
+    if merci != None and merci.poll() is None:
         # merci.terminate()
         os.kill(merci.pid, signal.SIGTERM)
         time.sleep(2)
@@ -228,6 +229,9 @@ def setup():
     global pos
     global live
     
+    # MEASURE SETUP TIME
+    ready['setuptime'] = int(time.time())
+    
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
@@ -235,7 +239,7 @@ def setup():
     misc['image'] = misc['random']
     print 'image: ', misc['image']
 
-    if overlay != None:
+    if overlay != None and overlay.poll() is None:
         # overlay.terminate()
         os.kill(overlay.pid, signal.SIGTERM)
         print 'overlay: kill'
@@ -260,7 +264,7 @@ def setup():
     print 'camera start preview (setup): done'
     sleep(2)
 
-    if merci != None:
+    if merci != None and merci.poll() is None:
         # merci.terminate()
         os.kill(merci.pid, signal.SIGTERM)
         print 'merci: kill'
@@ -272,6 +276,7 @@ def setup():
         
     print 'merci: done'
     
+    ready['setuptime'] = 0
     ready['setup'] = True
     ready['timestamp'] = int(time.time())
     
@@ -288,8 +293,8 @@ def counter():
     misc['counter'] = 0
     
     while countup < 5:
-        # if misc['sensor'] <= 2000 or misc['sensor'] > 3000:
-        misc['counter'] += 1
+        if misc['sensor'] <= 2000 or misc['sensor'] > 4000:
+            misc['counter'] += 1
         countup += 1
         sleep(1)
     
@@ -445,6 +450,22 @@ def resize_canvas(old_image_path, new_image_path,
     newImage.paste(im, (x1, y1, x1 + old_width, y1 + old_height))
     newImage.save(new_image_path)
     
+def status(status):
+    
+    print 'status update'
+        
+    url = api['protocol'] + api['url'] + '/status'
+    data = {'status': status}
+    
+    try:
+        r = requests.post(url, headers=api['header'], data=data)
+        print r.text
+        response = r.json()
+        del response
+    
+    except requests.exceptions.RequestException as e:
+        print e
+    
 def watchdog():
     global merci
     global ready
@@ -468,12 +489,25 @@ def watchdog():
         print ''
         print '----------'
         
-       timetime = int(time.time())
-       capdiff = timetime - ready['capture']
+        timetime = int(time.time())
+        capdiff = timetime - ready['capture']
+        setupdiff = timetime - ready['setuptime']
+        
+        print 'capdiff: ', capdiff
+        print 'setupdiff: ', setupdiff
+        print 'timetime: ', timetime
        
-       # if capture process takes more than a minute ---> reboot
-       if ( capdiff < timetime and capdiff > 60 ):
+        # if capture process takes more than a minute ---> reboot
+        # if setup process takes more than 30 seconds ---> reboot
+        if ( capdiff < timetime and capdiff > 60 ) or ( setupdiff < timetime and setupdiff > 30 ):
             print 'shutdown -r now'
+            
+            tStatus = threading.Thread(name='status', target=status, args=('reboot',))
+            tStatus.daemon = True
+            tStatus.start()
+            
+            sleep(5)
+            
             reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
         
         # if installation has been idle for 15 minutes ---> setup
@@ -489,7 +523,22 @@ def watchdog():
             
             ready['setup'] = False
             
+            tStatus = threading.Thread(name='status', target=status, args=('re-setup',))
+            tStatus.daemon = True
+            tStatus.start()
+            
+            if merci != None and merci.poll() is None:
+                # merci.terminate()
+                os.kill(merci.pid, signal.SIGTERM)
+                print 'merci (hello): kill'
+                time.sleep(2)
+                if merci.poll() is None:
+                    time.sleep(3)
+                    os.kill(merci.pid, signal.SIGKILL)
+                    print 'merci (hello): forcekill'
+            
             merci = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','4','/home/pi/Photobooth/merci/hello.png'])
+            print 'merci (hello): done'
             sleep(2)
             
             tSetup = threading.Thread(name='setup', target=setup)
@@ -523,6 +572,10 @@ try:
     
     print 'READY'
     
+    tStatus = threading.Thread(name='status', target=status, args=('init',))
+    tStatus.daemon = True
+    tStatus.start()
+    
     tSetup = threading.Thread(name='setup', target=setup)
     tSetup.daemon = True
     tSetup.start()
@@ -536,7 +589,7 @@ try:
     
     while True:
         
-        if ready['setup'] == True:
+        if misc['sensor'] != 0 and (misc['sensor'] <= 2000 or misc['sensor'] > 4000) and ready['setup'] == True:
             
             ready['setup'] = False
             
@@ -544,7 +597,7 @@ try:
             tCounter.daemon = True
             tCounter.start()
         
-        sleep(30)
+        sleep(1)
 
 except KeyboardInterrupt:
     cleanupAndExit()
