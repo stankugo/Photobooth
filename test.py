@@ -415,9 +415,11 @@ def prepare(filename,image):
             tUpload.start()
             
             # PRINT 
+            '''
             tPlot = threading.Thread(name='plot', target=plot, args=(hashid,image,))
             tPlot.daemon = True
             tPlot.start()
+            '''
             
         del response
         
