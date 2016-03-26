@@ -28,6 +28,7 @@ import httplib
 from PIL import Image
 from time import sleep
 from time import strftime
+from datetime import timedelta
 from serial import Serial
 from datetime import datetime
 from maxbotix import USB_ProxSonar
@@ -301,6 +302,10 @@ def setup():
 def counter():
     global misc
     
+    tStatus = threading.Thread(name='status', target=status, args=('counter',))
+    tStatus.daemon = True
+    tStatus.start()
+    
     print 'counter: start'
     counter = subprocess.Popen(['/home/pi/raspidmx/spriteview/./spriteview','-b','0','-c','5','-l','5','-m','1000000','-i','0','/home/pi/Photobooth/counter/counter.png'])
     
@@ -324,6 +329,10 @@ def counter():
     
     else:
         print 'abort'
+        tStatus = threading.Thread(name='status', target=status, args=('abort',))
+        tStatus.daemon = True
+        tStatus.start()
+        
         tSetup = threading.Thread(name='setup', target=setup)
         tSetup.daemon = True
         tSetup.start()
@@ -343,6 +352,11 @@ def snapshot(image):
     filename = time.strftime('%Y%m%d') + '-' + time.strftime('%H%M%S')
     
     print 'filename: ', filename
+    
+    message = 'snapshot: ', filename
+    tStatus = threading.Thread(name='status', target=status, args=(message,))
+    tStatus.daemon = True
+    tStatus.start()
     
     ready['capture'] = int(time.time())
     print 'camera: capture start'
@@ -413,6 +427,10 @@ def prepare(filename,image):
 def upload(id,hashid,filename,image):
     
     print 'upload'
+    
+    tStatus = threading.Thread(name='status', target=status, args=('upload',))
+    tStatus.daemon = True
+    tStatus.start()
         
     url = api['protocol'] + api['url'] + '/upload'
     files = {'file': open(misc['compositions'] + filename + misc['ext'], 'rb')}
@@ -534,7 +552,7 @@ def watchdog():
             # reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
         
         # if installation has been idle for 15 minutes ---> setup
-        elif ready['setup'] == True and ( int(time.time()) - ready['timestamp'] ) > ( 60 * 15 ):
+        elif ready['setup'] == True and ( int(time.time()) - ready['timestamp'] ) > ( 60 * 5 ):
             
             print ''
             print ''
@@ -547,6 +565,15 @@ def watchdog():
             ready['setup'] = False
             
             tStatus = threading.Thread(name='status', target=status, args=('re-setup',))
+            tStatus.daemon = True
+            tStatus.start()
+            
+            with open('/proc/uptime', 'r') as f:
+                uptime_seconds = float(f.readline().split()[0])
+                uptime_string = str(timedelta(seconds = uptime_seconds))
+            
+            message = 'uptime: ', uptime_string
+            tStatus = threading.Thread(name='status', target=status, args=(message,))
             tStatus.daemon = True
             tStatus.start()
             
