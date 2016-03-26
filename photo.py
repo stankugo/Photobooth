@@ -51,6 +51,7 @@ api = {
 }
 
 ready = {
+    'setuptime' : 0,
     'setup' : False,
     'timestamp' : 0,
     'upload' : True,
@@ -228,6 +229,9 @@ def setup():
     global pos
     global live
     
+    # MEASURE SETUP TIME
+    ready['setuptime'] = int(time.time())
+    
     # CREATE A RANDOM NUMBER
     while (misc['image'] == misc['random']):
         misc['random'] = random.randrange(0,len(misc['images'])-1,1)
@@ -272,6 +276,7 @@ def setup():
         
     print 'merci: done'
     
+    ready['setuptime'] = 0
     ready['setup'] = True
     ready['timestamp'] = int(time.time())
     
@@ -486,12 +491,15 @@ def watchdog():
         
         timetime = int(time.time())
         capdiff = timetime - ready['capture']
+        setupdiff = timetime - ready['setuptime']
         
         print 'capdiff: ', capdiff
+        print 'setupdiff: ', setupdiff
         print 'timetime: ', timetime
        
         # if capture process takes more than a minute ---> reboot
-        if ( capdiff < timetime and capdiff > 60 ):
+        # if setup process takes more than 30 seconds ---> reboot
+        if ( capdiff < timetime and capdiff > 60 ) or ( setupdiff < timetime and setupdiff > 30 ):
             print 'shutdown -r now'
             
             tStatus = threading.Thread(name='status', target=status, args=('reboot',))
