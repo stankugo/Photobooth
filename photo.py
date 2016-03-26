@@ -250,11 +250,11 @@ def setup():
     print 'overlay: done'
     sleep(2)
     
-    
-    print 'camera close (setup)'
-    camera.close()
-    print 'camera close (setup): done'
-    sleep(5)
+    if camera != None:
+        print 'camera close (setup)'
+        camera.close()
+        print 'camera close (setup): done'
+        sleep(5)
     
     
     print 'camera init (setup)'
