@@ -517,7 +517,7 @@ def watchdog():
             
             sleep(5)
             
-            reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
+            # reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
         
         # if installation has been idle for 15 minutes ---> setup
         elif ready['setup'] == True and ( int(time.time()) - ready['timestamp'] ) > ( 60 * 15 ):
