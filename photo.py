@@ -572,7 +572,7 @@ def watchdog():
                 uptime_seconds = float(f.readline().split()[0])
                 uptime_string = str(timedelta(seconds = uptime_seconds))
             
-            message = 'uptime: ', uptime_string
+            message = 'uptime: ' + uptime_string
             tStatus = threading.Thread(name='status', target=status, args=(message,))
             tStatus.daemon = True
             tStatus.start()
