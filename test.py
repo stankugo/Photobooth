@@ -477,7 +477,7 @@ def watchdog():
         # if capture process takes more than a minute ---> reboot
         if ( capdiff < timetime and capdiff > 60 ):
             print 'shutdown -r now'
-            # reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
+            reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
             
         # if installation has been idle for 15 minutes ---> setup
         elif ( int(time.time()) - ready['timestamp'] ) > ( 60 * 15 ):
