@@ -274,6 +274,7 @@ def setup():
     camera.preview_window = (live[misc['images'][misc['image']]]['x'] - 80,live[misc['images'][misc['image']]]['y'] + 10,(live[misc['images'][misc['image']]]['x'] + misc['width'] - 80),(live[misc['images'][misc['image']]]['y'] + misc['height'] + 10))
     print 'camera init (setup): done'
     
+    print 'camera start preview (setup)'
     camera.start_preview()
     print 'camera start preview (setup): done'
     sleep(2)
