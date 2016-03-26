@@ -66,7 +66,7 @@ misc = {
     'ext' : '.png',
     'width' : 367,
     'height' : 490,
-    'images' : [2,7,8,13,14,15,19,20,25,26,28],
+    'images' : [2,7,8,14,15,19,20,25,26,28],
     'image' : 0,
     'random' : 0,
     'port' : '/dev/ttyUSB0',
@@ -202,7 +202,7 @@ def cleanupAndExit():
     camera.close()
     sensor.stop()
     
-    if overlay != None:
+    if overlay != None and overlay.poll() is None:
         # overlay.terminate()
         os.kill(overlay.pid, signal.SIGTERM)
         time.sleep(2)
@@ -210,7 +210,7 @@ def cleanupAndExit():
             time.sleep(3)
             os.kill(overlay.pid, signal.SIGKILL)
 
-    if merci != None:
+    if merci != None and merci.poll() is None:
         # merci.terminate()
         os.kill(merci.pid, signal.SIGTERM)
         time.sleep(2)
@@ -235,7 +235,7 @@ def setup():
     misc['image'] = misc['random']
     print 'image: ', misc['image']
 
-    if overlay != None:
+    if overlay != None and overlay.poll() is None:
         # overlay.terminate()
         os.kill(overlay.pid, signal.SIGTERM)
         print 'overlay: kill'
@@ -260,7 +260,7 @@ def setup():
     print 'camera start preview (setup): done'
     sleep(2)
 
-    if merci != None:
+    if merci != None and merci.poll() is None:
         # merci.terminate()
         os.kill(merci.pid, signal.SIGTERM)
         print 'merci: kill'
