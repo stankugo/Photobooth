@@ -302,6 +302,7 @@ def setup():
 
 def counter():
     global misc
+    global merci
     
     tStatus = threading.Thread(name='status', target=status, args=('counter',))
     tStatus.daemon = True
@@ -574,7 +575,7 @@ def watchdog():
             print ''
             print '=========='
             print ''
-            print 're-setup'
+            print 're-setup' 
             print ''
             print '=========='
             
