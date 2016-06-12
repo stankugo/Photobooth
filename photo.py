@@ -284,12 +284,22 @@ def setup():
     if merci != None and merci.poll() is None:
         # merci.terminate()
         os.kill(merci.pid, signal.SIGTERM)
-        print 'merci: kill'
+        print 'merci (hello): kill'
         time.sleep(2)
+        count = 0
         while merci.poll() is None:
             time.sleep(3)
-            os.kill(merci.pid, signal.SIGKILL)
-            print 'merci: forcekill'
+            if count < 3:
+                os.kill(merci.pid, signal.SIGKILL)
+                count = count + 1
+                print 'merci (hello): forcekill'
+            else:
+                print 'shutdown -r now'
+                tStatus = threading.Thread(name='status', target=status, args=('reboot',))
+                tStatus.daemon = True
+                tStatus.start()
+                sleep(5)
+                reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
         
     print 'merci: done'
     
@@ -341,10 +351,20 @@ def counter():
             os.kill(merci.pid, signal.SIGTERM)
             print 'merci (hello): kill'
             time.sleep(2)
+            count = 0
             while merci.poll() is None:
                 time.sleep(3)
-                os.kill(merci.pid, signal.SIGKILL)
-                print 'merci (hello): forcekill'
+                if count < 3:
+                    os.kill(merci.pid, signal.SIGKILL)
+                    count = count + 1
+                    print 'merci (hello): forcekill'
+                else:
+                    print 'shutdown -r now'
+                    tStatus = threading.Thread(name='status', target=status, args=('reboot',))
+                    tStatus.daemon = True
+                    tStatus.start()
+                    sleep(5)
+                    reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
         
         merci = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','4','/home/pi/Photobooth/merci/hello.png'])
         print 'merci (hello): done'
@@ -602,10 +622,21 @@ def watchdog():
                 os.kill(merci.pid, signal.SIGTERM)
                 print 'merci (hello): kill'
                 time.sleep(2)
+                count = 0
                 while merci.poll() is None:
                     time.sleep(3)
-                    os.kill(merci.pid, signal.SIGKILL)
-                    print 'merci (hello): forcekill'
+                    if count < 3:
+                        os.kill(merci.pid, signal.SIGKILL)
+                        count = count + 1
+                        print 'merci (hello): forcekill'
+                    else:
+                        print 'shutdown -r now'
+                        tStatus = threading.Thread(name='status', target=status, args=('reboot',))
+                        tStatus.daemon = True
+                        tStatus.start()
+                        sleep(5)
+                        reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
+                        
             
             merci = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','4','/home/pi/Photobooth/merci/hello.png'])
             print 'merci (hello): done'
