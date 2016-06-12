@@ -593,8 +593,9 @@ def watchdog():
             tStatus.daemon = True
             tStatus.start()
             
-            ready['timestamp'] = int(time.time())
             '''
+            
+            ready['timestamp'] = int(time.time())
             
             if merci != None and merci.poll() is None:
                 # merci.terminate()
