@@ -288,8 +288,8 @@ def setup():
         time.sleep(2)
         count = 0
         while merci.poll() is None:
-            time.sleep(3)
             if count < 3:
+                time.sleep(3)
                 os.kill(merci.pid, signal.SIGKILL)
                 count = count + 1
                 print 'merci (hello): forcekill'
@@ -353,8 +353,8 @@ def counter():
             time.sleep(2)
             count = 0
             while merci.poll() is None:
-                time.sleep(3)
                 if count < 3:
+                    time.sleep(3)
                     os.kill(merci.pid, signal.SIGKILL)
                     count = count + 1
                     print 'merci (hello): forcekill'
@@ -624,8 +624,8 @@ def watchdog():
                 time.sleep(2)
                 count = 0
                 while merci.poll() is None:
-                    time.sleep(3)
                     if count < 3:
+                        time.sleep(3)
                         os.kill(merci.pid, signal.SIGKILL)
                         count = count + 1
                         print 'merci (hello): forcekill'
