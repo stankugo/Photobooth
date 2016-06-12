@@ -567,8 +567,8 @@ def watchdog():
             
             reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
         
-        # if installation has been idle for 5 minutes ---> setup
-        elif ready['setup'] == True and ( int(time.time()) - ready['timestamp'] ) > ( 60 * 5 ):
+        # if installation has been idle for 3 1/2 minutes ---> setup
+        elif ready['setup'] == True and ( int(time.time()) - ready['timestamp'] ) > ( 60 * 3 ):
             
             print ''
             print ''
