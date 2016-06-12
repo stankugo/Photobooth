@@ -334,6 +334,21 @@ def counter():
         tStatus.daemon = True
         tStatus.start()
         
+        # PRINT HELLO DIALOG
+        if merci != None and merci.poll() is None:
+            # merci.terminate()
+            os.kill(merci.pid, signal.SIGTERM)
+            print 'merci (hello): kill'
+            time.sleep(2)
+            while merci.poll() is None:
+                time.sleep(3)
+                os.kill(merci.pid, signal.SIGKILL)
+                print 'merci (hello): forcekill'
+        
+        merci = subprocess.Popen(['/home/pi/raspidmx/pngview/./pngview','-b','0','-l','4','/home/pi/Photobooth/merci/hello.png'])
+        print 'merci (hello): done'
+        sleep(2)
+        
         tSetup = threading.Thread(name='setup', target=setup)
         tSetup.daemon = True
         tSetup.start()
