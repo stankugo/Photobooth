@@ -345,6 +345,8 @@ def counter():
         tStatus.daemon = True
         tStatus.start()
         
+        time.sleep(2)
+        
         # PRINT HELLO DIALOG
         if merci != None and merci.poll() is None:
             # merci.terminate()
