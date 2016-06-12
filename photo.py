@@ -99,15 +99,15 @@ pos = {
     },
     15: {
         'x' : 280,
-        'y' : -44
+        'y' : -34
     },
     19: {
         'x' : 193,
-        'y' : -43
+        'y' : -35
     },
     20: {
-        'x' : 281,
-        'y' : 30
+        'x' : 277,
+        'y' : 35
     },
     25: {
         'x' : 223,
@@ -235,6 +235,13 @@ def setup():
     global live
     global camera
     
+    # CLOSE CAMERA IF ALREADY INIT (eg. on ABORT)
+    if camera != None:
+        print 'camera close (setup)'
+        camera.close()
+        print 'camera close (setup): done'
+    
+    
     # MEASURE SETUP TIME
     ready['setuptime'] = int(time.time())
     
@@ -259,12 +266,6 @@ def setup():
     
     print 'overlay: done'
     sleep(2)
-    
-    if camera != None:
-        print 'camera close (setup)'
-        camera.close()
-        print 'camera close (setup): done'
-        sleep(5)
     
     
     print 'camera init (setup)'
@@ -551,8 +552,8 @@ def watchdog():
             
             reboot = subprocess.Popen('sudo shutdown -r now', shell=True)
         
-        # if installation has been idle for 30 minutes ---> setup
-        elif ready['setup'] == True and ( int(time.time()) - ready['timestamp'] ) > ( 60 * 30 ):
+        # if installation has been idle for 7 minutes ---> setup
+        elif ready['setup'] == True and ( int(time.time()) - ready['timestamp'] ) > ( 60 * 7 ):
             
             print ''
             print ''
@@ -562,12 +563,11 @@ def watchdog():
             print ''
             print '=========='
             
-            # ready['setup'] = False
+            tStatus = threading.Thread(name='status', target=status, args=('re-setup',))
+            tStatus.daemon = True
+            tStatus.start()
             
-            # tStatus = threading.Thread(name='status', target=status, args=('re-setup',))
-            # tStatus.daemon = True
-            # tStatus.start()
-            
+            '''
             with open('/proc/uptime', 'r') as f:
                 uptime_seconds = float(f.readline().split()[0])
                 uptime_string = str(timedelta(seconds = int(uptime_seconds)))
@@ -578,8 +578,8 @@ def watchdog():
             tStatus.start()
             
             ready['timestamp'] = int(time.time())
-            
             '''
+            
             if merci != None and merci.poll() is None:
                 # merci.terminate()
                 os.kill(merci.pid, signal.SIGTERM)
@@ -597,7 +597,6 @@ def watchdog():
             tSetup = threading.Thread(name='setup', target=setup)
             tSetup.daemon = True
             tSetup.start()
-            '''
 
 class MySensor(USB_ProxSonar):
 
